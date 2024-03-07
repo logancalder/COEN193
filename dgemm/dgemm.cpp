@@ -3,6 +3,7 @@
 #include <chrono>
 #include <fstream>
 #include <papi.h>
+#include <iomanip>
 #include "matmul.h"
 #include "externals.h"
 #define LAPACK_INT long int
@@ -67,12 +68,12 @@ int main(int argc, char *argv[])
 
     int EventSet = PAPI_NULL;
     long long values[NUM_EVENTS];
+    long long values_avg[NUM_EVENTS];
+    double average_time = 0;
     int trials = 10; // HOW MANY TO RUN
     std::string fileName = getCurrentDateTimeString();
 
     // MEASUREMENTS START HERE
-
-    double average_time = 0;
 
     // PAPI Initialization (move outside the loop)
     if (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
@@ -102,8 +103,11 @@ int main(int argc, char *argv[])
     }
 
     // Loop for measurements
+
     for (int i = 0; i < trials; i++)
     {
+        auto start = std::chrono::high_resolution_clock::now(); // Start recording time
+
         // Start counting events
         if (PAPI_start(EventSet) != PAPI_OK)
         {
@@ -121,8 +125,18 @@ int main(int argc, char *argv[])
             return 1;
         }
 
-        // FILE WRITING (should be outside the loop if you're measuring multiple iterations)
-        std::string filepath = fileName + ".txt";
+        auto end = std::chrono::high_resolution_clock::now(); // End time recording
+        std::chrono::duration<double, std::milli> duration = end - start;
+
+        for (int j = 0; j < NUM_EVENTS; j++)
+        {
+            values_avg[j] += values[j];
+        }
+        average_time += duration.count();
+
+        // FILE WRITING PER TRIAL VALUES (should be outside the loop if you're measuring multiple iterations)
+
+        std::string filepath = "dgemm_results/" + fileName + ".txt";
         std::ofstream file(filepath, std::ios::app);
 
         if (!file.is_open())
@@ -131,11 +145,34 @@ int main(int argc, char *argv[])
         }
 
         if (i == 0)
-            file << "TRIAL\tSIZE\tINST\tCYCL\n"; // Header
+            file << "TRIAL\tSIZE\tINST\t\tCYCL\t\t\tRUNTIME (ms)\n"; // Header
 
-        file << i << "\t" << m << "x" << n << "\t" << values[0] << "\t" << values[1] << std::endl; // Write data into file
+        file << i << "\t" << m << "x" << n << "\t" << values[0] << "\t" << values[1] << "\t\t" << duration.count() << std::endl; // Write data into file
         file.close();
     }
+
+    // OBTAIN AVERAGE VALUES
+
+    for (int j = 0; j < NUM_EVENTS; j++)
+    {
+        values_avg[j] /= trials;
+    }
+    average_time /= trials;
+
+    // RECORD AVERAGE VALUES
+
+    std::string filepath = "dgemm_results/" + fileName + ".txt";
+    std::ofstream file(filepath, std::ios::app);
+
+    if (!file.is_open())
+    {
+        std::cerr << "Error opening file: " << filepath << std::endl;
+    }
+
+    file << "\n--------------------------- AVERAGES ---------------------------\nTRIAL\tSIZE\tINST\t\tCYCL\t\t\tRUNTIME (ms)\n"; // Header
+    file << "ALL"
+         << "\t" << m << "x" << n << "\t" << values_avg[0] << "\t" << values_avg[1] << "\t\t" << average_time << std::endl; // Write data into file
+    file.close();
 
     // Cleanup
     PAPI_cleanup_eventset(EventSet);
@@ -148,3 +185,4 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
