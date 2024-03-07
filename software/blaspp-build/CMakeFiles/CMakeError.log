@@ -1,0 +1,15 @@
+Performing C++ SOURCE FILE Test FSYCL_SUPPORT failed with the following output:
+Change Dir: /WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/blaspp-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_43979/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_43979.dir/build.make CMakeFiles/cmTC_43979.dir/build
+gmake[1]: Entering directory '/WAVE/projects/ycho_lab/logan_calder/workspace/blaspp-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_43979.dir/src.cxx.o
+/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++ -DFSYCL_SUPPORT  -fsycl -o CMakeFiles/cmTC_43979.dir/src.cxx.o -c /WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/blaspp-build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-fsycl'
+gmake[1]: *** [CMakeFiles/cmTC_43979.dir/build.make:78: CMakeFiles/cmTC_43979.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/WAVE/projects/ycho_lab/logan_calder/workspace/blaspp-build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_43979/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }

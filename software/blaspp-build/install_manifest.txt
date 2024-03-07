@@ -1,0 +1,6 @@
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/blaspp/lib64/libblaspp.so
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/blaspp/include/blas/defines.h
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/blaspp/lib64/cmake/blaspp/blasppTargets.cmake
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/blaspp/lib64/cmake/blaspp/blasppTargets-release.cmake
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/blaspp/lib64/cmake/blaspp/blasppConfig.cmake
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/blaspp/lib64/cmake/blaspp/blasppConfigVersion.cmake
