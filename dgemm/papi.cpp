@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     double ALPHA = 2;
     double BETA = 2;
 
-    m = n = k = 256;
+    m = n = k = 1024;
     lda = m;
     ldb = k;
     ldc = m;
@@ -63,50 +63,45 @@ int main(int argc, char *argv[])
 
 // Setup for PAPI
 #define NUM_EVENTS 2
+
     int EventSet = PAPI_NULL;
     long long values[NUM_EVENTS];
-
     int n_events = 1; // HOW MANY TO RUN
 
+    // MEASUREMENTS START HERE
+
+    double average_time = 0;
+
+    // PAPI Initialization (move outside the loop)
     if (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
     {
         std::cerr << "PAPI initialization failed!" << std::endl;
         return 1;
     }
 
-    // MEASUREMENTS START HERE
+    // Create EventSet
+    if (PAPI_create_eventset(&EventSet) != PAPI_OK)
+    {
+        std::cerr << "PAPI event creation failed!" << std::endl;
+        return 1;
+    }
 
-    double average_time = 0;
+    // Add events to EventSet
+    if (PAPI_add_event(EventSet, PAPI_TOT_INS) != PAPI_OK)
+    {
+        std::cerr << "PAPI event add failed!" << std::endl;
+        return 1;
+    }
 
+    if (PAPI_add_event(EventSet, PAPI_TOT_CYC) != PAPI_OK)
+    {
+        std::cerr << "PAPI event add failed!" << std::endl;
+        return 1;
+    }
+
+    // Loop for measurements
     for (int i = 0; i < n_events; i++)
     {
-        // Initialize PAPI
-        if (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
-        {
-            std::cerr << "PAPI initialization failed!" << std::endl;
-            return 1;
-        }
-
-        // Create EventSet
-        if (PAPI_create_eventset(&EventSet) != PAPI_OK)
-        {
-            std::cerr << "PAPI event creation failed!" << std::endl;
-            return 1;
-        }
-
-        // Add events to EventSet
-        if (PAPI_add_event(EventSet, PAPI_TOT_INS) != PAPI_OK)
-        {
-            std::cerr << "PAPI event add failed!" << std::endl;
-            return 1;
-        }
-
-        if (PAPI_add_event(EventSet, PAPI_TOT_CYC) != PAPI_OK)
-        {
-            std::cerr << "PAPI event add failed!" << std::endl;
-            return 1;
-        }
-
         // Start counting events
         if (PAPI_start(EventSet) != PAPI_OK)
         {
@@ -114,11 +109,8 @@ int main(int argc, char *argv[])
             return 1;
         }
 
-        // vvvvvvvvvvvvvvv
-
+        // Call matmul function
         double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
-
-        // ^^^^^^^^^^^^^^^
 
         // Stop counting events
         if (PAPI_stop(EventSet, values) != PAPI_OK)
@@ -127,7 +119,7 @@ int main(int argc, char *argv[])
             return 1;
         }
 
-        // FILE WRITING
+        // FILE WRITING (should be outside the loop if you're measuring multiple iterations)
         std::string filepath = "runtime.txt";
         std::ofstream file(filepath, std::ios::app);
 
@@ -141,6 +133,7 @@ int main(int argc, char *argv[])
         file.close();
     }
 
+    // Cleanup
     PAPI_cleanup_eventset(EventSet);
     PAPI_destroy_eventset(&EventSet);
     PAPI_shutdown();
