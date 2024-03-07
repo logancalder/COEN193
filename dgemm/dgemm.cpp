@@ -4,6 +4,7 @@
 #include <fstream>
 #include <papi.h>
 #include "matmul.h"
+#include "externals.h"
 #define LAPACK_INT long int
 #ifdef __cplusplus
 extern "C"
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
     double ALPHA = 2;
     double BETA = 2;
 
-    m = n = k = 1024;
+    m = n = k = 512;
     lda = m;
     ldb = k;
     ldc = m;
@@ -66,7 +67,8 @@ int main(int argc, char *argv[])
 
     int EventSet = PAPI_NULL;
     long long values[NUM_EVENTS];
-    int n_events = 1; // HOW MANY TO RUN
+    int trials = 10; // HOW MANY TO RUN
+    std::string fileName = getCurrentDateTimeString();
 
     // MEASUREMENTS START HERE
 
@@ -100,7 +102,7 @@ int main(int argc, char *argv[])
     }
 
     // Loop for measurements
-    for (int i = 0; i < n_events; i++)
+    for (int i = 0; i < trials; i++)
     {
         // Start counting events
         if (PAPI_start(EventSet) != PAPI_OK)
@@ -120,7 +122,7 @@ int main(int argc, char *argv[])
         }
 
         // FILE WRITING (should be outside the loop if you're measuring multiple iterations)
-        std::string filepath = "runtime.txt";
+        std::string filepath = fileName + ".txt";
         std::ofstream file(filepath, std::ios::app);
 
         if (!file.is_open())
@@ -128,8 +130,10 @@ int main(int argc, char *argv[])
             std::cerr << "Error opening file: " << filepath << std::endl;
         }
 
-        file << "# INST:\t" << values[0] << "\t|\t" << m << "x" << n << std::endl; // Write data into file
-        file << "# CYCL:\t" << values[1] << "\t|\t" << m << "x" << n << std::endl; // Write data into file
+        if (i == 0)
+            file << "TRIAL\tSIZE\tINST\tCYCL\n"; // Header
+
+        file << i << "\t" << m << "x" << n << "\t" << values[0] << "\t" << values[1] << std::endl; // Write data into file
         file.close();
     }
 
