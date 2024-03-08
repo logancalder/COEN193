@@ -68,8 +68,7 @@ int main(int argc, char *argv[])
 
     int EventSet = PAPI_NULL;
     long long values[NUM_EVENTS];
-    long long values_avg[NUM_EVENTS];
-    values_avg[0] = values_avg[1] = 0;
+    long long values_avg[NUM_EVENTS] = { 0 , };
     double average_time = 0;
     int trials = 10; // HOW MANY TO RUN
     std::string fileName = getCurrentDateTimeString();
