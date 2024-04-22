@@ -45,12 +45,7 @@ void initializePAPI(int EventSet)
         std::cout << "Adding event: " << events[i] << std::endl;
 
         // Add event to EventSet
-        if (PAPI_add_event(EventSet, PAPI_TOT_CYC) != PAPI_OK)
-        {
-            std::cerr << "PAPI event add failed for event: " << events[i] << std::endl;
-            return;
-        }
-        if (PAPI_add_event(EventSet, PAPI_TOT_INS) != PAPI_OK)
+        if (PAPI_add_event(EventSet, events[i]) != PAPI_OK)
         {
             std::cerr << "PAPI event add failed for event: " << events[i] << std::endl;
             return;
