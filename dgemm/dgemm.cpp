@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 
     // Setup for PAPI
 
-    initializePAPI("PAPI_input.txt");
+    initializePAPI();
 
     int NUM_EVENTS = returnNumEventsPAPI();
 
