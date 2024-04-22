@@ -67,41 +67,34 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
 {
     std::cout << "Stopping PAPI..." << std::endl;
     // Stop counting events
-    if (PAPI_stop(EventSet, values) != PAPI_OK)
+    if (PAPI_stop(&EventSet, values) != PAPI_OK)
     {
         std::cout << "PAPI stop failed!" << std::endl;
         return;
+    }
+    // FILE WRITING PER TRIAL VALUES (should be outside the loop if you're measuring multiple iterations)
+    std::string filepath = "papi_results/" + fileName + ".txt";
+    std::ofstream file(filepath, std::ios::app);
 
-        // Stop counting events
-        if (PAPI_stop(EventSet, values) != PAPI_OK)
-        {
-            std::cout << "PAPI stop failed!" << std::endl;
-            return;
-        }
-
-        // FILE WRITING PER TRIAL VALUES (should be outside the loop if you're measuring multiple iterations)
-        std::string filepath = "papi_results/" + fileName + ".txt";
-        std::ofstream file(filepath, std::ios::app);
-
-        if (!file.is_open())
-        {
-            std::cout << "Error opening file: " << filepath << std::endl;
-        }
-
-        if (trialNumber == 0)
-            file << "TRIAL\tINST\t\tCYCL"; // Header
-
-        file << trialNumber << "\t" << values[0] << "\t" << values[1] << std::endl; // Write data into file
-        std::cout << "Stopping" << std::endl;
-        file.close();
+    if (!file.is_open())
+    {
+        std::cout << "Error opening file: " << filepath << std::endl;
     }
 
-    // Clean up PAPI
+    if (trialNumber == 0)
+        file << "TRIAL\tINST\t\tCYCL"; // Header
 
-    std::cout << "Cleaning up PAPI..." << std::endl;
-    PAPI_cleanup_eventset(EventSet);
-    PAPI_destroy_eventset(&EventSet);
-    PAPI_shutdown();
+    file << trialNumber << "\t" << values[0] << "\t" << values[1] << std::endl; // Write data into file
+    std::cout << "Stopping" << std::endl;
+    file.close();
+}
+
+// Clean up PAPI
+
+std::cout << "Cleaning up PAPI..." << std::endl;
+PAPI_cleanup_eventset(EventSet);
+PAPI_destroy_eventset(&EventSet);
+PAPI_shutdown();
 }
 
 #endif // DA_H
