@@ -42,7 +42,7 @@ void initializePAPI()
 
     std::cout << "PAPI EventSet created" << std::endl;
 
-    for (int i = 0; i < events.size(); i++)
+    for (int i = 0; i < sizeof(events); i++)
     {
         std::cout << "Adding event: " << events[i] << std::endl;
 
