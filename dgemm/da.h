@@ -48,23 +48,23 @@ void initializePAPI(std::string inputFile)
         return;
     }
 
-    std::string event;
+    std::string eventName;
+    int eventValue;
     std::cout << "Reading events from file..." << std::endl;
 
-    while (std::getline(input, event))
+    while (input >> eventName >> eventValue)
     {
-        std::cout << "Adding event: " << event << std::endl;
+        std::cout << "Adding event: " << eventName << std::endl;
 
         // Add event to EventSet
-        if (PAPI_add_event(EventSet, event) != PAPI_OK)
+        if (PAPI_add_event(EventSet, eventValue) != PAPI_OK)
         {
-            std::cerr << "PAPI event add failed for event: " << event << std::endl;
+            std::cerr << "PAPI event add failed for event: " << eventName << std::endl;
             return;
         }
         std::cout << "Event added" << std::endl;
         numEvents++;
     }
-
     input.close();
 
     std::cout << "Starting PAPI..." << std::endl;
