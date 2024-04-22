@@ -15,6 +15,8 @@ int numEvents = 0;
 
 std::string fileName = getCurrentDateTimeString();
 
+long long events[2] = {PAPI_TOT_CYC, PAPI_TOT_INS};
+
 int returnNumEventsPAPI()
 {
     return numEvents;
@@ -48,15 +50,25 @@ void initializePAPI(std::string inputFile)
         return;
     }
 
-    const std::string event;
-    std::cout << "Reading events from file..." << std::endl;
+    for (int i = 0; i < events.size(); i++)
+    {
+        std::cout << "Adding event: " << events[i] << std::endl;
 
-    while (std::getline(input, event))
+        // Add event to EventSet
+        if (PAPI_add_event(EventSet, events[i]) != PAPI_OK)
+        {
+            std::cerr << "PAPI event add failed for event: " << events[i] << std::endl;
+            return;
+        }
+        std::cout << "Event added" << std::endl;
+        numEvents++;
+    }
+
     {
         std::cout << "Adding event: " << event << std::endl;
 
         // Add event to EventSet
-        if (PAPI_add_event(EventSet, event.c_str()) != PAPI_OK)
+        if (PAPI_add_event(EventSet, event) != PAPI_OK)
         {
             std::cerr << "PAPI event add failed for event: " << event << std::endl;
             return;
@@ -64,6 +76,7 @@ void initializePAPI(std::string inputFile)
         std::cout << "Event added" << std::endl;
         numEvents++;
     }
+
     input.close();
 
     std::cout << "Starting PAPI..." << std::endl;
