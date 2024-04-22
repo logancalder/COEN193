@@ -26,7 +26,7 @@ void initializePAPI(std::string inputFile)
     // PAPI Initialization (move outside the loop)
     if (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
     {
-        std::cout << "PAPI initialization failed!" << std::endl;
+        std::cerr << "PAPI initialization failed!" << std::endl;
         return;
     }
 
@@ -34,7 +34,7 @@ void initializePAPI(std::string inputFile)
     // Create EventSet
     if (PAPI_create_eventset(&EventSet) != PAPI_OK)
     {
-        std::cout << "PAPI event creation failed!" << std::endl;
+        std::cerr << "PAPI event creation failed!" << std::endl;
         return;
     }
 
@@ -44,36 +44,30 @@ void initializePAPI(std::string inputFile)
     std::ifstream input(inputFile);
     if (!input.is_open())
     {
-        std::cout << "Error opening file: " << inputFile << std::endl;
+        std::cerr << "Error opening file: " << inputFile << std::endl;
         return;
     }
 
     std::string event;
     std::cout << "Reading events from file..." << std::endl;
+    std::getline(input, event);
+    std::cout << "Adding event: " << event << std::endl;
     while (std::getline(input, event))
     {
         std::cout << "Adding event: " << event << std::endl;
         // Convert event string to integer
-        try
-        {
-            int eventCode = std::stoi(event);
+        int eventCode = std::stoi(event);
 
-            std::cout << "Event code: " << eventCode << std::endl;
+        std::cout << "Event code: " << eventCode << std::endl;
 
-            // Add event to EventSet
-            if (PAPI_add_event(EventSet, eventCode) != PAPI_OK)
-            {
-                std::cout << "PAPI event add failed for event: " << event << std::endl;
-                return;
-            }
-            std::cout << "Event added" << std::endl;
-            numEvents++;
-        }
-        catch (const std::invalid_argument &e)
+        // Add event to EventSet
+        if (PAPI_add_event(EventSet, eventCode) != PAPI_OK)
         {
-            std::cout << "Invalid argument: " << e.what() << std::endl;
+            std::cerr << "PAPI event add failed for event: " << event << std::endl;
             return;
         }
+        std::cout << "Event added" << std::endl;
+        numEvents++;
     }
 
     input.close();
