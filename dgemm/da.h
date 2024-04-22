@@ -87,14 +87,13 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
     file << trialNumber << "\t" << values[0] << "\t" << values[1] << std::endl; // Write data into file
     std::cout << "Stopping" << std::endl;
     file.close();
-}
 
-// Clean up PAPI
+    // Clean up PAPI
 
-std::cout << "Cleaning up PAPI..." << std::endl;
-PAPI_cleanup_eventset(EventSet);
-PAPI_destroy_eventset(&EventSet);
-PAPI_shutdown();
+    std::cout << "Cleaning up PAPI..." << std::endl;
+    PAPI_cleanup_eventset(EventSet);
+    PAPI_destroy_eventset(&EventSet);
+    PAPI_shutdown();
 }
 
 #endif // DA_H
