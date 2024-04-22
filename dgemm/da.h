@@ -1,10 +1,12 @@
 #ifndef DA_H
 #define DA_H
-
 #include <iostream>
 #include <vector>
-#include <chrono>
 #include <fstream>
+#include <papi.h>
+#include <iomanip>
+#include "matmul.h"
+#include "externals.h"
 #include "da.h"
 
 int EventSet = PAPI_NULL;
