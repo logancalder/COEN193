@@ -68,31 +68,22 @@ int main(int argc, char *argv[])
     // Setup for PAPI
 
     initializePAPI("PAPI_input.txt");
-    startPAPI();
 
     int NUM_EVENTS = returnNumEventsPAPI();
 
     int EventSet = PAPI_NULL;
     long long values[NUM_EVENTS];
-    long long values_avg[NUM_EVENTS] = {
-        0,
-    };
     int trials = 1; // HOW MANY TO RUN
     std::string fileName = getCurrentDateTimeString();
-
-    // MEASUREMENTS START HERE
 
     // Loop for measurements
 
     for (int i = 0; i < trials; i++)
     {
-        // Call matmul function
         double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
-        stopPAPI(values, i);
-    }
 
-    // Cleanup
-    cleanupPAPI(EventSet);
+        stopPAPI(values, i, EventSet);
+    }
 
     free(A);
     free(B);

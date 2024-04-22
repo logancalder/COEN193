@@ -54,13 +54,9 @@ void initializePAPI(std::string inputFile)
     while (std::getline(input, event))
     {
         std::cout << "Adding event: " << event << std::endl;
-        // Convert event string to integer
-        int eventCode = std::stoi(event);
-
-        std::cout << "Event code: " << eventCode << std::endl;
 
         // Add event to EventSet
-        if (PAPI_add_event(EventSet, eventCode) != PAPI_OK)
+        if (PAPI_add_event(EventSet, event) != PAPI_OK)
         {
             std::cerr << "PAPI event add failed for event: " << event << std::endl;
             return;
@@ -70,11 +66,7 @@ void initializePAPI(std::string inputFile)
     }
 
     input.close();
-}
 
-void startPAPI()
-{
-    printf("1");
     std::cout << "Starting PAPI..." << std::endl;
     // Start counting events
     if (PAPI_start(EventSet) != PAPI_OK)
@@ -84,7 +76,7 @@ void startPAPI()
     }
 }
 
-void stopPAPI(long long *values, int trialNumber)
+void stopPAPI(long long *values, int trialNumber, int EventSet)
 {
     std::cout << "Stopping PAPI..." << std::endl;
     // Stop counting events
@@ -116,6 +108,8 @@ void stopPAPI(long long *values, int trialNumber)
         std::cout << "Stopping" << std::endl;
         file.close();
     }
+
+    cleanupPAPI(EventSet);
 }
 
 // Cleanup
