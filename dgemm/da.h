@@ -98,6 +98,7 @@ void stopPAPI(long long *values, int trialNumber)
             file << "TRIAL\tINST\t\tCYCL"; // Header
 
         file << trialNumber << "\t" << values[0] << "\t" << values[1] << std::endl; // Write data into file
+        std::cout << "Stopping" << std::endl;
         file.close();
     }
 }
