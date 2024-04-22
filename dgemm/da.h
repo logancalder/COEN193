@@ -75,13 +75,13 @@ void stopPAPI(long long *values, int trialNumber)
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
     {
-        std::cerr << "PAPI stop failed!" << std::endl;
+        std::cout << "PAPI stop failed!" << std::endl;
         return;
 
         // Stop counting events
         if (PAPI_stop(EventSet, values) != PAPI_OK)
         {
-            std::cerr << "PAPI stop failed!" << std::endl;
+            std::cout << "PAPI stop failed!" << std::endl;
             return;
         }
 
@@ -91,7 +91,7 @@ void stopPAPI(long long *values, int trialNumber)
 
         if (!file.is_open())
         {
-            std::cerr << "Error opening file: " << filepath << std::endl;
+            std::cout << "Error opening file: " << filepath << std::endl;
         }
 
         if (trialNumber == 0)
