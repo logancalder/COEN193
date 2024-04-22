@@ -20,6 +20,7 @@ int returnNumEventsPAPI()
 
 void initializePAPI(std::string inputFile)
 {
+    std::cout << "Initializing PAPI..." << std::endl;
     // PAPI Initialization (move outside the loop)
     if (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
     {
@@ -62,6 +63,7 @@ void initializePAPI(std::string inputFile)
 
 void startPAPI()
 {
+    std::cout << "Starting PAPI..." << std::endl;
     // Start counting events
     if (PAPI_start(EventSet) != PAPI_OK)
     {
@@ -72,6 +74,7 @@ void startPAPI()
 
 void stopPAPI(long long *values, int trialNumber)
 {
+    std::cout << "Stopping PAPI..." << std::endl;
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
     {
@@ -107,6 +110,7 @@ void stopPAPI(long long *values, int trialNumber)
 
 void cleanupPAPI(int EventSet)
 {
+    std::cout << "Cleaning up PAPI..." << std::endl;
     PAPI_cleanup_eventset(EventSet);
     PAPI_destroy_eventset(&EventSet);
     PAPI_shutdown();
