@@ -54,18 +54,26 @@ void initializePAPI(std::string inputFile)
     {
         std::cout << "Adding event: " << event << std::endl;
         // Convert event string to integer
-        int eventCode = std::stoi(event);
-
-        std::cout << "Event code: " << eventCode << std::endl;
-
-        // Add event to EventSet
-        if (PAPI_add_event(EventSet, eventCode) != PAPI_OK)
+        try
         {
-            std::cout << "PAPI event add failed for event: " << event << std::endl;
+            int eventCode = std::stoi(event);
+
+            std::cout << "Event code: " << eventCode << std::endl;
+
+            // Add event to EventSet
+            if (PAPI_add_event(EventSet, eventCode) != PAPI_OK)
+            {
+                std::cout << "PAPI event add failed for event: " << event << std::endl;
+                return;
+            }
+            std::cout << "Event added" << std::endl;
+            numEvents++;
+        }
+        catch (const std::invalid_argument &e)
+        {
+            std::cout << "Invalid argument: " << e.what() << std::endl;
             return;
         }
-        std::cout << "Event added" << std::endl;
-        numEvents++;
     }
 
     input.close();
