@@ -50,8 +50,7 @@ void initializePAPI(std::string inputFile)
 
     std::string event;
     std::cout << "Reading events from file..." << std::endl;
-    std::getline(input, event);
-    std::cout << "Adding event: " << event << std::endl;
+
     while (std::getline(input, event))
     {
         std::cout << "Adding event: " << event << std::endl;
