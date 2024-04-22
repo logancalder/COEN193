@@ -56,8 +56,6 @@ void initializePAPI()
         numEvents++;
     }
 
-    input.close();
-
     std::cout << "Starting PAPI..." << std::endl;
     // Start counting events
     if (PAPI_start(EventSet) != PAPI_OK)
