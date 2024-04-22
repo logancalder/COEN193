@@ -109,13 +109,8 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
         file.close();
     }
 
-    cleanupPAPI(EventSet);
-}
+    // Clean up PAPI
 
-// Cleanup
-
-void cleanupPAPI(int EventSet)
-{
     std::cout << "Cleaning up PAPI..." << std::endl;
     PAPI_cleanup_eventset(EventSet);
     PAPI_destroy_eventset(&EventSet);
