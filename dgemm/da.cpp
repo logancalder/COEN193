@@ -6,9 +6,14 @@
 
 int EventSet = PAPI_NULL;
 
-int trials = 10; // HOW MANY TO RUN
+int numEvents = 0;
 
 std::string fileName = getCurrentDateTimeString();
+
+int returnNumEventsPAPI()
+{
+    return numEvents;
+}
 
 void initializePAPI(std::string inputFile)
 {
@@ -46,6 +51,7 @@ void initializePAPI(std::string inputFile)
             std::cerr << "PAPI event add failed for event: " << event << std::endl;
             return;
         }
+        numEvents++;
     }
 
     input.close();

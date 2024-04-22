@@ -12,4 +12,7 @@ void initializePAPI(std::string inputFile);
 void startPAPI();
 void stopPAPI(long long *values, int trialNumber);
 void cleanupPAPI(int EventSet);
+
+int returnNumEventsPAPI();
+
 #endif // DA_H
