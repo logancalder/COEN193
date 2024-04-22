@@ -67,8 +67,8 @@ int main(int argc, char *argv[])
 
     // Setup for PAPI
 
-    void initializePAPI(std::string inputFile);
-    void startPAPI();
+    initializePAPI("PAPI_input.txt");
+    startPAPI();
 
     int NUM_EVENTS = returnNumEventsPAPI();
 
@@ -88,12 +88,11 @@ int main(int argc, char *argv[])
     {
         // Call matmul function
         double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
-
-        void stopPAPI(long long *values, int i);
+        stopPAPI(values, i);
     }
 
     // Cleanup
-    void cleanupPAPI(int EventSet);
+    cleanupPAPI(EventSet);
 
     free(A);
     free(B);

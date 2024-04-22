@@ -3,11 +3,11 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <chrono>
 #include <papi.h>
 #include <iomanip>
 #include "matmul.h"
 #include "externals.h"
-#include "da.h"
 
 int EventSet = PAPI_NULL;
 

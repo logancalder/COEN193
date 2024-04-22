@@ -1,0 +1,798 @@
+Script started on 2024-04-21 21:50:16-07:00
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ git push origincommit -a -m "software"[12Ppush origin[K./dgemm
+./dgemm: error while loading shared libraries: libpapi.so.7.1: cannot open shared object file: No such file or directory
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ echo $LD_LIBRARY_PATH
+/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi run_env.sh 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"run_env.sh" 0L, 0C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[2;1H[94m~                                                                                                                                                [3;1H~                                                                                                                                                [4;1H~                                                                                                                                                [5;1H~                                                                                                                                                [6;1H~                                                                                                                                                [7;1H~                                                                                                                                                [8;1H~                                                                                                                                                [9;1H~                                                                                                                                                [10;1H~                                                                                                                                                [11;1H~                                                                                                                                                [12;1H~                                                                                                                                                [13;1H~                                                                                                                                                [14;1H~                                                                                                                                                [15;1H~                                                                                                                                                [16;1H~                                                                                                                                                [17;1H~                                                                                                                                                [18;1H~                                                                                                                                                [19;1H~                                                                                                                                                [20;1H~                                                                                                                                                [21;1H~                                                                                                                                                [22;1H~                                                                                                                                                [23;1H~                                                                                                                                                [24;1H~                                                                                                                                                [25;1H~                                                                                                                                                [26;1H~                                                                                                                                                [27;1H~                                                                                                                                                [28;1H~                                                                                                                                                [29;1H~                                                                                                                                                [30;1H~                                                                                                                                                [31;1H~                                                                                                                                                [32;1H~                                                                                                                                                [m[33;128H0,0-1[9CAll[1;1H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[2;1H[94m~                                                                                                                                                [3;1H~                                                                                                                                                [4;1H~                                                                                                                                                [5;1H~                                                                                                                                                [6;1H~                                                                                                                                                [7;1H~                                                                                                                                                [8;1H~                                                                                                                                                [9;1H~                                                                                                                                                [10;1H~                                                                                                                                                [11;1H~                                                                                                                                                [12;1H~                                                                                                                                                [13;1H~                                                                                                                                                [14;1H~                                                                                                                                                [15;1H~                                                                                                                                                [16;1H~                                                                                                                                                [17;1H~                                                                                                                                                [18;1H~                                                                                                                                                [19;1H~                                                                                                                                                [20;1H~                                                                                                                                                [21;1H~                                                                                                                                                [22;1H~                                                                                                                                                [23;1H~                                                                                                                                                [24;1H~                                                                                                                                                [25;1H~                                                                                                                                                [26;1H~                                                                                                                                                [27;1H~                                                                                                                                                [28;1H~                                                                                                                                                [29;1H~                                                                                                                                                [30;1H~                                                                                                                                                [31;1H~                                                                                                                                                [32;1H~                                                                                                                                                [m[33;128H0,0-1[9CAll"run_env.sh" 0L, 0C[1;1H[?25h[?25l[33;118H:[1;1H[33;1H[K[33;1H:[?2004h[?25hq[?25l[?25h[?25l[?2004l[33;1H[K[33;1H[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi run_env.sh 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"run_env.sh" [noeol] 7L, 8192C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1HScript started on 2024-04-21 21:50:16-07:00
+[34m^[[m[97m[101m][m[31m0[m;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[34m^G[m[38;5;130m[[mlcalder@wave8-login2 dgemm[38;5;130m][m$ git push origin[34m^H^H^H^H^H^H^H^H^H^H^H[mcommit [35m-a[m [35m-m[m  [3;1H[38;5;130m"[m[31msoftware[m[38;5;130m"[m[34m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[m[38;5;130m[[m12Ppush origin[34m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[m[38;5;130m[[mK./dg[34m^G[memm[34m^M[m
+./dgemm: error while loading shared libraries: libpapi.so.[31m7[m.1: cannot open shared object file: No such file or directory[34m^M
+^[[m[38;5;130m][m[31m0[m[38;5;130m;[mlcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[34m^G[m[38;5;130m[[mlcalder@wave8-login2 dgemm[38;5;130m][m$ echo [35m$LD_LIBRARY_PATH[m[34m^M[m
+/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.[31m3[m.[31m0[m/lib[34m^M
+^[[m[38;5;130m][m[31m0[m;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[34m^G[m[38;5;130m[[mlcalder@wave8-login2 dgemm[38;5;130m][m$ vi run_env.sh [34m^M
+^[[m[38;5;130m[[m?2004h[34m^[[m[38;5;130m[[m?1049h[34m^[[m[38;5;130m[[m[31m22[m[38;5;130m;[m[31m0[m[38;5;130m;[m0t[34m^[[m[38;5;130m[[m?1h[34m^[[m[38;5;130m=[m[34m^[[m[38;5;130m[[m?2004h[34m^[[m[38;5;130m[[m[31m1[m[38;5;130m;[m33r[34m^[[m[38;5;130m[[m?12h[34m^[[m[38;5;130m[[m?12l[34m^[[m[38;5;130m[[m27m[34m^[[m[38;5;130m[[m23m[34m^[[m[38;5;130m[[m29m[34m^[[m[38;5;130m[[mm[34m^[[m[38;5;130m[[mH[34m^[[m[38;5;130m[[m2J[34m^[[m[38;5;130m[[m?25l[34m^[[m[38;5;130m[[m[31m33[m[38;5;130m;[m1H[38;5;130m"[m[31mrun_env.sh[m[38;5;130m"[m 0L, 0C[34m^[[m[38;5;130m[[m[31m2[m[38;5;130m;[m1H▽[8;142H[34m^[[m[38;5;130m[[m66[9;1Hn[34m^[[m[38;5;130m[[m[31m2[m[38;5;130m;[m1H  [34m^[[m[38;5;130m[[m[31m1[m[38;5;130m;[m1H[34m^[[m[38;5;130m[>[mc[34m^[[m[38;5;130m][m[31m10[m[38;5;130m;[m?[34m^G^[[m[38;5;130m][m[31m11[m[38;5;130m;[m?[34m^G^[[m[38;5;130m[[m[31m2[m[38;5;130m;[m1H[34m^[[m[38;5;130m[[m94m~[90C  [10;1H [52C[34m^[[m[38;5;130m[[m[31m3[m[38;5;130m;[m1H~[83C  [11;1H [59C[34m^[[m[38;5;130m[[m[31m4[m[38;5;130m;[m1H~[76C  [12;1H [66C[34m^[[m[38;5;130m[[m[31m5[m[38;5;130m;[m1H~[69C  [13;1H [73C[34m^[[m[38;5;130m[[m[31m6[m[38;5;130m;[m1H~[62C  [14;1H [80C[34m^[[m[38;5;130m[[m[31m7[m[38;5;130m;[m1H~[55C  [15;1H [87C[34m^[[m[38;5;130m[[m[31m8[m[38;5;130m;[m1H~[48C  [16;1H [94C[34m^[[m[38;5;130m[[m[31m9[m[38;5;130m;[m1H~[41C  [17;1H [101C[34m^[[m[38;5;130m[[m[31m10[m[38;5;130m;[m1H~[33C  [18;1H [109C[34m^[[m[38;5;130m[[m[31m11[m[38;5;130m;[m1H~[25C  [19;1H [117C[34m^[[m[38;5;130m[[m[31m12[m[38;5;130m;[m1H~[17C  [20;1H [125C[34m^[[m[38;5;130m[[m[31m13[m[38;5;130m;[m1H~[9C  [21;1H [133C[34m^[[m[38;5;130m[[m[31m14[m[38;5;130m;[m1H~   [22;1H [141C[34m^[[m[38;5;130m[[[m[23;1H[31m15[m[38;5;130m;[m1H~[138C  [24;1H     [34m^[[m[38;5;130m[[m[31m16[m[38;5;130m;[m1H~[130C  [25;1H [12C[34m^[[m[38;5;130m[[m[31m17[m[38;5;130m;[m1H~[122C  [26;1H [20C[34m^[[m[38;5;130m[[m[31m18[m[38;5;130m;[m1H~[114C  [27;1H [28C[34m^[[m[38;5;130m[[m[31m19[m[38;5;130m;[m1H~[106C  [28;1H [36C[34m^[[m[38;5;130m[[m[31m20[m[38;5;130m;[m1H~[98C  [29;1H [44C[34m^[[m[21;1H~[90C  [30;1H [52C[34m^[[m[22;1H~[82C  [31;1H [60C[34m^[[m[23;1H~[74C  [32;1H [68C[34m^[[m[24;1H~[94m@@@                                                                                                                                              [m[33;128H1,1[11CTop[1;1H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[1;1HScript started on 2024-04-21 21:50:16-07:00
+[38;5;81m^[[m[97m[101m][m[95m0[m;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[38;5;81m^G[m[93m[[mlcalder@wave8-login2 dgemm[93m][m$ git push origin[38;5;81m^H^H^H^H^H^H^H^H^H^H^H[mcommit [38;5;224m-a[m [38;5;224m-m[m  [3;1H[93m"[m[95msoftware[m[93m"[m[38;5;81m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[m[93m[[m12Ppush origin[38;5;81m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[m[93m[[mK./dg[38;5;81m^G[memm[38;5;81m^M[m
+./dgemm: error while loading shared libraries: libpapi.so.[95m7[m.1: cannot open shared object file: No such file or directory[38;5;81m^M
+^[[m[93m][m[95m0[m[93m;[mlcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[38;5;81m^G[m[93m[[mlcalder@wave8-login2 dgemm[93m][m$ echo [38;5;81m$LD_LIBRARY_PATH[m[38;5;81m^M[m
+/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.[95m3[m.[95m0[m/lib[38;5;81m^M
+^[[m[93m][m[95m0[m;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[38;5;81m^G[m[93m[[mlcalder@wave8-login2 dgemm[93m][m$ vi run_env.sh [38;5;81m^M
+^[[m[93m[[m?2004h[38;5;81m^[[m[93m[[m?1049h[38;5;81m^[[m[93m[[m[95m22[m[93m;[m[95m0[m[93m;[m0t[38;5;81m^[[m[93m[[m?1h[38;5;81m^[[m[93m=[m[38;5;81m^[[m[93m[[m?2004h[38;5;81m^[[m[93m[[m[95m1[m[93m;[m33r[38;5;81m^[[m[93m[[m?12h[38;5;81m^[[m[93m[[m?12l[38;5;81m^[[m[93m[[m27m[38;5;81m^[[m[93m[[m23m[38;5;81m^[[m[93m[[m29m[38;5;81m^[[m[93m[[mm[38;5;81m^[[m[93m[[mH[38;5;81m^[[m[93m[[m2J[38;5;81m^[[m[93m[[m?25l[38;5;81m^[[m[93m[[m[95m33[m[93m;[m1H[93m"[m[95mrun_env.sh[m[93m"[m 0L, 0C[38;5;81m^[[m[93m[[m[95m2[m[93m;[m1H▽[8;142H[38;5;81m^[[m[93m[[m66[9;1Hn[38;5;81m^[[m[93m[[m[95m2[m[93m;[m1H  [38;5;81m^[[m[93m[[m[95m1[m[93m;[m1H[38;5;81m^[[m[93m[>[mc[38;5;81m^[[m[93m][m[95m10[m[93m;[m?[38;5;81m^G^[[m[93m][m[95m11[m[93m;[m?[38;5;81m^G^[[m[93m[[m[95m2[m[93m;[m1H[38;5;81m^[[m[93m[[m94m~[90C  [10;1H [52C[38;5;81m^[[m[93m[[m[95m3[m[93m;[m1H~[83C  [11;1H [59C[38;5;81m^[[m[93m[[m[95m4[m[93m;[m1H~[76C  [12;1H [66C[38;5;81m^[[m[93m[[m[95m5[m[93m;[m1H~[69C  [13;1H [73C[38;5;81m^[[m[93m[[m[95m6[m[93m;[m1H~[62C  [14;1H [80C[38;5;81m^[[m[93m[[m[95m7[m[93m;[m1H~[55C  [15;1H [87C[38;5;81m^[[m[93m[[m[95m8[m[93m;[m1H~[48C  [16;1H [94C[38;5;81m^[[m[93m[[m[95m9[m[93m;[m1H~[41C  [17;1H [101C[38;5;81m^[[m[93m[[m[95m10[m[93m;[m1H~[33C  [18;1H [109C[38;5;81m^[[m[93m[[m[95m11[m[93m;[m1H~[25C  [19;1H [117C[38;5;81m^[[m[93m[[m[95m12[m[93m;[m1H~[17C  [20;1H [125C[38;5;81m^[[m[93m[[m[95m13[m[93m;[m1H~[9C  [21;1H [133C[38;5;81m^[[m[93m[[m[95m14[m[93m;[m1H~   [22;1H [141C[38;5;81m^[[m[93m[[[m[23;1H[95m15[m[93m;[m1H~[138C  [24;1H     [38;5;81m^[[m[93m[[m[95m16[m[93m;[m1H~[130C  [25;1H [12C[38;5;81m^[[m[93m[[m[95m17[m[93m;[m1H~[122C  [26;1H [20C[38;5;81m^[[m[93m[[m[95m18[m[93m;[m1H~[114C  [27;1H [28C[38;5;81m^[[m[93m[[m[95m19[m[93m;[m1H~[106C  [28;1H [36C[38;5;81m^[[m[93m[[m[95m20[m[93m;[m1H~[98C  [29;1H [44C[38;5;81m^[[m[21;1H~[90C  [30;1H [52C[38;5;81m^[[m[22;1H~[82C  [31;1H [60C[38;5;81m^[[m[23;1H~[74C  [32;1H [68C[38;5;81m^[[m[24;1H~[94m@@@                                                                                                                                              [m[33;128H1,1[11CTop"run_env.sh" [noeol] 7L, 8192C[1;1H[?25h[?25l[33;118H:[1;1H[33;1H[K[33;1H:[?2004h[?25h%[?25l[?25hd[?25l[?25h[?25l[1;1H[1;1H[K[2;1H[94m~                                                                                                                                                [3;1H~                                                                                                                                                [4;1H~                                                                                                                                                [5;1H~                                                                                                                                                [6;1H~                                                                                                                                                [7;1H~                                                                                                                                                [8;1H~                                                                                                                                                [9;1H~                                                                                                                                                [10;1H~                                                                                                                                                [11;1H~                                                                                                                                                [12;1H~                                                                                                                                                [13;1H~                                                                                                                                                [14;1H~                                                                                                                                                [15;1H~                                                                                                                                                [16;1H~                                                                                                                                                [17;1H~                                                                                                                                                [18;1H~                                                                                                                                                [19;1H~                                                                                                                                                [20;1H~                                                                                                                                                [21;1H~                                                                                                                                                [22;1H~                                                                                                                                                [23;1H~                                                                                                                                                [24;1H~                                                                                                                                                [25;1H~                                                                                                                                                [26;1H~                                                                                                                                                [27;1H~                                                                                                                                                [28;1H~                                                                                                                                                [29;1H~                                                                                                                                                [30;1H~                                                                                                                                                [31;1H~                                                                                                                                                [32;1H~   [m[33;128H0,0-1[9CAll--No lines in buffer--[33;128H[K[33;128H0,0-1[9CAll[1;1H[?25h[?25l[33;1H[1m-- INSERT --[m[33;13H[K[33;128H0,1[11CAll[1;1H[1m[96mOpenBLAS_PATH[m=/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_1[?25h[?25l2.[95m3[m.[95m0[m
+[1m[96mPapi_PATH[m=/WAVE/users/unix/lcalder/ycho_lab/logan_calder/wo[2;60H[K[2;60H[?25h[?25lrkspace/software/papi-install/lib
+[1m[96mGCC_PATH[m=/WAVE/apps/el8/eb/soft[3;32H[K[3;32H[?25h[?25lware/GCCcore/[95m12[m.[95m3[m.[95m0[m/lib64
+module load Python[4;19H[K[5;1Hmodule load OpenMPI[5;20H[K[5;20H[?25h[?25l/[95m4[m.[95m1[m.[95m5[m
+[93mexport[m[1m[96m LD_LIBRARY_PATH=[m[38;5;81m${OpenBLAS_PATH}[m:[38;5;81m${LD_LIBRARY_PATH[m[6;58H[K[6;58H[?25h[?25l[38;5;81m}[m
+[93mexport[m[1m[96m LD_LIBRARY_PATH=[m[38;5;81m${Papi_PATH}[m:[38;5;81m${LD_LIBRARY_PATH}[m[7;55H[K[8;1Hexport[8;7H[K[8;7H[?25h[?25l[33;1H[K[8;1H[93mexport[m[1m[96m LD_LIBRARY_PATH=[m[38;5;81m${GCC_PATH}[m:[38;5;81m$[m[38;5;81m[46m{[m[38;5;81mLD_LIBRARY_PATH[m[38;5;81m[46m}[m[33;128H8,53[10CAll[8;53H[?25h[?25l[33;118H:[8;53H[33;118H[K[33;1H:[?2004h[?25hw[?25l[?25hq[?25l[?25h[?25l[?2004l"run_env.sh"
+[97m[41mWARNING: The file has been changed since reading it!!![?2004h[m
+[38;5;121mDo you really want to write to it (y/n)?[?25h[my[?25l"run_env.sh" 8L, 430C written[33;30H[K[33;1H[?2004l
+[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi run_env.sh echo $LD_LIBRARY_PATH[14P./dgemmgit push origincommit -a -m "software"[14Padd --allcommit -a -m "software"^C
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ shell run_env.sh 
+bash: shell: command not found
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ source run_env.sh 
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ source run_env.sh [1Phell[C[C[C[C[C[C[C[C[C[C[C[C[3Pvi[C[C[C[C[C[C[C[C[C[C[C[Cecho $LD_LIBRARY_PATH[14P./dgemmgit push origin[8P./dgemmecho $LD_LIBRARY_PATH
+/WAVE/apps/el8/eb/software/GCCcore/12.3.0/lib64:/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib:/WAVE/apps/el8/eb/software/GCCcore/12.3.0/lib64:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ echo $LD_LIBRARY_PATH[3Psource run_env.sh [1Phell[C[C[C[C[C[C[C[C[C[C[C[C[3Pvi[C[C[C[C[C[C[C[C[C[C[C[Cecho $LD_LIBRARY_PATH[14P./dgemmgit push origincommit -a -m "software"[12Ppush origin[8P./dgemm
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ ls
+[0m[38;5;40mdgemm[0m  dgemm.cpp  [38;5;33mdgemm_results[0m  externals.h  Makefile  matmul.h  README.md  recorder.h  run_env.sh
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ cd[K[Kvi dg[K[K[K[K[Kcd dgemm_results/
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm/dgemm_results[lcalder@wave8-login2 dgemm_results]$ ls
+data-2024-3-7-9-5-19.txt  data-2024-3-8-9-40-8.txt  data-2024-4-21-21-52-15.txt
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm/dgemm_results[lcalder@wave8-login2 dgemm_results]$ vi data-2024-4-21-21-52-15.txt 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"data-2024-4-21-21-52-15.txt" 15L, 395C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1HTRIAL   SIZE    INST[12CCYCL[20CRUNTIME (ms)
+0[7C512x512 0[7C0[15C1405.67
+1[7C512x512 0[7C0[15C1413.01
+2[7C512x512 0[7C0[15C1432.44
+3[7C512x512 0[7C0[15C1409.47
+4[7C512x512 0[7C0[15C1399.84
+5[7C512x512 0[7C0[15C1422.12
+6[7C512x512 0[7C0[15C1386.88
+7[7C512x512 0[7C0[15C1402.27
+8[7C512x512 0[7C0[15C1409.42
+9[7C512x512 0[7C0[15C1406.24
+
+--------------------------- AVERAGES ---------------------------
+TRIAL   SIZE    INST[12CCYCL[20CRUNTIME (ms)
+ALL     512x512 0[7C0[15C1408.74
+[94m~                                                                                                                                                [17;1H~                                                                                                                                                [18;1H~                                                                                                                                                [19;1H~                                                                                                                                                [20;1H~                                                                                                                                                [21;1H~                                                                                                                                                [22;1H~                                                                                                                                                [23;1H~                                                                                                                                                [24;1H~                                                                                                                                                [25;1H~                                                                                                                                                [26;1H~                                                                                                                                                [27;1H~                                                                                                                                                [28;1H~                                                                                                                                                [29;1H~                                                                                                                                                [30;1H~                                                                                                                                                [31;1H~                                                                                                                                                [32;1H~                                                                                                                                                [m[33;128H1,1[11CAll[1;1H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[1;1HTRIAL   SIZE    INST[12CCYCL[20CRUNTIME (ms)
+0[7C512x512 0[7C0[15C1405.67
+1[7C512x512 0[7C0[15C1413.01
+2[7C512x512 0[7C0[15C1432.44
+3[7C512x512 0[7C0[15C1409.47
+4[7C512x512 0[7C0[15C1399.84
+5[7C512x512 0[7C0[15C1422.12
+6[7C512x512 0[7C0[15C1386.88
+7[7C512x512 0[7C0[15C1402.27
+8[7C512x512 0[7C0[15C1409.42
+9[7C512x512 0[7C0[15C1406.24
+
+--------------------------- AVERAGES ---------------------------
+TRIAL   SIZE    INST[12CCYCL[20CRUNTIME (ms)
+ALL     512x512 0[7C0[15C1408.74
+[94m~                                                                                                                                                [17;1H~                                                                                                                                                [18;1H~                                                                                                                                                [19;1H~                                                                                                                                                [20;1H~                                                                                                                                                [21;1H~                                                                                                                                                [22;1H~                                                                                                                                                [23;1H~                                                                                                                                                [24;1H~                                                                                                                                                [25;1H~                                                                                                                                                [26;1H~                                                                                                                                                [27;1H~                                                                                                                                                [28;1H~                                                                                                                                                [29;1H~                                                                                                                                                [30;1H~                                                                                                                                                [31;1H~                                                                                                                                                [32;1H~                                                                                                                                                [m[33;128H1,1[11CAll"data-2024-4-21-21-52-15.txt" 15L, 395C[1;1H[?25h[?25l[33;118H:[1;1H[33;1H[K[33;1H:[?2004h[?25hq[?25l[?25h[?25l[?2004l[33;1H[K[33;1H[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm/dgemm_results[lcalder@wave8-login2 dgemm_results]$ make
+make: *** No targets specified and no makefile found.  Stop.
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm/dgemm_results[lcalder@wave8-login2 dgemm_results]$ cd ..
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ make
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi m[KM[K[K[K[Kgit branch
+[?1h=* [32mmain[m[m
+[K[?1l>]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ git pull origin
+remote: Enumerating objects: 26, done.[K
+remote: Counting objects:   3% (1/26)[Kremote: Counting objects:   7% (2/26)[Kremote: Counting objects:  11% (3/26)[Kremote: Counting objects:  15% (4/26)[Kremote: Counting objects:  19% (5/26)[Kremote: Counting objects:  23% (6/26)[Kremote: Counting objects:  26% (7/26)[Kremote: Counting objects:  30% (8/26)[Kremote: Counting objects:  34% (9/26)[Kremote: Counting objects:  38% (10/26)[Kremote: Counting objects:  42% (11/26)[Kremote: Counting objects:  46% (12/26)[Kremote: Counting objects:  50% (13/26)[Kremote: Counting objects:  53% (14/26)[Kremote: Counting objects:  57% (15/26)[Kremote: Counting objects:  61% (16/26)[Kremote: Counting objects:  65% (17/26)[Kremote: Counting objects:  69% (18/26)[Kremote: Counting objects:  73% (19/26)[Kremote: Counting objects:  76% (20/26)[Kremote: Counting objects:  80% (21/26)[Kremote: Counting objects:  84% (22/26)[Kremote: Counting objects:  88% (23/26)[Kremote: Counting objects:  92% (24/26)[Kremote: Counting objects:  96% (25/26)[Kremote: Counting objects: 100% (26/26)[Kremote: Counting objects: 100% (26/26), done.[K
+remote: Compressing objects:  10% (1/10)[Kremote: Compressing objects:  20% (2/10)[Kremote: Compressing objects:  30% (3/10)[Kremote: Compressing objects:  40% (4/10)[Kremote: Compressing objects:  50% (5/10)[Kremote: Compressing objects:  60% (6/10)[Kremote: Compressing objects:  70% (7/10)[Kremote: Compressing objects:  80% (8/10)[Kremote: Compressing objects:  90% (9/10)[Kremote: Compressing objects: 100% (10/10)[Kremote: Compressing objects: 100% (10/10), done.[K
+remote: Total 22 (delta 11), reused 22 (delta 11), pack-reused 0[K
+Unpacking objects:   4% (1/22)Unpacking objects:   9% (2/22)Unpacking objects:  13% (3/22)Unpacking objects:  18% (4/22)Unpacking objects:  22% (5/22)Unpacking objects:  27% (6/22)Unpacking objects:  31% (7/22)Unpacking objects:  36% (8/22)Unpacking objects:  40% (9/22)Unpacking objects:  45% (10/22)Unpacking objects:  50% (11/22)Unpacking objects:  54% (12/22)Unpacking objects:  59% (13/22)Unpacking objects:  63% (14/22)Unpacking objects:  68% (15/22)Unpacking objects:  72% (16/22)Unpacking objects:  77% (17/22)Unpacking objects:  81% (18/22)Unpacking objects:  86% (19/22)Unpacking objects:  90% (20/22)Unpacking objects:  95% (21/22)Unpacking objects: 100% (22/22)Unpacking objects: 100% (22/22), 4.09 KiB | 11.00 KiB/s, done.
+giFrom https://github.com/logancalder/COEN193
+   8a6ced23..804f01cb  main             -> origin/main
+ * [new branch]        papi_integration -> origin/papi_integration
+tUpdating 8a6ced23..804f01cb
+ Fast-forward
+ .DS_Store                     | Bin [31m0[m -> [32m6148[m bytes
+ .vscode/c_cpp_properties.json |  18 [32m+++++++++++++++[m
+ .vscode/launch.json           |  13 [32m+++++++++++[m
+ .vscode/settings.json         | 132 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ dgemm/PAPI_input              |   2 [32m++[m
+ dgemm/da.cpp                  | 103 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ dgemm/da.h                    |  15 [32m+++++++++++++[m
+ dgemm/dgemm.cpp               |   7 [32m++++[m[31m--[m
+ dgemm/run_env.sh              |  16 [32m++++++[m[31m-------[m
+ 9 files changed, 296 insertions(+), 10 deletions(-)
+ create mode 100644 .DS_Store
+ create mode 100644 .vscode/c_cpp_properties.json
+ create mode 100644 .vscode/launch.json
+ create mode 100644 .vscode/settings.json
+ create mode 100644 dgemm/PAPI_input
+ create mode 100644 dgemm/da.cpp
+ create mode 100644 dgemm/da.h
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ git git [K[K[K[K[Kbra[K[K[K branch
+[?1h=* [32mmain[m[m
+[K[?1l>]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ git checkout papi_integration
+M	dgemm/dgemm
+M	software/blaspp
+M	software/lapackpp
+M	software/scarab
+branch 'papi_integration' set up to track 'origin/papi_integration'.
+Switched to a new branch 'papi_integration'
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ git status
+gOn branch papi_integration
+Your branch is up to date with 'origin/papi_integration'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+	[31mmodified:   dgemm[m
+	[31mmodified:   ../software/blaspp[m (untracked content)
+	[31mmodified:   ../software/lapackpp[m (untracked content)
+	[31mmodified:   ../software/scarab[m (modified content, untracked content)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m.nfs0000000594082cbd00000c81[m
+	[31mdgemm_results/data-2024-4-21-21-52-15.txt[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ git pull origin
+Already up to date.
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ ls
+da.cpp  da.h  [0m[38;5;40mdgemm[0m  dgemm.cpp  [38;5;33mdgemm_results[0m  externals.h  Makefile  matmul.h  PAPI_input  README.md  recorder.h  run_env.sh
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgem.[Km.cpp 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"dgemm.cpp" 103L, 2090C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[35m#include [m[31m<iostream>[m
+[35m#include [m[31m<vector>[m
+[35m#include [m[31m<chrono>[m
+[35m#include [m[31m<fstream>[m
+[35m#include [m[31m<papi.h>[m
+[35m#include [m[31m<iomanip>[m
+[35m#include [m[31m"matmul.h"[m
+[35m#include [m[31m"externals.h"[m
+[35m#include [m[31m"da.h"[m
+
+[35m#define LAPACK_INT [m[32mlong[m[35m [m[32mint[m
+[35m#ifdef __cplusplus[m
+[32mextern[m [31m"C"[m
+{
+[35m#endif[m
+    [32mvoid[m dgemm_([17;9H[32mconst[m [32mchar[m *TRANSA,[18;9H[32mconst[m [32mchar[m *TRANSB,[19;9H[32mconst[m LAPACK_INT *m,[20;9H[32mconst[m LAPACK_INT *n,[21;9H[32mconst[m LAPACK_INT *k,[22;9H[32mconst[m [32mdouble[m *ALPHA,[23;9H[32mdouble[m *A,[24;9H[32mconst[m LAPACK_INT *LDA,[25;9H[32mdouble[m *B,[26;9H[32mconst[m LAPACK_INT *LDB,[27;9H[32mconst[m [32mdouble[m *BETA,[28;9H[32mdouble[m *C,[29;9H[32mconst[m LAPACK_INT *LDC);
+[35m#ifdef __cplusplus[m
+}
+[35m#endif[m[33;128H1,1[11CTop[1;1H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[1;1H[38;5;81m#include [m[95m<iostream>[m
+[38;5;81m#include [m[95m<vector>[m
+[38;5;81m#include [m[95m<chrono>[m
+[38;5;81m#include [m[95m<fstream>[m
+[38;5;81m#include [m[95m<papi.h>[m
+[38;5;81m#include [m[95m<iomanip>[m
+[38;5;81m#include [m[95m"matmul.h"[m
+[38;5;81m#include [m[95m"externals.h"[m
+[38;5;81m#include [m[95m"da.h"[m
+
+[38;5;81m#define LAPACK_INT [m[38;5;121mlong[m[38;5;81m [m[38;5;121mint[m
+[38;5;81m#ifdef __cplusplus[m
+[38;5;121mextern[m [95m"C"[m
+{
+[38;5;81m#endif[m
+    [38;5;121mvoid[m dgemm_([17;9H[38;5;121mconst[m [38;5;121mchar[m *TRANSA,[18;9H[38;5;121mconst[m [38;5;121mchar[m *TRANSB,[19;9H[38;5;121mconst[m LAPACK_INT *m,[20;9H[38;5;121mconst[m LAPACK_INT *n,[21;9H[38;5;121mconst[m LAPACK_INT *k,[22;9H[38;5;121mconst[m [38;5;121mdouble[m *ALPHA,[23;9H[38;5;121mdouble[m *A,[24;9H[38;5;121mconst[m LAPACK_INT *LDA,[25;9H[38;5;121mdouble[m *B,[26;9H[38;5;121mconst[m LAPACK_INT *LDB,[27;9H[38;5;121mconst[m [38;5;121mdouble[m *BETA,[28;9H[38;5;121mdouble[m *C,[29;9H[38;5;121mconst[m LAPACK_INT *LDC);
+[38;5;81m#ifdef __cplusplus[m
+}
+[38;5;81m#endif[m[33;128H1,1[11CTop"dgemm.cpp" 103L, 2090C[1;1H[?25h[?25l[33;118H~@k[1;1H[33;118H   [2;1H[33;128H2[2;1H[?25h[?25l[33;118H~@k[2;1H[33;118H   [3;1H[33;128H3[3;1H[?25h[?25l[33;118H~@k[3;1H[33;118H   [4;1H[33;128H4[4;1H[?25h[?25l[33;118H~@k[4;1H[33;118H   [5;1H[33;128H5[5;1H[?25h[?25l[33;118H~@k[5;1H[33;118H   [6;1H[33;128H6[6;1H[?25h[?25l[33;118H~@k[6;1H[33;118H   [7;1H[33;128H7[7;1H[?25h[?25l[33;128H8[8;1H[?25h[?25l[33;118H~@k[8;1H[33;118H   [9;1H[33;128H9[9;1H[?25h[?25l[33;118H~@k[9;1H[33;118H   [10;1H[33;128H10,0-1[10;1H[?25h[?25l[33;129H1,1  [11;1H[?25h[?25l[33;118H~@k[11;1H[33;118H   [12;1H[33;129H2[12;1H[?25h[?25l[33;118H~@k[12;1H[33;118H   [13;1H[33;129H3[13;1H[?25h[?25l[33;118H~@k[13;1H[33;118H   [14;1H[46m{[31;1H}[m[33;129H4[14;1H[?25h[?25l[33;118H~@k[14;1H[33;118H   [15;1H[14;1H{[31;1H}[33;129H5[15;1H[?25h[?25l[33;129H6[16;1H[?25h[?25l[33;118H~@k[16;1H[33;118H   [17;1H[33;129H7[17;1H[?25h[?25l[33;118H~@k[17;1H[33;118H   [18;1H[33;129H8[18;1H[?25h[?25l[33;129H9[19;1H[?25h[?25l[33;118H~@k[19;1H[33;118H   [20;1H[33;128H20[20;1H[?25h[?25l[33;129H1[21;1H[?25h[?25l[33;118H~@k[21;1H[33;118H   [22;1H[33;129H2[22;1H[?25h[?25l[33;129H3[23;1H[?25h[?25l[33;118H~@k[23;1H[33;118H   [24;1H[33;129H4[24;1H[?25h[?25l[33;129H5[25;1H[?25h[?25l[33;118H~@k[25;1H[33;118H   [26;1H[33;129H6[26;1H[?25h[?25l[33;129H7[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;1H[38;5;121mint[m main([38;5;121mint[m argc, [38;5;121mchar[m *argv[])[33;1H[K[33;128H28,1[11C1%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H{[33;128H[K[33;128H29,1[11C2%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[38;5;121mdouble[m *A;[33;128H[K[33;128H30,1[11C4%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[10;1H[46m{[27;1H}[m[32;5H[38;5;121mdouble[m *B;[33;128H[K[33;128H31,1[11C5%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[9;1H{[26;1H}[32;5H[38;5;121mdouble[m *C;[33;128H[K[33;128H32,1[11C7%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H[38;5;121mchar[m transA = [95m'N'[m;[33;128H[K[33;128H33,1[11C8%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H[38;5;121mchar[m transB = [95m'N'[m;[33;128H[K[33;128H34,1[11C9%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H[38;5;121mlong[m [38;5;121mint[m m, n, k, lda, ldb, ldc;[33;128H[K[33;128H35,1[10C11%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[38;5;121mdouble[m ALPHA = [95m2[m;[33;128H[K[33;128H36,1[10C12%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H[38;5;121mdouble[m BETA = [95m2[m;[33;128H[K[33;128H37,1[10C14%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H38,1[10C15%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5Hm = n = k = [95m512[m;[33;128H[K[33;128H39,1[10C16%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5Hlda = m;[33;128H[K[33;128H40,1[10C18%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5Hldb = k;[33;128H[K[33;128H41,1[10C19%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5Hldc = m;[33;128H[K[33;128H42,1[10C21%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[33;128H[K[33;128H43,0-1[8C22%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5HA = ([38;5;121mdouble[m *)malloc([93msizeof[m([38;5;121mdouble[m) * m * k);[33;128H[K[33;128H44,1[10C23%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H[38;5;81m#pragma omp parallel [m[93mfor[m[33;128H[K[33;128H45,1[10C25%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < m * k; i++)[33;128H[K[33;128H46,1[10C26%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H{[33;128H[K[33;128H47,1[10C28%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;9HA[i] = [95m0[m;[33;128H[K[33;128H48,0-1[8C29%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H}[33;128H[K[33;128H49,1[10C30%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5HB = ([38;5;121mdouble[m *)malloc([93msizeof[m([38;5;121mdouble[m) * k * n);[33;128H[K[33;128H50,1[10C32%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;1H[38;5;81m#pragma omp parallel [m[93mfor[m[33;128H[K[33;128H51,1[10C33%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < k * n; i++)[33;128H[K[33;128H52,1[10C35%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H{[33;128H[K[33;128H53,1[10C36%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;9HB[i] = (([38;5;121mfloat[m)rand() / ([38;5;121mfloat[m)([95mRAND_MAX[m));[33;128H[K[33;128H54,1[10C38%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H}[33;128H[K[33;128H55,1[10C39%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5HC = ([38;5;121mdouble[m *)malloc([93msizeof[m([38;5;121mdouble[m) * m * n);[33;128H[K[33;128H56,1[10C40%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;1H[38;5;81m#pragma omp parallel [m[93mfor[m[33;128H[K[33;128H57,1[10C42%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < m * n; i++)[33;128H[K[33;128H58,1[10C43%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H{[33;128H[K[33;128H59,1[10C45%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;9HC[i] = [95m0[m;[33;128H[K[33;128H60,1[10C46%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H}[33;128H[K[33;128H61,1[10C47%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H62,1[10C49%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[96m// Setup for PAPI[m[33;128H[K[33;128H63,1[10C50%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H64,1[10C52%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[38;5;121mvoid[m initializePAPI(std::string inputFile);[33;128H[K[33;128H65,1[10C53%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[38;5;121mvoid[m startPAPI();[33;128H[K[33;128H66,1[10C54%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H67,0-1[8C56%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();[33;128H[K[33;128H68,1[10C57%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H69,0-1[8C59%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H[38;5;121mint[m EventSet = PAPI_NULL;[33;128H[K[33;128H70,1[10C60%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];[33;128H[K[33;128H71,1[10C61%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {[33;128H[K[33;128H72,0-1[8C63%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;9H[95m0[m,[33;128H[K[33;128H73,1[10C64%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H};[33;128H[K[33;128H74,0-1[8C66%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H[38;5;121mint[m trials = [95m1[m; [96m// HOW MANY TO RUN[m[33;128H[K[33;128H75,1[10C67%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5Hstd::string fileName = getCurrentDateTimeString();[33;128H[K[33;128H76,1[10C69%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H77,1[10C70%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[96m// MEASUREMENTS START HERE[m[33;128H[K[33;128H78,1[10C71%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H79,1[10C73%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[96m// Loop for measurements[m[33;128H[K[33;128H80,1[10C74%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H81,1[10C76%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < trials; i++)[33;128H[K[33;128H82,0-1[8C77%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H{[33;128H[K[33;128H83,1[10C78%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;9H[96m// Call matmul function[m[33;128H[K[33;128H84,0-1[8C80%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;9H[38;5;121mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[33;128H[K[33;128H85,1[10C81%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H86,0-1[8C83%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;9H[38;5;121mvoid[m stopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[33;128H[K[33;128H87,1[10C84%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H}[33;128H[K[33;128H88,1[10C85%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H89,1[10C87%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[96m// Cleanup[m[33;128H[K[33;128H90,1[10C88%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[38;5;121mvoid[m cleanupPAPI([38;5;121mint[m EventSet);[33;128H[K[33;128H91,0-1[8C90%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H92,1[10C91%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5Hfree(A);[33;128H[K[33;128H93,1[10C92%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5Hfree(B);[33;128H[K[33;128H94,0-1[8C94%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5Hfree(C);[33;128H[K[33;128H95,1[10C95%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[33;128H[K[33;128H96,1[10C97%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[93mreturn[m [95m0[m;[33;128H[K[33;128H97,0-1[8C98%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;1H}[33;128H[K[33;128H98,1[10CBot[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [28;1H[33;129H9[28;1H[?25h[?25l[33;118H~@k[28;1H[33;118H   [29;1H[33;128H100,1[29;1H[?25h[?25l[33;118H~@k[29;1H[33;118H   [30;1H[33;130H1,0-1[30;1H[?25h[?25l[33;118H~@k[30;1H[33;118H   [31;1H[33;130H2,1  [31;1H[?25h[?25l[33;118H~@k[31;1H[33;118H   [32;1H[33;130H3[32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H:[32;1H[33;118H[K[33;1H:[?2004h[?25hq[?25l[?25h[?25l[?2004l[33;1H[K[33;1H[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ make
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/bin/ld: /tmp/ccmqzQte.o: in function `main':
+dgemm.cpp:(.text+0x45b): undefined reference to `returnNumEventsPAPI()'
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:7: loop] Error 1
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ makevi dgemm.cpp ls[Kgit pull origin
+remote: Enumerating objects: 7, done.[K
+remote: Counting objects:  14% (1/7)[Kremote: Counting objects:  28% (2/7)[Kremote: Counting objects:  42% (3/7)[Kremote: Counting objects:  57% (4/7)[Kremote: Counting objects:  71% (5/7)[Kremote: Counting objects:  85% (6/7)[Kremote: Counting objects: 100% (7/7)[Kremote: Counting objects: 100% (7/7), done.[K
+remote: Compressing objects:  50% (1/2)[Kremote: Compressing objects: 100% (2/2)[Kremote: Compressing objects: 100% (2/2), done.[K
+remote: Total 4 (delta 2), reused 4 (delta 2), pack-reused 0[K
+Unpacking objects:  25% (1/4)Unpacking objects:  50% (2/4)Unpacking objects:  75% (3/4)Unpacking objects: 100% (4/4)Unpacking objects: 100% (4/4), 1.15 KiB | 19.00 KiB/s, done.
+From https://github.com/logancalder/COEN193
+   930c684b..064ebccc  papi_integration -> origin/papi_integration
+Updating 930c684b..064ebccc
+Fast-forward
+ dgemm/da.h | 110 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m[31m-------[m
+ 1 file changed, 103 insertions(+), 7 deletions(-)
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ git pull originmake[Kvi dgemm.cpp make[K
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ ls
+da.cpp  da.h  [0m[38;5;40mdgemm[0m  dgemm.cpp  [38;5;33mdgemm_results[0m  externals.h  Makefile  matmul.h  PAPI_input  README.md  recorder.h  run_env.sh
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ ./dgemm
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ cd dgemm_results/
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm/dgemm_results[lcalder@wave8-login2 dgemm_results]$ ls
+data-2024-3-7-9-5-19.txt  data-2024-3-8-9-40-8.txt  data-2024-4-21-21-52-15.txt
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm/dgemm_results[lcalder@wave8-login2 dgemm_results]$ vi data-2024-4-21-21-52-15.txt ^C
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm/dgemm_results[lcalder@wave8-login2 dgemm_results]$ cd ..
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ cd ..
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193[lcalder@wave8-login2 COEN193]$ mkdir papi_results
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193[lcalder@wave8-login2 COEN193]$ mkdir papi_resultscd ..[K[3Plscd dgemm_results/[10P./dgemm
+bash: ./dgemm: Is a directory
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193[lcalder@wave8-login2 COEN193]$ ls
+[0m[38;5;33mdgemm[0m  [38;5;33mpapi_results[0m  [38;5;33mredundant[0m  [38;5;33msoftware[0m
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193[lcalder@wave8-login2 COEN193]$ cd [K[K[Krm -r papi_results/
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193[lcalder@wave8-login2 COEN193]$ cd dgemm/
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ ls
+da.cpp  da.h  [0m[38;5;40mdgemm[0m  dgemm.cpp  [38;5;33mdgemm_results[0m  externals.h  Makefile  matmul.h  PAPI_input  README.md  recorder.h  run_env.sh
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ lscd dgemm/rm -r papi_results/ls[K./dgemmmkdir papi_results
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ mkdir papi_resultsls[Kcd dgemm/rm -r papi_results/ls[K./dgemm
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ cd papi_results/
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm/papi_results[lcalder@wave8-login2 papi_results]$ ls
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm/papi_results[lcalder@wave8-login2 papi_results]$ cd ..
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ git pull origin
+remote: Enumerating objects: 7, done.[K
+remote: Counting objects:  14% (1/7)[Kremote: Counting objects:  28% (2/7)[Kremote: Counting objects:  42% (3/7)[Kremote: Counting objects:  57% (4/7)[Kremote: Counting objects:  71% (5/7)[Kremote: Counting objects:  85% (6/7)[Kremote: Counting objects: 100% (7/7)[Kremote: Counting objects: 100% (7/7), done.[K
+remote: Compressing objects: 100% (1/1)[Kremote: Compressing objects: 100% (1/1), done.[K
+remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0[K
+Unpacking objects:  25% (1/4)Unpacking objects:  50% (2/4)Unpacking objects:  75% (3/4)Unpacking objects: 100% (4/4)Unpacking objects: 100% (4/4), 371 bytes | 6.00 KiB/s, done.
+From https://github.com/logancalder/COEN193
+   064ebccc..577b674b  papi_integration -> origin/papi_integration
+Updating 064ebccc..577b674b
+Fast-forward
+m dgemm/da.h | 1 [32m+[m
+ 1 file changed, 1 insertion(+)
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ make
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ makegit pull origin[10Pcd ..[3Plscd papi_results/[9P./dgemmmkdir papi_results[11P./dgemm
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgemm.cpp 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"dgemm.cpp" 103L, 2090C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[2;5H[32mint[m NUM_EVENTS = returnNumEventsPAPI();[4;5H[32mint[m EventSet = PAPI_NULL;
+    [32mlong[m [32mlong[m values[NUM_EVENTS];
+    [32mlong[m [32mlong[m values_avg[NUM_EVENTS] = {[7;9H[31m0[m,
+    };
+    [32mint[m trials = [31m1[m; [34m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[12;5H[34m// MEASUREMENTS START HERE[14;5H// Loop for measurements[m[16;5H[38;5;130mfor[m ([32mint[m i = [31m0[m; i < trials; i++)
+    {[18;9H[34m// Call matmul function[m[19;9H[32mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[21;9H[32mvoid[m stopPAPI([32mlong[m [32mlong[m *values, [32mint[m i);
+    }[24;5H[34m// Cleanup[m
+    [32mvoid[m cleanupPAPI([32mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[38;5;130mreturn[m [31m0[m;
+}[33;128H103,1[9CBot[32;1H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[2;5H[38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();[4;5H[38;5;121mint[m EventSet = PAPI_NULL;
+    [38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];
+    [38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {[7;9H[95m0[m,
+    };
+    [38;5;121mint[m trials = [95m1[m; [96m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[12;5H[96m// MEASUREMENTS START HERE[14;5H// Loop for measurements[m[16;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < trials; i++)
+    {[18;9H[96m// Call matmul function[m[19;9H[38;5;121mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[21;9H[38;5;121mvoid[m stopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);
+    }[24;5H[96m// Cleanup[m
+    [38;5;121mvoid[m cleanupPAPI([38;5;121mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[93mreturn[m [95m0[m;
+}[33;128H103,1[9CBot"dgemm.cpp" 103L, 2090C[32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [31;1H[33;130H2[31;1H[?25h[?25l[33;118H~@k[31;1H[33;118H   [30;1H[33;130H1,0-1[30;1H[?25h[?25l[33;118H~@k[30;1H[33;118H   [29;1H[33;130H0,1  [29;1H[?25h[?25l[33;118H~@k[29;1H[33;118H   [28;1H[33;128H99,1 [28;1H[?25h[?25l[33;118H~@k[28;1H[33;118H   [27;1H[33;129H8[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [26;1H[33;129H7,0-1[26;1H[?25h[?25l[33;118H~@k[26;1H[33;118H   [25;1H[33;129H6,1  [25;1H[?25h[?25l[33;118H~@k[25;1H[33;118H   [24;1H[33;129H5[24;1H[?25h[?25l[33;118H~@k[24;1H[33;118H   [23;1H[33;129H4,0-1[23;1H[?25h[?25l[33;118H~@k[23;1H[33;118H   [22;1H[33;129H3,1  [22;1H[?25h[?25l[33;118H~@k[22;1H[33;118H   [21;1H[33;129H2[21;1H[?25h[?25l[33;118H~@k[21;1H[33;118H   [20;1H[33;129H1,0-1[20;1H[?25h[?25l[33;118H~@k[20;1H[33;118H   [19;1H[33;129H0,1  [19;1H[?25h[?25l[33;118H~@k[19;1H[33;118H   [18;1H[33;128H89[18;1H[?25h[?25l[33;118H~@k[18;1H[33;118H   [17;1H[33;129H8[17;1H[?25h[?25l[33;118H~@k[17;1H[33;118H   [16;1H[33;129H7[16;1H[?25h[?25l[33;118H~@k[16;1H[33;118H   [15;1H[33;129H6,0-1[15;1H[?25h[?25l[33;118H~@k[15;1H[33;118H   [14;1H[33;129H5,1  [14;1H[?25h[?25l[33;118H~@k[14;1H[33;118H   [13;1H[33;129H4,0-1[13;1H[?25h[?25l[33;118H~@k[13;1H[33;118H   [12;1H[33;129H3,1  [12;1H[?25h[?25l[33;118H~@k[12;1H[33;118H   [11;1H[33;129H2,0-1[11;1H[?25h[?25l[33;118H~@k[11;1H[33;118H   [10;1H[33;129H1,1  [10;1H[?25h[?25l[33;118H~@k[10;1H[33;118H   [9;1H[33;129H0[9;1H[?25h[?25l[33;118H~@k[9;1H[33;118H   [8;1H[33;128H79[8;1H[?25h[?25l[33;118H~@k[8;1H[33;118H   [9;1H[33;128H80[9;1H[?25h[?25l[33;118H~@k[9;1H[33;118H   [10;1H[33;129H1[10;1H[?25h[?25l[33;118H:[10;1H[33;1H[K[33;1H:[?2004h[?25hq[?25l[?25h[?25l[?2004l[33;1H[K[33;1H[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgemm.cpp 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"dgemm.cpp" 103L, 2090C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;5H}[3;5H[34m// Setup for PAPI[m[5;5H[32mvoid[m initializePAPI(std::string inputFile);
+    [32mvoid[m startPAPI();[8;5H[32mint[m NUM_EVENTS = returnNumEventsPAPI();[10;5H[32mint[m EventSet = PAPI_NULL;
+    [32mlong[m [32mlong[m values[NUM_EVENTS];
+    [32mlong[m [32mlong[m values_avg[NUM_EVENTS] = {[13;9H[31m0[m,
+    };
+    [32mint[m trials = [31m1[m; [34m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[18;5H[34m// MEASUREMENTS START HERE[20;5H// Loop for measurements[m[22;5H[38;5;130mfor[m ([32mint[m i = [31m0[m; i < trials; i++)
+    {[24;9H[34m// Call matmul function[m[25;9H[32mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[27;9H[32mvoid[m stopPAPI([32mlong[m [32mlong[m *values, [32mint[m i);
+    }[30;5H[34m// Cleanup[m
+    [32mvoid[m cleanupPAPI([32mint[m EventSet);[33;128H81,1[10C91%[16;1H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[1;5H}[3;5H[96m// Setup for PAPI[m[5;5H[38;5;121mvoid[m initializePAPI(std::string inputFile);
+    [38;5;121mvoid[m startPAPI();[8;5H[38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();[10;5H[38;5;121mint[m EventSet = PAPI_NULL;
+    [38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];
+    [38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {[13;9H[95m0[m,
+    };
+    [38;5;121mint[m trials = [95m1[m; [96m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[18;5H[96m// MEASUREMENTS START HERE[20;5H// Loop for measurements[m[22;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < trials; i++)
+    {[24;9H[96m// Call matmul function[m[25;9H[38;5;121mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[27;9H[38;5;121mvoid[m stopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);
+    }[30;5H[96m// Cleanup[m
+    [38;5;121mvoid[m cleanupPAPI([38;5;121mint[m EventSet);[33;128H81,1[10C91%"dgemm.cpp" 103L, 2090C[16;1H[?25h[?25l[33;118H~@k[16;1H[33;118H   [17;1H[33;129H2,0-1[17;1H[?25h[?25l[33;118H~@k[17;1H[33;118H   [18;1H[33;129H3,1  [18;1H[?25h[?25l[33;118H~@k[18;1H[33;118H   [19;1H[33;129H4,0-1[19;1H[?25h[?25l[33;118H~@k[19;1H[33;118H   [20;1H[33;129H5,1  [20;1H[?25h[?25l[33;118H~@k[20;1H[33;118H   [21;1H[33;129H6,0-1[21;1H[?25h[?25l[33;118H~@k[21;1H[33;118H   [22;1H[33;129H7,1  [22;1H[?25h[?25l[33;118H~@k[22;1H[33;118H   [23;1H[33;129H8[23;1H[?25h[?25l[33;118H~@k[23;1H[33;118H   [24;1H[33;129H9[24;1H[?25h[?25l[33;118H~@k[24;1H[33;118H   [25;1H[33;128H90[25;1H[?25h[?25l[33;118H~@k[25;1H[33;118H   [26;1H[33;129H1,0-1[26;1H[?25h[?25l[33;118H~@k[26;1H[33;118H   [27;1H[33;129H2,1  [27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5Hfree(A);[33;1H[K[33;128H93,1[10C92%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5Hfree(B);[33;128H[K[33;128H94,0-1[8C94%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5Hfree(C);[33;128H[K[33;128H95,1[10C95%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[33;128H[K[33;128H96,1[10C97%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;5H[93mreturn[m [95m0[m;[33;128H[K[33;128H97,0-1[8C98%[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [27;1H[1;32r[32;1H
+[1;33r[32;1H}[33;128H[K[33;128H98,1[10CBot[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [28;1H[33;129H9[28;1H[?25h[?25l[33;118H~@k[28;1H[33;118H   [29;1H[33;128H100,1[29;1H[?25h[?25l[33;118H~@k[29;1H[33;118H   [30;1H[33;130H1,0-1[30;1H[?25h[?25l[33;118H~@k[30;1H[33;118H   [31;1H[33;130H2,1  [31;1H[?25h[?25l[33;118H~@k[31;1H[33;118H   [32;1H[33;130H3[32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [31;1H[33;130H2[31;1H[?25h[?25l[33;118H~@k[31;1H[33;118H   [30;1H[33;130H1,0-1[30;1H[?25h[?25l[33;118H~@k[30;1H[33;118H   [29;1H[33;130H0,1  [29;1H[?25h[?25l[33;118H~@k[29;1H[33;118H   [28;1H[33;128H99,1 [28;1H[?25h[?25l[33;129H8[27;1H[?25h[?25l[33;118H~@k[27;1H[33;118H   [26;1H[33;129H7,0-1[26;1H[?25h[?25l[33;118H~@k[26;1H[33;118H   [25;1H[33;129H6,1  [25;1H[?25h[?25l[33;118H~@k[25;1H[33;118H   [24;1H[33;129H5[24;1H[?25h[?25l[33;118H~@k[24;1H[33;118H   [23;1H[33;129H4,0-1[23;1H[?25h[?25l[33;118H~@k[23;1H[33;118H   [22;1H[33;129H3,1  [22;1H[?25h[?25l[33;118H~@k[22;1H[33;118H   [21;1H[33;129H2[21;1H[?25h[?25l[33;118H~@k[21;1H[33;118H   [20;1H[33;129H1,0-1[20;1H[?25h[?25l[33;118H~@k[20;1H[33;118H   [19;1H[33;129H0,1  [19;1H[?25h[?25l[33;118H~@k[19;1H[33;118H   [18;1H[33;128H89[18;1H[?25h[?25l[33;118Hi[18;1H[33;118H [18;1H[33;1H[1m-- INSERT --[m[33;128H[K[33;128H89,1[10CBot[18;1H[?25h[?25l[33;128H90[19;1H[?25h[?25l[33;129H1[20;1H[?25h[?25l[33;131H2-9[20;9H[?25h[?25lg[33;131H3-10[20;10H[?25h[?25l[20;9H[K[33;131H2-9 [20;9H[?25h[?25ls[33;131H3-10[20;10H[?25h[?25lt[33;131H4-11[20;11H[?25h[?25ld[33;131H5-12[20;12H[?25h[?25l[93mstd[m:[33;131H6-13[20;13H[?25h[?25lstd::[33;131H7-14[20;14H[?25h[?25lc[33;131H8-15[20;15H[?25h[?25lo[33;131H9-16[20;16H[?25h[?25lu[33;131H10-17[20;17H[?25h[?25lt[33;132H1-18[20;18H[?25h[?25l[33;132H2-19[20;19H[?25h[?25l<[33;132H3-20[20;20H[?25h[?25l<[33;132H4-21[20;21H[?25h[?25l[33;132H5-22[20;22H[?25h[?25l[95m"[m[33;132H6-23[20;23H[?25h[?25l[95mh[m[33;132H7-24[20;24H[?25h[?25l[95me[m[33;132H8-25[20;25H[?25h[?25l[95mr[m[33;132H9-26[20;26H[?25h[?25l[95me[m[33;131H20-27[20;27H[?25h[?25l[95m"[m[33;132H1-28[20;28H[?25h[?25l[33;132H2-29[20;29H[?25h[?25l<[33;132H3-30[20;30H[?25h[?25l<[33;132H4-31[20;31H[?25h[?25l[33;132H5-32[20;32H[?25h[?25ls[33;132H6-33[20;33H[?25h[?25lt[33;132H7-34[20;34H[?25h[?25ld[33;132H8-35[20;35H[?25h[?25l:[33;132H9-36[20;36H[?25h[?25le[33;131H30-37[20;37H[?25h[?25ln[33;132H1-38[20;38H[?25h[?25ld[33;132H2-39[20;39H[?25h[?25l[20;38H[K[33;132H1-38[20;38H[?25h[?25l[20;37H[K[33;132H0-37[20;37H[?25h[?25l[20;36H[K[33;131H29-36[20;36H[?25h[?25l:[33;131H30-37[20;37H[?25h[?25le[33;132H1-38[20;38H[?25h[?25ln[33;132H2-39[20;39H[?25h[?25ld[33;132H3-40[20;40H[?25h[?25ll[33;132H4-41[20;41H[?25h[?25l;[33;132H5-42[20;42H[?25h[33;1H[K[20;41H[?25l[33;118H^[[20;41H[33;118H  [20;42H[33;128H91,34-41      Bot[20;41H[?25h[?25l[33;118H:[20;41H[33;118H[K[33;1H:[?2004h[?25hw[?25l[?25hq[?25l[?25h[?25l[?2004l"dgemm.cpp" 103L, 2124C written
+[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgemm.cpp [6P./dgemm[3Pmake./dgemm
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ make
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ ./dgemm
+here
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgemm.cpp 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"dgemm.cpp" 103L, 2124C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[2;5H[32mint[m NUM_EVENTS = returnNumEventsPAPI();[4;5H[32mint[m EventSet = PAPI_NULL;
+    [32mlong[m [32mlong[m values[NUM_EVENTS];
+    [32mlong[m [32mlong[m values_avg[NUM_EVENTS] = {[7;9H[31m0[m,
+    };
+    [32mint[m trials = [31m1[m; [34m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[12;5H[34m// MEASUREMENTS START HERE[14;5H// Loop for measurements[m[16;5H[38;5;130mfor[m ([32mint[m i = [31m0[m; i < trials; i++)
+    {[18;9H[34m// Call matmul function[m[19;9H[32mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[20;9Hstd::cout << [31m"here"[m << std::endl;[21;9H[32mvoid[m stopPAPI([32mlong[m [32mlong[m *values, [32mint[m i);
+    }[24;5H[34m// Cleanup[m
+    [32mvoid[m cleanupPAPI([32mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[38;5;130mreturn[m [31m0[m;
+}[33;128H91,34-41      Bot[20;41H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[2;5H[38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();[4;5H[38;5;121mint[m EventSet = PAPI_NULL;
+    [38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];
+    [38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {[7;9H[95m0[m,
+    };
+    [38;5;121mint[m trials = [95m1[m; [96m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[12;5H[96m// MEASUREMENTS START HERE[14;5H// Loop for measurements[m[16;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < trials; i++)
+    {[18;9H[96m// Call matmul function[m[19;9H[38;5;121mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[20;9Hstd::cout << [95m"here"[m << std::endl;[21;9H[38;5;121mvoid[m stopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);
+    }[24;5H[96m// Cleanup[m
+    [38;5;121mvoid[m cleanupPAPI([38;5;121mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[93mreturn[m [95m0[m;
+}[33;128H91,34-41      Bot"dgemm.cpp" 103L, 2124C[20;41H[?25h[?25l[33;118Hd[20;41H[?25h[?25l[33;119Hd[20;41H[33;118H  [20;9H[20;32r[32;1H
+[1;33r[32;1H[94m~                                                                                                                                                [m[33;1H[K[33;128H91,9[10CBot[20;9H[?25h[?25l[33;118H~@k[20;9H[33;118H   [21;5H[17;5H[46m{[21;5H}[m[33;129H2,5[21;5H[?25h[?25l[33;118H~@k[21;5H[33;118H   [20;9H[17;5H{[21;5H}[33;129H1,9[20;9H[?25h[?25l[33;118H:[20;9H[33;118H[K[33;1H:[?2004h[?25hq[?25l[?25h[?25l[97m[41mE37: No write since last change (add ! to override)[?2004h[20;9H[m[33;128H91,9[10CBot[20;9H[?25h[?25l[33;118Hg[20;9H[?25h[?25l[33;118H [20;9H[33;118Hgi[20;9H[33;118H  [20;9H[33;1H[1m-- INSERT --[m[33;13H[K[33;128H91,9[10CBot[20;9H[?25h[?25l:[38;5;121mvoid[m stopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[33;131H10[20;10H[?25h[?25l:[38;5;121mvoid[m stopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[33;132H1[20;11H[?25h[?25l[38;5;121mvoid[m stopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[20;50H[K[33;132H0[20;10H[?25h[33;1H[K[20;9H[?25l[33;118H^[[20;9H[33;118H  [20;10H[33;128H91,9[10CBot[20;9H[?25h[?25l[33;118H:[20;9H[33;118H[K[33;1H:[?2004h[?25hq[?25l[?25h![?25l[?25h[?25l[?2004l[33;1H[K[33;1H[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ giot[K[Kt pull origin
+remote: Enumerating objects: 7, done.[K
+remote: Counting objects:  14% (1/7)[Kremote: Counting objects:  28% (2/7)[Kremote: Counting objects:  42% (3/7)[Kremote: Counting objects:  57% (4/7)[Kremote: Counting objects:  71% (5/7)[Kremote: Counting objects:  85% (6/7)[Kremote: Counting objects: 100% (7/7)[Kremote: Counting objects: 100% (7/7), done.[K
+remote: Compressing objects: 100% (1/1)[Kremote: Compressing objects: 100% (1/1), done.[K
+remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0[K
+Unpacking objects:  25% (1/4)Unpacking objects:  50% (2/4)Unpacking objects:  75% (3/4)Unpacking objects: 100% (4/4)Unpacking objects: 100% (4/4), 359 bytes | 6.00 KiB/s, done.
+From https://github.com/logancalder/COEN193
+   577b674b..a6a4e612  papi_integration -> origin/papi_integration
+Updating 577b674b..a6a4e612
+Fast-forward
+m dgemm/da.h | 6 [32m+++[m[31m---[m
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ make
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ ./dgemm
+here
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgemmm[K.cpp
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"dgemm.cpp" 103L, 2124C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[2;5H[32mint[m NUM_EVENTS = returnNumEventsPAPI();[4;5H[32mint[m EventSet = PAPI_NULL;
+    [32mlong[m [32mlong[m values[NUM_EVENTS];
+    [32mlong[m [32mlong[m values_avg[NUM_EVENTS] = {[7;9H[31m0[m,
+    };
+    [32mint[m trials = [31m1[m; [34m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[12;5H[34m// MEASUREMENTS START HERE[14;5H// Loop for measurements[m[16;5H[38;5;130mfor[m ([32mint[m i = [31m0[m; i < trials; i++)
+    {[18;9H[34m// Call matmul function[m[19;9H[32mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[20;9Hstd::cout << [31m"here"[m << std::endl;[21;9H[32mvoid[m stopPAPI([32mlong[m [32mlong[m *values, [32mint[m i);
+    }[24;5H[34m// Cleanup[m
+    [32mvoid[m cleanupPAPI([32mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[38;5;130mreturn[m [31m0[m;
+}[33;128H91,9-16[7CBot[20;16H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[2;5H[38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();[4;5H[38;5;121mint[m EventSet = PAPI_NULL;
+    [38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];
+    [38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {[7;9H[95m0[m,
+    };
+    [38;5;121mint[m trials = [95m1[m; [96m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[12;5H[96m// MEASUREMENTS START HERE[14;5H// Loop for measurements[m[16;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < trials; i++)
+    {[18;9H[96m// Call matmul function[m[19;9H[38;5;121mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[20;9Hstd::cout << [95m"here"[m << std::endl;[21;9H[38;5;121mvoid[m stopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);
+    }[24;5H[96m// Cleanup[m
+    [38;5;121mvoid[m cleanupPAPI([38;5;121mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[93mreturn[m [95m0[m;
+}[33;128H91,9-16[7CBot"dgemm.cpp" 103L, 2124C[20;16H[?25h[?25l[33;118H~@k[20;16H[33;118H   [21;16H[33;129H2,16  [21;16H[?25h[?25l[33;118H~@k[21;16H[33;118H   [22;5H[17;5H[46m{[22;5H}[m[33;129H3,5 [22;5H[?25h[?25l[33;118H~@k[22;5H[33;118H   [23;1H[17;5H{[22;5H}[33;129H4,0-1[23;1H[?25h[?25l[33;118H~@k[23;1H[33;118H   [24;14H[33;129H5,14 [24;14H[?25h[?25l[33;118H~@k[24;14H[33;118H   [23;1H[33;129H4,0-1[23;1H[?25h[?25l[33;118H~@k[23;1H[33;118H   [22;5H[17;5H[46m{[22;5H}[m[33;129H3,5  [22;5H[?25h[?25l[33;118H~@k[22;5H[33;118H   [21;16H[17;5H{[22;5H}[33;129H2,16[21;16H[?25h[?25l[33;118H~@k[21;16H[33;118H   [20;16H[33;129H1,9-16[20;16H[?25h[?25l[33;118Hd[20;16H[?25h[?25l[33;119Hd[20;16H[33;118H  [20;9H[20;32r[32;1H
+[1;33r[32;1H[94m~                                                                                                                                                [m[33;1H[K[33;128H91,9[10CBot[20;9H[?25h[?25l[33;118H:[20;9H[33;118H[K[33;1H:[?2004h[?25hq[?25l[?25h[?25l[33;2H[K[33;2H[?25hw[?25l[?25hq[?25l[?25h[?25l[?2004l"dgemm.cpp" 102L, 2089C written
+[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgemm.cpp[5P./dgemm[3Pmake
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ makevi dgemm.cpp[5P./dgemm
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ git pull origin
+remote: Enumerating objects: 7, done.[K
+remote: Counting objects:  14% (1/7)[Kremote: Counting objects:  28% (2/7)[Kremote: Counting objects:  42% (3/7)[Kremote: Counting objects:  57% (4/7)[Kremote: Counting objects:  71% (5/7)[Kremote: Counting objects:  85% (6/7)[Kremote: Counting objects: 100% (7/7)[Kremote: Counting objects: 100% (7/7), done.[K
+remote: Compressing objects: 100% (1/1)[Kremote: Compressing objects: 100% (1/1), done.[K
+remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0[K
+Unpacking objects:  25% (1/4)Unpacking objects:  50% (2/4)Unpacking objects:  75% (3/4)Unpacking objects: 100% (4/4)Unpacking objects: 100% (4/4), 434 bytes | 7.00 KiB/s, done.
+From https://github.com/logancalder/COEN193
+   a6a4e612..5fd57fc7  papi_integration -> origin/papi_integration
+Updating a6a4e612..5fd57fc7
+Fast-forward
+ dgemm/da.cpp | 109 [31m-------------------------------------------------------------------------------------------------------------[m
+ dgemm/da.h   |   4 [32m++++[m
+ 2 files changed, 4 insertions(+), 109 deletions(-)
+ delete mode 100644 dgemm/da.cpp
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ make
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ ./dgemm
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ git pull origin
+remote: Enumerating objects: 7, done.[K
+remote: Counting objects:  14% (1/7)[Kremote: Counting objects:  28% (2/7)[Kremote: Counting objects:  42% (3/7)[Kremote: Counting objects:  57% (4/7)[Kremote: Counting objects:  71% (5/7)[Kremote: Counting objects:  85% (6/7)[Kremote: Counting objects: 100% (7/7)[Kremote: Counting objects: 100% (7/7), done.[K
+remote: Compressing objects: 100% (1/1)[Kremote: Compressing objects: 100% (1/1), done.[K
+remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0[K
+Unpacking objects:  25% (1/4)Unpacking objects:  50% (2/4)Unpacking objects:  75% (3/4)Unpacking objects: 100% (4/4)Unpacking objects: 100% (4/4), 345 bytes | 6.00 KiB/s, done.
+From https://github.com/logancalder/COEN193
+   5fd57fc7..bf1f2753  papi_integration -> origin/papi_integration
+Updating 5fd57fc7..bf1f2753
+Fast-forward
+ dgemm/da.h | 1 [32m+[m
+ 1 file changed, 1 insertion(+)
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ git pull origin[8P./dgemm[3Pmakegit pull originmake[K
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ makegit pull origin[8P./dgemm
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgemm.cpp
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"dgemm.cpp" 102L, 2089C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;5H[32mvoid[m startPAPI();[3;5H[32mint[m NUM_EVENTS = returnNumEventsPAPI();[5;5H[32mint[m EventSet = PAPI_NULL;
+    [32mlong[m [32mlong[m values[NUM_EVENTS];
+    [32mlong[m [32mlong[m values_avg[NUM_EVENTS] = {[8;9H[31m0[m,
+    };
+    [32mint[m trials = [31m1[m; [34m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[13;5H[34m// MEASUREMENTS START HERE[15;5H// Loop for measurements[m[17;5H[38;5;130mfor[m ([32mint[m i = [31m0[m; i < trials; i++)
+    {[19;9H[34m// Call matmul function[m[20;9H[32mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[21;9H[32mvoid[m stopPAPI([32mlong[m [32mlong[m *values, [32mint[m i);
+    }[24;5H[34m// Cleanup[m
+    [32mvoid[m cleanupPAPI([32mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[38;5;130mreturn[m [31m0[m;
+}[33;128H91,9[10CBot[21;9H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[1;5H[38;5;121mvoid[m startPAPI();[3;5H[38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();[5;5H[38;5;121mint[m EventSet = PAPI_NULL;
+    [38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];
+    [38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {[8;9H[95m0[m,
+    };
+    [38;5;121mint[m trials = [95m1[m; [96m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[13;5H[96m// MEASUREMENTS START HERE[15;5H// Loop for measurements[m[17;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < trials; i++)
+    {[19;9H[96m// Call matmul function[m[20;9H[38;5;121mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[21;9H[38;5;121mvoid[m stopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);
+    }[24;5H[96m// Cleanup[m
+    [38;5;121mvoid[m cleanupPAPI([38;5;121mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[93mreturn[m [95m0[m;
+}[33;128H91,9[10CBot"dgemm.cpp" 102L, 2089C[21;9H[?25h[?25l[33;118H~@k[21;9H[33;118H   [22;5H[18;5H[46m{[22;5H}[m[33;129H2,5[22;5H[?25h[?25l[33;118H~@k[22;5H[33;118H   [23;1H[18;5H{[22;5H}[33;129H3,0-1[23;1H[?25h[?25l[33;118H~@k[23;1H[33;118H   [24;5H[33;129H4,5  [24;5H[?25h[?25l[33;118H~@k[24;5H[33;118H   [25;5H[33;129H5[25;5H[?25h[?25l[33;118H~@k[25;5H[33;118H   [26;1H[33;129H6,0-1[26;1H[?25h[?25l[33;118H~@k[26;1H[33;118H   [27;5H[33;129H7,5  [27;5H[?25h[?25l[33;118H~@k[27;5H[33;118H   [28;5H[33;129H8[28;5H[?25h[?25l[33;118H~@k[28;5H[33;118H   [29;5H[33;129H9[29;5H[?25h[?25l[33;118H~@k[29;5H[33;118H   [30;1H[33;128H100,0-1[30;1H[?25h[?25l[33;118H~@k[30;1H[33;118H   [31;5H[33;130H1,5  [31;5H[?25h[?25l[33;118H~@k[31;5H[33;118H   [32;1H[33;130H2,1[32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [32;1H[?25h[?25l[33;118H~@k[32;1H[33;118H   [31;5H[33;130H1,5[31;5H[?25h[?25l[33;118H~@k[31;5H[33;118H   [30;1H[33;130H0,0-1[30;1H[?25h[?25l[33;118H~@k[30;1H[33;118H   [29;5H[33;128H99,5   [29;5H[?25h[?25l[33;118H~@k[29;5H[33;118H   [28;5H[33;129H8[28;5H[?25h[?25l[33;118H~@k[28;5H[33;118H   [27;5H[33;129H7[27;5H[?25h[?25l[33;118H~@k[27;5H[33;118H   [26;1H[33;129H6,0-1[26;1H[?25h[?25l[33;118H~@k[26;1H[33;118H   [25;5H[33;129H5,5  [25;5H[?25h[?25l[33;118H~@k[25;5H[33;118H   [24;5H[33;129H4[24;5H[?25h[?25l[33;118H~@k[24;5H[33;118H   [23;1H[33;129H3,0-1[23;1H[?25h[?25l[33;118H~@k[23;1H[33;118H   [22;5H[18;5H[46m{[22;5H}[m[33;129H2,5  [22;5H[?25h[?25l[33;118H~@k[22;5H[33;118H   [21;5H[18;5H{[22;5H}[33;129H1[21;5H[?25h[?25l[33;118H~@k[21;5H[33;118H   [20;5H[33;129H0[20;5H[?25h[?25l[33;118H~@k[20;5H[33;118H   [19;5H[33;128H89[19;5H[?25h[?25l[33;118H~@k[19;5H[33;118H   [18;5H[46m{[22;5H}[m[33;129H8[18;5H[?25h[?25l[33;118H~@k[18;5H[33;118H   [17;5H
+    {[22;5H}[33;129H7[17;5H[?25h[?25l[33;118H~@k[17;5H[33;118H   [16;1H[33;129H6,0-1[16;1H[?25h[?25l[33;118H~@k[16;1H[33;118H   [15;5H[33;129H5,5  [15;5H[?25h[?25l[33;118H~@k[15;5H[33;118H   [14;1H[33;129H4,0-1[14;1H[?25h[?25l[33;118H~@k[14;1H[33;118H   [13;5H[33;129H3,5  [13;5H[?25h[?25l[33;118H~@k[13;5H[33;118H   [12;1H[33;129H2,0-1[12;1H[?25h[?25l[33;118H~@k[12;1H[33;118H   [11;5H[33;129H1,5  [11;5H[?25h[?25l[33;118H~@k[11;5H[33;118H   [10;5H[33;129H0[10;5H[?25h[?25l[7;40H[46m{[9;5H}[m[33;128H79[9;5H[?25h[?25l[33;118H~@k[9;5H[33;118H   [8;5H[7;40H{[9;5H}[33;129H8[8;5H[?25h[?25l[33;129H7[7;5H[?25h[?25l[33;118H~@k[7;5H[33;118H   [6;5H[33;129H6[6;5H[?25h[?25l[1;32r[1;1H[L[1;33r[1;5H[38;5;121mvoid[m initializePAPI(std::string inputFile);[33;1H[K[33;128H75,5[10C98%[6;5H[?25h[?25l[33;118H~@k[6;5H[33;118H   [6;1H[1;32r[1;1H[L[1;33r[33;128H[K[33;128H74,0-1[8C97%[6;1H[?25h[?25l[33;118H~@k[6;1H[33;118H   [6;5H[1;32r[1;1H[L[1;33r[1;5H[96m// Setup for PAPI[m[33;128H[K[33;128H73,5[10C95%[6;5H[?25h[?25l[33;118H~@k[6;5H[33;118H   [6;1H[1;32r[1;1H[L[1;33r[33;128H[K[33;128H72,0-1[8C94%[6;1H[?25h[?25l[33;118H~@k[6;1H[33;118H   [6;5H[1;32r[1;1H[L[1;33r[1;5H}[33;128H[K[33;128H71,5[10C92%[6;5H[?25h[?25l[33;118H~@k[6;5H[33;118H   [6;5H[1;32r[1;1H[L[1;33r[1;9HC[i] = [95m0[m;[33;128H[K[33;128H70,5[10C91%[6;5H[?25h[?25l[33;118H~@k[6;5H[33;118H   [6;1H[1;32r[1;1H[L[1;33r[1;5H{[33;128H[K[33;128H69,0-1[8C90%[6;1H[?25h[?25l[33;118H~@k[6;1H[33;118H   [6;5H[1;32r[1;1H[L[1;33r[1;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < m * n; i++)[33;128H[K[33;128H68,5[10C88%[6;5H[?25h[?25l[33;118H~@k[6;5H[33;118H   [7;1H[33;129H9,0-1[7;1H[?25h[?25l[33;118H~@k[7;1H[33;118H   [8;5H[33;128H70,5  [8;5H[?25h[?25l[33;118H:[8;5H[33;118H[K[33;1H:[?2004h[?25hq[?25l[?25h![?25l[?25h[?25l[?2004l[33;1H[K[33;1H[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgemm.cpp[5P./dgemm[3Pmakegit pull origin
+remote: Enumerating objects: 7, done.[K
+remote: Counting objects:  14% (1/7)[Kremote: Counting objects:  28% (2/7)[Kremote: Counting objects:  42% (3/7)[Kremote: Counting objects:  57% (4/7)[Kremote: Counting objects:  71% (5/7)[Kremote: Counting objects:  85% (6/7)[Kremote: Counting objects: 100% (7/7)[Kremote: Counting objects: 100% (7/7), done.[K
+remote: Compressing objects: 100% (1/1)[Kremote: Compressing objects: 100% (1/1), done.[K
+remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0[K
+Unpacking objects:  25% (1/4)Unpacking objects:  50% (2/4)Unpacking objects:  75% (3/4)Unpacking objects: 100% (4/4)Unpacking objects: 100% (4/4), 394 bytes | 7.00 KiB/s, done.
+From https://github.com/logancalder/COEN193
+   bf1f2753..9e281b00  papi_integration -> origin/papi_integration
+Updating bf1f2753..9e281b00
+mFast-forward
+ dgemm/da.h | 6 [32m++++[m[31m--[m
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ make
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+^[[A]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ makegit pull origin[3Pvi dgemm.cpp[5P./dgemm
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ ls
+da.h  [0m[38;5;40mdgemm[0m  dgemm.cpp  [38;5;33mdgemm_results[0m  externals.h  Makefile  matmul.h  PAPI_input  [38;5;33mpapi_results[0m  README.md  recorder.h  run_env.sh
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ cd papi_results/
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm/papi_results[lcalder@wave8-login2 papi_results]$ ls
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm/papi_results[lcalder@wave8-login2 papi_results]$ cd ..
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi da.h
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"da.h" [noeol] 122L, 2947C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[35m#ifndef DA_H
+#define DA_H
+#include [m[31m<iostream>[m
+[35m#include [m[31m<vector>[m
+[35m#include [m[31m<fstream>[m
+[35m#include [m[31m<papi.h>[m
+[35m#include [m[31m<iomanip>[m
+[35m#include [m[31m"matmul.h"[m
+[35m#include [m[31m"externals.h"[m
+[35m#include [m[31m"da.h"[m
+
+[32mint[m EventSet = PAPI_NULL;
+
+[32mint[m numEvents = [31m0[m;
+
+std::string fileName = getCurrentDateTimeString();
+
+[32mint[m returnNumEventsPAPI()
+{
+    [38;5;130mreturn[m numEvents;
+}
+
+[32mvoid[m initializePAPI(std::string inputFile)
+{
+    std::cout << [31m"Initializing PAPI..."[m << std::endl;
+    [34m// PAPI Initialization (move outside the loop)[m
+    [38;5;130mif[m (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
+    {[29;9Hstd::cerr << [31m"PAPI initialization failed!"[m << std::endl;[30;9H[38;5;130mreturn[m;
+    }[33;128H1,1[11CTop[1;1H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[1;1H[38;5;81m#ifndef DA_H
+#define DA_H
+#include [m[95m<iostream>[m
+[38;5;81m#include [m[95m<vector>[m
+[38;5;81m#include [m[95m<fstream>[m
+[38;5;81m#include [m[95m<papi.h>[m
+[38;5;81m#include [m[95m<iomanip>[m
+[38;5;81m#include [m[95m"matmul.h"[m
+[38;5;81m#include [m[95m"externals.h"[m
+[38;5;81m#include [m[95m"da.h"[m
+
+[38;5;121mint[m EventSet = PAPI_NULL;
+
+[38;5;121mint[m numEvents = [95m0[m;
+
+std::string fileName = getCurrentDateTimeString();
+
+[38;5;121mint[m returnNumEventsPAPI()
+{
+    [93mreturn[m numEvents;
+}
+
+[38;5;121mvoid[m initializePAPI(std::string inputFile)
+{
+    std::cout << [95m"Initializing PAPI..."[m << std::endl;
+    [96m// PAPI Initialization (move outside the loop)[m
+    [93mif[m (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
+    {[29;9Hstd::cerr << [95m"PAPI initialization failed!"[m << std::endl;[30;9H[93mreturn[m;
+    }[33;128H1,1[11CTop"da.h" [noeol] 122L, 2947C[1;1H[?25h[?25l[33;118H~@k[1;1H[33;118H   [2;1H[33;128H2[2;1H[?25h[?25l[33;118H~@k[2;1H[33;118H   [3;1H[33;128H3[3;1H[?25h[?25l[33;118H~@k[3;1H[33;118H   [4;1H[33;128H4[4;1H[?25h[?25l[33;118H~@k[4;1H[33;118H   [5;1H[33;128H5[5;1H[?25h[?25l[33;118H~@k[5;1H[33;118H   [6;1H[33;128H6[6;1H[?25h[?25l[33;118H~@k[6;1H[33;118H   [7;1H[33;128H7[7;1H[?25h[?25l[33;118H~@k[7;1H[33;118H   [8;1H[33;128H8[8;1H[?25h[?25l[33;118H~@k[8;1H[33;118H   [9;1H[33;128H9[9;1H[?25h[?25l[33;118H~@k[9;1H[33;118H   [10;1H[33;128H10,1[10;1H[?25h[?25l[33;118Hd[10;1H[?25h[?25l[33;119Hd[10;1H[33;118H  [10;1H[10;32r[32;1H
+[1;33r[32;5H[96m// Create EventSet[m[33;1H[K[33;128H10,0-1[8CTop[10;1H[?25h[?25l[33;118H~@k[10;1H[33;118H   [11;1H[33;129H1,1  [11;1H[?25h[?25l[33;118H~@k[11;1H[33;118H   [12;1H[33;129H2,0-1[12;1H[?25h[?25l[33;118H~@k[12;1H[33;118H   [13;1H[33;129H3,1  [13;1H[?25h[?25l[33;118H~@k[13;1H[33;118H   [14;1H[33;129H4,0-1[14;1H[?25h[?25l[33;118H~@k[14;1H[33;118H   [15;1H[33;129H5,1  [15;1H[?25h[?25l[33;118H~@k[15;1H[33;118H   [14;1H[33;129H4,0-1[14;1H[?25h[?25l[33;118H~@k[14;1H[33;118H   [15;1H[33;129H5,1  [15;1H[?25h[?25l[33;118H~@k[15;1H[33;118H   [16;1H[33;129H6,0-1[16;1H[?25h[?25l[33;118H~@k[16;1H[33;118H   [15;1H[33;129H5,1  [15;1H[?25h[?25l[33;118H~@k[15;1H[33;118H   [14;1H[33;129H4,0-1[14;1H[?25h[?25l[33;118H~@k[14;1H[33;118H   [13;1H[33;129H3,1  [13;1H[?25h[?25l[33;118H~@k[13;1H[33;118H   [12;1H[33;129H2,0-1[12;1H[?25h[?25l[33;118H~@k[12;1H[33;118H   [11;1H[33;129H1,1  [11;1H[?25h[?25l[33;118H~@k[11;1H[33;118H   [10;1H[33;129H0,0-1[10;1H[?25h[?25l[33;118H~@k[10;1H[33;118H   [9;1H[33;128H9,1   [9;1H[?25h[?25l[33;118H~@k[9;1H[33;118H   [8;1H[33;128H8[8;1H[?25h[?25l[33;118H~@k[8;1H[33;118H   [7;1H[33;128H7[7;1H[?25h[?25l[33;118H~@k[7;1H[33;118H   [6;1H[33;128H6[6;1H[?25h[?25l[33;118H~@k[6;1H[33;118H   [5;1H[33;128H5[5;1H[?25h[?25l[33;118H~@k[5;1H[33;118H   [6;1H[33;128H6[6;1H[?25h[?25l[33;118Hi[6;1H[33;118H [6;1H[33;1H[1m-- INSERT --[m[33;128H[K[33;128H6,1[11CTop[6;1H[?25h[?25l[7;32r[7;1H[L[1;33r[6;1H[K[7;1H[38;5;81m#include [m[95m<papi.h>[m[33;128H[K[33;128H7,1[11CTop[7;1H[?25h[?25l[33;128H6[6;1H[?25h[?25l#[33;130H2[6;2H[?25h[?25li[33;130H3[6;3H[?25h[?25ln[33;130H4[6;4H[?25h[?25lc[33;130H5[6;5H[?25h[?25ll[33;130H6[6;6H[?25h[?25lu[33;130H7[6;7H[?25h[?25ld[33;130H8[6;8H[?25h[?25le[33;130H9[6;9H[?25h[?25l[33;130H10[6;10H[?25h[?25l[38;5;81m#include <[m[33;131H1[6;11H[?25h[?25lc[33;131H2[6;12H[?25h[?25lh[33;131H3[6;13H[?25h[?25lr[33;131H4[6;14H[?25h[?25lo[33;131H5[6;15H[?25h[?25ln[33;131H6[6;16H[?25h[?25lo[33;131H7[6;17H[?25h[?25l[6;10H[95m<chrono>[m[33;131H8[6;18H[?25h[?25l[33;128H7[7;18H[?25h[?25l[33;128H8[8;18H[?25h[?25l[33;128H9[9;18H[?25h[33;1H[K[9;17H[?25l[33;118H^[[9;17H[33;118H  [9;18H[33;128H9,17[10CTop[9;17H[?25h[?25l[33;118H~@k[9;17H[33;118H   [10;17H[33;128H10,17[10;17H[?25h[?25l[33;118H~@k[10;17H[33;118H   [11;1H[33;129H1,0-1[11;1H[?25h[?25l[33;118H~@k[11;1H[33;118H   [12;17H[33;129H2,17 [12;17H[?25h[?25l[33;118H~@k[12;17H[33;118H   [13;1H[33;129H3,0-1[13;1H[?25h[?25l[33;118H~@k[13;1H[33;118H   [14;17H[33;129H4,17 [14;17H[?25h[?25l[33;118H~@k[14;17H[33;118H   [15;1H[33;129H5,0-1[15;1H[?25h[?25l[33;118H~@k[15;1H[33;118H   [16;17H[33;129H6,17 [16;17H[?25h[?25l[33;118H~@k[16;17H[33;118H   [17;1H[33;129H7,0-1[17;1H[?25h[?25l[33;118H~@k[17;1H[33;118H   [18;17H[33;129H8,17 [18;17H[?25h[?25l[33;118H~@k[18;17H[33;118H   [19;1H[46m{
+
+}[m[33;129H9,1 [19;1H[?25h[?25l[33;118H~@k[19;1H[33;118H   [20;17H[19;1H{
+
+}[33;128H20,17[20;17H[?25h[?25l[33;118H~@k[20;17H[33;118H   [21;1H[19;1H[46m{
+
+}[m[33;129H1,1 [21;1H[?25h[?25l[33;118H~@k[21;1H[33;118H   [20;17H[19;1H{
+
+}[33;129H0,17[20;17H[?25h[?25l[33;118H~@k[20;17H[33;118H   [19;1H[46m{
+
+}[m[33;128H19,1 [19;1H[?25h[?25l[33;118H~@k[19;1H[33;118H   [20;17H[19;1H{
+
+}[33;128H20,17[20;17H[?25h[?25l[33;118H~@k[20;17H[33;118H   [21;1H[19;1H[46m{
+
+}[m[33;129H1,1 [21;1H[?25h[?25l[33;118H:[21;1H[33;118H[K[33;1H:[?2004h[?25hq[?25l[?25h[?25l[97m[41mE37: No write since last change (add ! to override)[?2004h[21;1H[m[33;128H21,1[10CTop[21;1H[?25h[?25l[33;118H:[21;1H[33;1H[K[33;1H:[?2004h[?25hw[?25l[?25hq[?25l[?25h[?25l[?2004l"da.h" 122L, 2950C written
+[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgm.[K[Kemm.cpp 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"dgemm.cpp" 102L, 2089C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;5HB = ([32mdouble[m *)malloc([38;5;130msizeof[m([32mdouble[m) * k * n);
+[35m#pragma omp parallel [m[38;5;130mfor
+[m    [38;5;130mfor[m ([32mint[m i = [31m0[m; i < k * n; i++)
+    {[5;9HB[i] = (([32mfloat[m)rand() / ([32mfloat[m)([31mRAND_MAX[m));
+    }
+    C = ([32mdouble[m *)malloc([38;5;130msizeof[m([32mdouble[m) * m * n);
+[35m#pragma omp parallel [m[38;5;130mfor
+[m    [38;5;130mfor[m ([32mint[m i = [31m0[m; i < m * n; i++)
+    {[11;9HC[i] = [31m0[m;
+    }[14;5H[34m// Setup for PAPI[m[16;5H[32mvoid[m initializePAPI(std::string inputFile);
+    [32mvoid[m startPAPI();[19;5H[32mint[m NUM_EVENTS = returnNumEventsPAPI();[21;5H[32mint[m EventSet = PAPI_NULL;
+    [32mlong[m [32mlong[m values[NUM_EVENTS];
+    [32mlong[m [32mlong[m values_avg[NUM_EVENTS] = {[24;9H[31m0[m,
+    };
+    [32mint[m trials = [31m1[m; [34m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[29;5H[34m// MEASUREMENTS START HERE[31;5H// Loop for measurements[m[33;128H70,5[10C77%[16;5H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[1;5HB = ([38;5;121mdouble[m *)malloc([93msizeof[m([38;5;121mdouble[m) * k * n);
+[38;5;81m#pragma omp parallel [m[93mfor
+[m    [93mfor[m ([38;5;121mint[m i = [95m0[m; i < k * n; i++)
+    {[5;9HB[i] = (([38;5;121mfloat[m)rand() / ([38;5;121mfloat[m)([95mRAND_MAX[m));
+    }
+    C = ([38;5;121mdouble[m *)malloc([93msizeof[m([38;5;121mdouble[m) * m * n);
+[38;5;81m#pragma omp parallel [m[93mfor
+[m    [93mfor[m ([38;5;121mint[m i = [95m0[m; i < m * n; i++)
+    {[11;9HC[i] = [95m0[m;
+    }[14;5H[96m// Setup for PAPI[m[16;5H[38;5;121mvoid[m initializePAPI(std::string inputFile);
+    [38;5;121mvoid[m startPAPI();[19;5H[38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();[21;5H[38;5;121mint[m EventSet = PAPI_NULL;
+    [38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];
+    [38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {[24;9H[95m0[m,
+    };
+    [38;5;121mint[m trials = [95m1[m; [96m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[29;5H[96m// MEASUREMENTS START HERE[31;5H// Loop for measurements[m[33;128H70,5[10C77%"dgemm.cpp" 102L, 2089C[16;5H[?25h[?25l[33;118H~@k[16;5H[33;118H   [17;5H[33;129H1[17;5H[?25h[?25l[33;118H~@k[17;5H[33;118H   [16;5H[33;129H0[16;5H[?25h[?25l[33;118Hi[16;5H[33;118H [16;5H[33;1H[1m-- INSERT --[m[33;13H[K[33;128H70,5[10C77%[16;5H[?25h[?25l[33;128H69,1[15;1H[?25h[?25l[16;32r[16;1H[L[1;33r[33;128H[K[33;128H70,5[10C76%[16;5H[?25h[?25l[17;32r[17;1H[L[1;33r[33;128H[K[33;128H71,5[10C75%[17;5H[?25h[?25l[33;129H0,1[16;1H[?25h[?25l[33;131H2-9[16;9H[?25h[?25lc[33;131H3-10[16;10H[?25h[?25lo[33;131H4-11[16;11H[?25h[?25lu[33;131H5-12[16;12H[?25h[?25lt[33;131H6-13[16;13H[?25h[?25l[16;12H[K[33;131H5-12[16;12H[?25h[?25l[16;11H[K[33;131H4-11[16;11H[?25h[?25l[16;10H[K[33;131H3-10[16;10H[?25h[?25l[16;9H[K[33;131H2-9 [16;9H[?25h[?25l[33;131H1  [16;1H[?25h[?25l[15;32r[32;1H
+[1;33r[32;5H[96m// Loop for measurements[m[33;128H[K[33;128H69,1[10C76%[15;1H[?25h[?25l[16;32r[16;1H[L[1;33r[33;128H[K[33;128H70,5[10C75%[16;5H[?25h[?25l[33;131H6-9[16;9H[?25h[?25l[33;131H5  [16;5H[?25h[?25lc[33;131H6[16;6H[?25h[?25lo[33;131H7[16;7H[?25h[?25lu[33;131H8[16;8H[?25h[?25lt[33;131H9[16;9H[?25h[?25l[33;131H10[16;10H[?25h[?25l<[33;132H1[16;11H[?25h[?25l<[33;132H2[16;12H[?25h[?25l[33;132H3[16;13H[?25h[?25lr[33;132H4[16;14H[?25h[?25le[33;132H5[16;15H[?25h[?25lt[33;132H6[16;16H[?25h[?25lu[33;132H7[16;17H[?25h[?25lr[33;132H8[16;18H[?25h[?25l[93mreturn[m[33;132H9[16;19H[?25h[?25lreturnN[33;131H20[16;20H[?25h[?25lu[33;132H1[16;21H[?25h[?25lm[33;132H2[16;22H[?25h[?25lE[33;132H3[16;23H[?25h[?25lv[33;132H4[16;24H[?25h[?25le[33;132H5[16;25H[?25h[?25ln[33;132H6[16;26H[?25h[?25lt[33;132H7[16;27H[?25h[?25ls[33;132H8[16;28H[?25h[?25lP[33;132H9[16;29H[?25h[?25lA[33;131H30[16;30H[?25h[?25lP[33;132H1[16;31H[?25h[?25lI[33;132H2[16;32H[?25h[?25l([33;132H3[16;33H[?25h[?25l)[46m()[m[33;132H4[16;34H[?25h[?25l()[33;132H5[16;35H[?25h[?25l<[33;132H6[16;36H[?25h[?25l<[33;132H7[16;37H[?25h[?25l[33;132H8[16;38H[?25h[33;1H[K[16;37H[?25l[33;118H^[[16;37H[33;118H  [16;38H[33;128H70,37[9C75%[16;37H[?25h[?25l[33;118Hd[16;37H[?25h[?25l[33;119Hd[16;37H[33;118H  [16;1H[16;32r[32;1H
+[1;33r[32;5H[96m// Loop for measurements[m[33;128H[K[33;128H70,0-1[8C76%[16;1H[?25h[?25l[33;118Hi[16;1H[33;118H [16;1H[33;1H[1m-- INSERT --[m[33;128H[K[33;128H70,1[10C76%[16;1H[?25h[?25l[33;131H2-9[16;9H[?25h[?25l[33;131H1  [16;1H[?25h[?25l[33;131H2-9[16;9H[?25h[?25l[33;131H3-10[16;10H[?25h[?25l[33;131H2-9 [16;9H[?25h[?25l[33;131H1  [16;1H[?25h[?25l[33;131H2-9[16;9H[?25h[?25l[33;131H1  [16;1H[?25h[?25l[33;131H2[16;2H[?25h[?25l[33;131H3[16;3H[?25h[?25l[33;131H4[16;4H[?25h[?25l[33;131H5[16;5H[?25h[?25l[17;32r[17;1H[L[1;33r[33;128H[K[33;128H71,5[10C75%[17;5H[?25h[?25ls[33;131H6[17;6H[?25h[?25lt[33;131H7[17;7H[?25h[?25ld[33;131H8[17;8H[?25h[?25l[93mstd[m:[17;5H[K[33;131H5[17;5H[?25h[?25l    std::[33;131H10[17;10H[?25h[?25lc[33;132H1[17;11H[?25h[?25lo[33;132H2[17;12H[?25h[?25lu[33;132H3[17;13H[?25h[?25lt[33;132H4[17;14H[?25h[?25l[33;132H5[17;15H[?25h[?25lr[33;132H6[17;16H[?25h[?25le[33;132H7[17;17H[?25h[?25lt[33;132H8[17;18H[?25h[?25lu[33;132H9[17;19H[?25h[?25lr[33;131H20[17;20H[?25h[?25l[93mreturn[m[33;132H1[17;21H[?25h[?25lreturnN[33;132H2[17;22H[?25h[?25lu[33;132H3[17;23H[?25h[?25lm[33;132H4[17;24H[?25h[?25lE[33;132H5[17;25H[?25h[?25lv[33;132H6[17;26H[?25h[?25le[33;132H7[17;27H[?25h[?25ln[33;132H8[17;28H[?25h[?25lt[33;132H9[17;29H[?25h[?25ls[33;131H30[17;30H[?25h[?25lP[33;132H1[17;31H[?25h[?25lA[33;132H2[17;32H[?25h[?25lP[33;132H3[17;33H[?25h[?25lU[33;132H4[17;34H[?25h[?25l[17;33H[K[33;132H3[17;33H[?25h[?25lI[33;132H4[17;34H[?25h[?25l([33;132H5[17;35H[?25h[?25l)[46m()[m[33;132H6[17;36H[?25h[?25l()[33;132H7[17;37H[?25h[?25l<[33;132H8[17;38H[?25h[?25l<[33;132H9[17;39H[?25h[?25l[33;132H8[17;38H[?25h[?25l[33;132H9[17;39H[?25h[?25l[33;131H40[17;40H[?25h[?25ls[33;132H1[17;41H[?25h[?25lt[33;132H2[17;42H[?25h[?25ld[33;132H3[17;43H[?25h[?25l:[33;132H4[17;44H[?25h[?25l:[33;132H5[17;45H[?25h[?25le[33;132H6[17;46H[?25h[?25ln[33;132H7[17;47H[?25h[?25ld[33;132H8[17;48H[?25h[?25l;[33;132H9[17;49H[?25h[?25l[17;48H[K[33;132H8[17;48H[?25h[?25ll[33;132H9[17;49H[?25h[?25l;[33;131H50[17;50H[?25h[?25l[33;131H49[17;49H[?25h[?25l[33;132H8[17;48H[?25h[?25l[33;132H7[17;47H[?25h[?25l[33;132H6[17;46H[?25h[?25l[33;132H5[17;45H[?25h[?25l[33;132H4[17;44H[?25h[?25l[33;132H3[17;43H[?25h[?25l[33;132H2[17;42H[?25h[?25l[33;132H1[17;41H[?25h[?25l[33;132H0[17;40H[?25h[?25l[33;131H39[17;39H[?25h[?25l[33;132H8[17;38H[?25h[?25l[33;132H7[17;37H[?25h[?25l[46m()[m[33;132H6[17;36H[?25h[?25l[33;132H5[17;35H[?25h[?25l[97m[46m)[m[46m [m<< std::endl;[17;49H[K[17;34H[97m[101m)[m [33;132H4[17;34H[?25h[?25l[97m[101m)[m << std::endl;[17;48H[K[33;132H3[17;33H[?25h[?25l[97m[101m)[m << std::endl;[17;47H[K[33;132H2[17;32H[?25h[?25l[97m[101m)[m << std::endl;[17;46H[K[33;132H1[17;31H[?25h[?25l[97m[101m)[m << std::endl;[17;45H[K[33;132H0[17;30H[?25h[?25l[97m[101m)[m << std::endl;[17;44H[K[33;131H29[17;29H[?25h[?25l[97m[101m)[m << std::endl;[17;43H[K[33;132H8[17;28H[?25h[?25l[97m[101m)[m << std::endl;[17;42H[K[33;132H7[17;27H[?25h[?25l[97m[101m)[m << std::endl;[17;41H[K[33;132H6[17;26H[?25h[?25l[97m[101m)[m << std::endl;[17;40H[K[33;132H5[17;25H[?25h[?25l[97m[101m)[m << std::endl;[17;39H[K[33;132H4[17;24H[?25h[?25l[97m[101m)[m << std::endl;[17;38H[K[33;132H3[17;23H[?25h[?25l[97m[101m)[m << std::endl;[17;37H[K[33;132H2[17;22H[?25h[?25l[17;15H[93mreturn[m[97m[101m)[m << std::endl;[17;36H[K[33;132H1[17;21H[?25h[?25lretur[97m[101m)[m << std::endl;[17;35H[K[33;132H0[17;20H[?25h[?25l[97m[101m)[m << std::endl;[17;34H[K[33;131H19[17;19H[?25h[?25l[97m[101m)[m << std::endl;[17;33H[K[33;132H8[17;18H[?25h[?25l[97m[101m)[m << std::endl;[17;32H[K[33;132H7[17;17H[?25h[?25l[97m[101m)[m << std::endl;[17;31H[K[33;132H6[17;16H[?25h[?25l[97m[101m)[m << std::endl;[17;30H[K[33;132H5[17;15H[?25h[?25l[97m[101m)[m << std::endl;[17;29H[K[33;132H4[17;14H[?25h[?25l [97m[101m)[m << std::endl;[33;132H5[17;15H[?25h[?25le[97m[101m)[m << std::endl;[33;132H6[17;16H[?25h[?25lv[97m[101m)[m << std::endl;[33;132H7[17;17H[?25h[?25le[97m[101m)[m << std::endl;[33;132H8[17;18H[?25h[?25ln[97m[101m)[m << std::endl;[33;132H9[17;19H[?25h[?25lt[97m[101m)[m << std::endl;[33;131H20[17;20H[?25h[?25ls[97m[101m)[m << std::endl;[33;132H1[17;21H[?25h[?25l[33;132H0[17;20H[?25h[?25l[33;131H19[17;19H[?25h[?25l[33;132H8[17;18H[?25h[?25l[33;132H7[17;17H[?25h[?25l[33;132H6[17;16H[?25h[?25l[33;132H5[17;15H[?25h[?25l<events[97m[101m)[m << std::endl;[33;132H6[17;16H[?25h[?25l<events[97m[101m)[m << std::endl;[33;132H7[17;17H[?25h[?25l events[97m[101m)[m << std::endl;[33;132H8[17;18H[?25h[?25l[33;132H9[17;19H[?25h[?25l[33;131H20[17;20H[?25h[?25l[33;132H1[17;21H[?25h[?25l[33;132H2[17;22H[?25h[?25l[33;132H3[17;23H[?25h[?25l[33;132H4[17;24H[?25h[?25l[33;132H5[17;25H[?25h[?25l << std::endl;[17;38H[K[33;132H4[17;24H[?25h[?25l[33;129H0,5 [16;5H[?25h[?25li[33;131H6[16;6H[?25h[?25ln[33;131H7[16;7H[?25h[?25l[38;5;121mint[m[33;131H8[16;8H[?25h[?25l[33;131H9[16;9H[?25h[?25le[33;131H10[16;10H[?25h[?25lv[33;132H1[16;11H[?25h[?25le[33;132H2[16;12H[?25h[?25ln[33;132H3[16;13H[?25h[?25lt[33;132H4[16;14H[?25h[?25ls[33;132H5[16;15H[?25h[?25l[33;132H6[16;16H[?25h[?25l=[33;132H7[16;17H[?25h[?25l[33;132H8[16;18H[?25h[?25lr[33;132H9[16;19H[?25h[?25le[33;131H20[16;20H[?25h[?25lt[33;132H1[16;21H[?25h[?25lu[33;132H2[16;22H[?25h[?25lr[33;132H3[16;23H[?25h[?25l[93mreturn[m[33;132H4[16;24H[?25h[?25lreturnN[33;132H5[16;25H[?25h[?25lu[33;132H6[16;26H[?25h[?25lm[33;132H7[16;27H[?25h[?25lE[33;132H8[16;28H[?25h[?25lv[33;132H9[16;29H[?25h[?25le[33;131H30[16;30H[?25h[?25ln[33;132H1[16;31H[?25h[?25lt[33;132H2[16;32H[?25h[?25ls[33;132H3[16;33H[?25h[?25lP[33;132H4[16;34H[?25h[?25lA[33;132H5[16;35H[?25h[?25lP[33;132H6[16;36H[?25h[?25lI[33;132H7[16;37H[?25h[?25l([33;132H8[16;38H[?25h[?25l)[46m()[m[33;132H9[16;39H[?25h[?25l;()[33;131H40[16;40H[?25h[?25l:[33;132H1[16;41H[?25h[?25l[16;40H[K[33;132H0[16;40H[?25h[33;1H[K[16;40H[?25l`[33;1H[1m-- INSERT --[m[115C70,41[9C75%[16;41H[33;118H^[[16;40H[33;118H  [16;41H[33;1H[K[33;128H70,40[9C75%[16;40H[?25h[?25l[33;118Hi[16;40H[33;118H [16;40H[33;1H[1m-- INSERT --[m[33;128H[K[33;128H70,40[9C75%[16;40H[?25h[?25l`[16;40H[K[16;37H[46m()[m[33;131H39[16;39H[?25h[?25l()[33;131H40[16;40H[?25h[?25l[16;39H[K[16;37H[46m()[m[33;131H39[16;39H[?25h[?25l;()[33;131H40[16;40H[?25h[33;1H[K[16;39H[?25l[33;118H^[[16;39H[33;118H  [16;40H[33;128H70,39[9C75%[16;39H[?25h[?25l[33;118H:[16;39H[33;118H[K[33;1H:[?2004h[?25hw[?25l[?25hq[?25l[?25h[?25l[?2004l"dgemm.cpp" 104L, 2167C written
+[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ make
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ ./dgemm
+0
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ ./dgemm[3Pmakevi dgemm.cpp 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"dgemm.cpp" 104L, 2167C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;5HB = ([32mdouble[m *)malloc([38;5;130msizeof[m([32mdouble[m) * k * n);
+[35m#pragma omp parallel [m[38;5;130mfor
+[m    [38;5;130mfor[m ([32mint[m i = [31m0[m; i < k * n; i++)
+    {[5;9HB[i] = (([32mfloat[m)rand() / ([32mfloat[m)([31mRAND_MAX[m));
+    }
+    C = ([32mdouble[m *)malloc([38;5;130msizeof[m([32mdouble[m) * m * n);
+[35m#pragma omp parallel [m[38;5;130mfor
+[m    [38;5;130mfor[m ([32mint[m i = [31m0[m; i < m * n; i++)
+    {[11;9HC[i] = [31m0[m;
+    }[14;5H[34m// Setup for PAPI[m[16;5H[32mint[m events = returnNumEventsPAPI();
+    std::cout << events << std::endl;
+    [32mvoid[m initializePAPI(std::string inputFile);
+    [32mvoid[m startPAPI();[21;5H[32mint[m NUM_EVENTS = returnNumEventsPAPI();[23;5H[32mint[m EventSet = PAPI_NULL;
+    [32mlong[m [32mlong[m values[NUM_EVENTS];
+    [32mlong[m [32mlong[m values_avg[NUM_EVENTS] = {[26;9H[31m0[m,
+    };
+    [32mint[m trials = [31m1[m; [34m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[31;5H[34m// MEASUREMENTS START HERE[m[33;128H70,39[9C75%[16;39H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[1;5HB = ([38;5;121mdouble[m *)malloc([93msizeof[m([38;5;121mdouble[m) * k * n);
+[38;5;81m#pragma omp parallel [m[93mfor
+[m    [93mfor[m ([38;5;121mint[m i = [95m0[m; i < k * n; i++)
+    {[5;9HB[i] = (([38;5;121mfloat[m)rand() / ([38;5;121mfloat[m)([95mRAND_MAX[m));
+    }
+    C = ([38;5;121mdouble[m *)malloc([93msizeof[m([38;5;121mdouble[m) * m * n);
+[38;5;81m#pragma omp parallel [m[93mfor
+[m    [93mfor[m ([38;5;121mint[m i = [95m0[m; i < m * n; i++)
+    {[11;9HC[i] = [95m0[m;
+    }[14;5H[96m// Setup for PAPI[m[16;5H[38;5;121mint[m events = returnNumEventsPAPI();
+    std::cout << events << std::endl;
+    [38;5;121mvoid[m initializePAPI(std::string inputFile);
+    [38;5;121mvoid[m startPAPI();[21;5H[38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();[23;5H[38;5;121mint[m EventSet = PAPI_NULL;
+    [38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];
+    [38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {[26;9H[95m0[m,
+    };
+    [38;5;121mint[m trials = [95m1[m; [96m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[31;5H[96m// MEASUREMENTS START HERE[m[33;128H70,39[9C75%"dgemm.cpp" 104L, 2167C[16;39H[?25h[?25l[33;118Hd[16;39H[?25h[?25l[33;119Hd[16;39H[33;118H  [16;5H[16;32r[32;1H
+[1;33r[32;5H[96m// Loop for measurements[m[33;1H[K[33;128H70,5[10C76%[16;5H[?25h[?25l[33;118Hd[16;5H[?25h[?25l[33;119Hd[16;5H[33;118H  [16;5H[16;32r[32;1H
+[1;33r[33;128H[K[33;128H70,5[10C77%[16;5H[?25h[?25l[33;118H~@k[16;5H[33;118H   [17;5H[33;129H1[17;5H[?25h[?25l[33;118H~@k[17;5H[33;118H   [16;5H[33;129H0[16;5H[?25h[?25l[33;118H~@k[16;5H[33;118H   [17;5H[33;129H1[17;5H[?25h[?25l[33;118H~@k[17;5H[33;118H   [16;5H[33;129H0[16;5H[?25h[?25l[33;118Hi[16;5H[33;118H [16;5H[33;1H[1m-- INSERT --[m[33;128H[K[33;128H70,5[10C77%[16;5H[?25h[?25l[33;129H1[17;5H[?25h[?25l[33;129H0[16;5H[?25h[?25l[33;131H6[16;6H[?25h[?25l[33;131H7[16;7H[?25h[?25l[33;131H8[16;8H[?25h[?25l[33;131H9[16;9H[?25h[?25l[33;131H10[16;10H[?25h[?25l[33;132H1[16;11H[?25h[?25l[33;132H2[16;12H[?25h[?25l[33;132H3[16;13H[?25h[?25l[33;132H4[16;14H[?25h[?25l[33;132H5[16;15H[?25h[?25l[33;132H6[16;16H[?25h[?25l[33;132H7[16;17H[?25h[?25l[33;132H8[16;18H[?25h[?25l[33;132H9[16;19H[?25h[?25l[33;131H20[16;20H[?25h[?25l[33;132H1[16;21H[?25h[?25l[33;132H2[16;22H[?25h[?25l[33;132H3[16;23H[?25h[?25lI[46m([21C)[m[33;132H4[16;24H[?25h[?25l[33;132H5[16;25H[?25h[?25l([21C)[33;132H6[16;26H[?25h[?25l[33;132H7[16;27H[?25h[?25l[33;132H8[16;28H[?25h[?25l[33;132H9[16;29H[?25h[?25l[33;131H30[16;30H[?25h[?25l[33;132H1[16;31H[?25h[?25l[33;132H2[16;32H[?25h[?25l[33;132H3[16;33H[?25h[?25l[33;132H4[16;34H[?25h[?25l[33;132H5[16;35H[?25h[?25l[33;132H6[16;36H[?25h[?25l[33;132H7[16;37H[?25h[?25l[33;132H8[16;38H[?25h[?25l[33;132H9[16;39H[?25h[?25l[33;131H40[16;40H[?25h[?25l[33;132H1[16;41H[?25h[?25l[33;132H2[16;42H[?25h[?25l[33;132H3[16;43H[?25h[?25l[33;132H4[16;44H[?25h[?25l[33;132H5[16;45H[?25h[?25l[16;24H[46m([21C)[m[33;132H6[16;46H[?25h[?25l)[46m;[m[16;47H[K[16;45H[46m)[m;[33;132H5[16;45H[?25h[?25l)[46m;[m[16;46H[K[16;44H[46m)[m;[33;132H4[16;44H[?25h[?25l)[46m;[m[16;45H[K[16;43H[46m)[m;[33;132H3[16;43H[?25h[?25l)[46m;[m[16;44H[K[16;42H[46m)[m;[33;132H2[16;42H[?25h[?25l)[46m;[m[16;43H[K[16;41H[46m)[m;[33;132H1[16;41H[?25h[?25l)[46m;[m[16;42H[K[16;40H[46m)[m;[33;132H0[16;40H[?25h[?25l)[46m;[m[16;41H[K[16;39H[46m)[m;[33;131H39[16;39H[?25h[?25l)[46m;[m[16;40H[K[16;38H[46m)[m;[33;132H8[16;38H[?25h[?25l)[46m;[m[16;39H[K[16;37H[46m)[m;[33;132H7[16;37H[?25h[?25l)[46m;[m[16;38H[K[16;36H[46m)[m;[33;132H6[16;36H[?25h[?25l)[46m;[m[16;37H[K[16;35H[46m)[m;[33;132H5[16;35H[?25h[?25l)[46m;[m[16;36H[K[16;34H[46m)[m;[33;132H4[16;34H[?25h[?25l)[46m;[m[16;35H[K[16;33H[46m)[m;[33;132H3[16;33H[?25h[?25l)[46m;[m[16;34H[K[16;32H[46m)[m;[33;132H2[16;32H[?25h[?25l)[46m;[m[16;33H[K[16;31H[46m)[m;[33;132H1[16;31H[?25h[?25l)[46m;[m[16;32H[K[16;30H[46m)[m;[33;132H0[16;30H[?25h[?25l)[46m;[m[16;31H[K[16;29H[46m)[m;[33;131H29[16;29H[?25h[?25l)[46m;[m[16;30H[K[16;28H[46m)[m;[33;132H8[16;28H[?25h[?25l)[46m;[m[16;29H[K[16;27H[46m)[m;[33;132H7[16;27H[?25h[?25l)[46m;[m[16;28H[K[16;26H[46m)[m;[33;132H6[16;26H[?25h[?25l)[46m;[m[16;27H[K[16;25H[46m)[m;[33;132H5[16;25H[?25h[?25l[95m[46m"[m[95m);
+    void startPAPI();
+
+    int NUM_EVENTS = returnNumEventsPAPI();
+
+    int EventSet = PAPI_NULL;
+    long long values[NUM_EVENTS];
+    long long values_avg[NUM_EVENTS] = {
+        0,
+    };
+    int trials = 1; // HOW MANY TO RUN
+    std::string fileName = getCurrentDateTimeString();
+
+    // MEASUREMENTS START HERE
+
+    // Loop for measurements[m[16;24H([95m"[m[33;132H6[16;26H[?25h[?25l[95m"[m);
+    [38;5;121mvoid[m startPAPI();
+
+    [38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();
+
+    [38;5;121mint[m EventSet = PAPI_NULL;
+    [38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];
+    [38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {
+        [1C,
+    };
+    [38;5;121mint[m trials = [1C; [96m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();
+
+    [96m// MEASUREMENTS START HERE[m
+
+    [96m// Loop for measurements[m[16;24H[46m([2C)[m[33;132H7[16;27H[?25h[?25l([2C)[33;132H6[16;26H[?25h[?25l[95mp"[m);[33;132H7[16;27H[?25h[?25l[95ma"[m);[33;132H8[16;28H[?25h[?25l[95mp"[m);[33;132H9[16;29H[?25h[?25l[95mi"[m);[33;131H30[16;30H[?25h[?25l[95m_"[m);[33;132H1[16;31H[?25h[?25l[95m"[m);[16;33H[K[33;132H0[16;30H[?25h[?25l[95m"[m);[16;32H[K[33;131H29[16;29H[?25h[?25l[95m"[m);[16;31H[K[33;132H8[16;28H[?25h[?25l[95m"[m);[16;30H[K[33;132H7[16;27H[?25h[?25l[95m"[m);[16;29H[K[33;132H6[16;26H[?25h[?25l[95mP"[m);[33;132H7[16;27H[?25h[?25l[95mA"[m);[33;132H8[16;28H[?25h[?25l[95mP"[m);[33;132H9[16;29H[?25h[?25l[95mI"[m);[33;131H30[16;30H[?25h[?25l[95m_"[m);[33;132H1[16;31H[?25h[?25l[95mi"[m);[33;132H2[16;32H[?25h[?25l[95mn"[m);[33;132H3[16;33H[?25h[?25l[95mp"[m);[33;132H4[16;34H[?25h[?25l[95mu"[m);[33;132H5[16;35H[?25h[?25l[95mt"[m);[33;132H6[16;36H[?25h[?25l[95m."[m);[33;132H7[16;37H[?25h[?25l[95mt"[m);[33;132H8[16;38H[?25h[?25l[95mx"[m);[33;132H9[16;39H[?25h[?25l[95mt"[m);[33;131H40[16;40H[?25h[33;1H[K[16;39H[?25l[33;118H^[[16;39H[33;118H  [16;40H[33;128H70,39[9C77%[16;39H[?25h[?25l[33;118H:[16;39H[33;118H[K[33;1H:[?2004h[?25hw[?25l[?25hq[?25l[?25h[?25l[?2004l"dgemm.cpp" 102L, 2084C written
+[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgemm.cpp [6P./dgemm[3Pmake
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+[01m[Kdgemm.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kdgemm.cpp:70:10:[m[K [01;31m[Kerror: [m[Kvariable or field ‘[01m[KinitializePAPI[m[K’ declared void
+   70 |     void [01;31m[KinitializePAPI[m[K("PAPI_input.txt");
+      |          [01;31m[K^~~~~~~~~~~~~~[m[K
+make: *** [Makefile:7: loop] Error 1
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ makevi dgemm.cpp [6P./dgemmvi dgemm.cpp 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"dgemm.cpp" 102L, 2084C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;5HB = ([32mdouble[m *)malloc([38;5;130msizeof[m([32mdouble[m) * k * n);
+[35m#pragma omp parallel [m[38;5;130mfor
+[m    [38;5;130mfor[m ([32mint[m i = [31m0[m; i < k * n; i++)
+    {[5;9HB[i] = (([32mfloat[m)rand() / ([32mfloat[m)([31mRAND_MAX[m));
+    }
+    C = ([32mdouble[m *)malloc([38;5;130msizeof[m([32mdouble[m) * m * n);
+[35m#pragma omp parallel [m[38;5;130mfor
+[m    [38;5;130mfor[m ([32mint[m i = [31m0[m; i < m * n; i++)
+    {[11;9HC[i] = [31m0[m;
+    }[14;5H[34m// Setup for PAPI[m[16;5H[32mvoid[m initializePAPI([31m"PAPI_input.txt"[m);
+    [32mvoid[m startPAPI();[19;5H[32mint[m NUM_EVENTS = returnNumEventsPAPI();[21;5H[32mint[m EventSet = PAPI_NULL;
+    [32mlong[m [32mlong[m values[NUM_EVENTS];
+    [32mlong[m [32mlong[m values_avg[NUM_EVENTS] = {[24;9H[31m0[m,
+    };
+    [32mint[m trials = [31m1[m; [34m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[29;5H[34m// MEASUREMENTS START HERE[31;5H// Loop for measurements[m[33;128H70,39[9C77%[16;39H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[1;5HB = ([38;5;121mdouble[m *)malloc([93msizeof[m([38;5;121mdouble[m) * k * n);
+[38;5;81m#pragma omp parallel [m[93mfor
+[m    [93mfor[m ([38;5;121mint[m i = [95m0[m; i < k * n; i++)
+    {[5;9HB[i] = (([38;5;121mfloat[m)rand() / ([38;5;121mfloat[m)([95mRAND_MAX[m));
+    }
+    C = ([38;5;121mdouble[m *)malloc([93msizeof[m([38;5;121mdouble[m) * m * n);
+[38;5;81m#pragma omp parallel [m[93mfor
+[m    [93mfor[m ([38;5;121mint[m i = [95m0[m; i < m * n; i++)
+    {[11;9HC[i] = [95m0[m;
+    }[14;5H[96m// Setup for PAPI[m[16;5H[38;5;121mvoid[m initializePAPI([95m"PAPI_input.txt"[m);
+    [38;5;121mvoid[m startPAPI();[19;5H[38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();[21;5H[38;5;121mint[m EventSet = PAPI_NULL;
+    [38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];
+    [38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {[24;9H[95m0[m,
+    };
+    [38;5;121mint[m trials = [95m1[m; [96m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[29;5H[96m// MEASUREMENTS START HERE[31;5H// Loop for measurements[m[33;128H70,39[9C77%"dgemm.cpp" 102L, 2084C[16;39H[?25h[?25l[33;118H~@k[16;39H[33;118H   [17;21H[33;129H1,21[17;21H[?25h[?25l[33;118H~@k[17;21H[33;118H   [16;21H[33;129H0[16;21H[?25h[?25l[33;118H~@k[16;21H[33;118H   [16;20H[33;132H0[16;20H[?25h[?25l[33;118H~@k[16;20H[33;118H   [16;19H[33;131H19[16;19H[?25h[?25l[33;118H~@k[16;19H[33;118H   [16;18H[33;132H8[16;18H[?25h[?25l[33;118H~@k[16;18H[33;118H   [16;17H[33;132H7[16;17H[?25h[?25l[33;118H~@k[16;17H[33;118H   [16;16H[33;132H6[16;16H[?25h[?25l[33;118H~@k[16;16H[33;118H   [16;15H[33;132H5[16;15H[?25h[?25l[33;118H~@k[16;15H[33;118H   [16;14H[33;132H4[16;14H[?25h[?25l[33;118H~@k[16;14H[33;118H   [16;13H[33;132H3[16;13H[?25h[?25l[33;118H~@k[16;13H[33;118H   [16;12H[33;132H2[16;12H[?25h[?25l[33;118H~@k[16;12H[33;118H   [16;11H[33;132H1[16;11H[?25h[?25l[33;118H~@k[16;11H[33;118H   [16;10H[33;132H0[16;10H[?25h[?25l[33;118Hi[16;10H[33;118H [16;10H[33;1H[1m-- INSERT --[m[33;13H[K[33;128H70,10[9C77%[16;10H[?25h[?25lvoidinitializePAPI([95m"PAPI_input.txt"[m);[16;42H[K[33;131H9 [16;9H[?25h[?25linitializePAPI([95m"PAPI_input.txt"[m);[16;41H[K[33;131H8[16;8H[?25h[?25lnitializePAPI([95m"PAPI_input.txt"[m);[16;40H[K[33;131H7[16;7H[?25h[?25linitializePAPI([95m"PAPI_input.txt"[m);[16;39H[K[33;131H6[16;6H[?25h[?25linitializePAPI([95m"PAPI_input.txt"[m);[16;38H[K[33;131H5[16;5H[?25h[?25l[33;128H69,1[15;1H[?25h[?25l[33;128H70,5[16;5H[?25h[?25l[33;129H1[17;5H[?25h[?25l[33;131H6[17;6H[?25h[?25l[33;131H7[17;7H[?25h[?25l[33;131H8[17;8H[?25h[?25l[33;131H9[17;9H[?25h[?25l[33;131H10[17;10H[?25h[?25lvoidstartPAPI();[17;21H[K[33;131H9 [17;9H[?25h[?25lstartPAPI();[17;20H[K[33;131H8[17;8H[?25h[?25lstartPAPI();[17;19H[K[33;131H7[17;7H[?25h[?25lstartPAPI();[17;18H[K[33;131H6[17;6H[?25h[?25lstartPAPI();[17;17H[K[33;131H5[17;5H[?25h[?25lstartPAPI();[17;16H[K[33;131H4[17;4H[?25h[?25l startPAPI();[33;131H5[17;5H[?25h[?25l[33;129H2,1[18;1H[?25h[?25l[33;129H3,5[19;5H[?25h[?25l[33;129H4,1[20;1H[?25h[?25l[33;129H5,5[21;5H[?25h[?25l[33;129H6[22;5H[?25h[?25l[33;129H7[23;5H[?25h[?25l[33;129H8[24;5H[?25h[?25l[23;40H[46m{[25;5H}[m[33;129H9[25;5H[?25h[?25l[23;40H{[25;5H}[33;128H81[27;5H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < trials; i++)[33;128H[K[33;128H82,1[10C78%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H{[33;128H[K[33;128H83,5[10C80%[27;5H[?25h[?25l[1;32r[32;1H
+[1;33r[32;9H[96m// Call matmul function[m[33;128H[K[33;128H84,1[10C81%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;9H[38;5;121mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[33;128H[K[33;128H85,5[10C82%[27;5H[?25h[?25l[1;32r[32;1H
+[1;33r[32;9H[38;5;121mvoid[m stopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[33;128H[K[33;128H86,1[10C84%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H}[33;128H[K[33;128H87,5[10C85%[27;5H[?25h[?25l[1;32r[32;1H
+[1;33r[33;128H[K[33;128H88,5[10C87%[27;5H[46m{[31;5H}[27;5H[?25h[?25l[1;32r[m[32;1H
+[1;33r[32;5H[96m// Cleanup[m[33;128H[K[33;128H89,5[10C88%[26;5H{[30;5H}[27;5H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H[38;5;121mvoid[m cleanupPAPI([38;5;121mint[m EventSet);[33;128H[K[33;128H90,5[10C90%[27;5H[?25h[?25l[1;32r[32;1H
+[1;33r[33;128H[K[33;128H91,5[10C91%[27;5H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5Hfree(A);[33;128H[K[33;128H92,5[10C92%[23;5H[46m{[27;5H}[?25h[?25l[1;32r[m[32;1H
+[1;33r[32;5Hfree(B);[33;128H[K[33;128H93,1[10C94%[22;5H{[26;5H}
+[?25h[?25l[1;32r[32;1H
+[1;33r[32;5Hfree(C);[33;128H[K[33;128H94,5[10C95%[27;5H[?25h[?25l[1;32r[32;1H
+[1;33r[33;128H[K[33;128H95,5[10C97%[27;5H[?25h[?25l[33;131H6[27;6H[?25h[?25l[33;131H7[27;7H[?25h[?25l[33;131H8[27;8H[?25h[?25l[33;131H9[27;9H[?25h[?25l[33;131H10[27;10H[?25h[?25lvoidcleanupPAPI([38;5;121mint[m EventSet);[27;35H[K[33;131H9 [27;9H[?25h[?25lcleanupPAPI([38;5;121mint[m EventSet);[27;34H[K[33;131H8[27;8H[?25h[?25lcleanupPAPI([38;5;121mint[m EventSet);[27;33H[K[33;131H7[27;7H[?25h[?25lcleanupPAPI([38;5;121mint[m EventSet);[27;32H[K[33;131H6[27;6H[?25h[?25lcleanupPAPI([38;5;121mint[m EventSet);[27;31H[K[33;131H5[27;5H[?25h[?25l[1;32r[32;1H
+[1;33r[32;5H[93mreturn[m [95m0[m;[33;128H[K[33;128H96,1[10C98%[27;1H[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H}[33;128H[K[33;128H102,2[9CBot[32;2H[?25h[?25l[33;130H1,5[31;5H[?25h[?25l[33;130H0,1[30;1H[?25h[?25l[33;128H99,5 [29;5H[?25h[?25l[33;129H8[28;5H[?25h[?25l[33;129H7[27;5H[?25h[?25l[33;129H6,1[26;1H[?25h[?25l[33;129H5,5[25;5H[?25h[?25l[33;129H4[24;5H[?25h[?25l[33;129H3,1[23;1H[?25h[?25l[18;5H[46m{[22;5H}[m[33;129H2,5[22;5H[?25h[?25l[18;5H{[22;5H}[33;129H1[21;5H[?25h[?25l[33;131H6[21;6H[?25h[?25l[33;131H7[21;7H[?25h[?25l[33;131H8[21;8H[?25h[?25l[33;131H9[21;9H[?25h[?25l[33;131H10[21;10H[?25h[?25l[33;132H1[21;11H[?25h[?25l[33;132H2[21;12H[?25h[?25l[33;132H3[21;13H[?25h[?25l[33;132H4[21;14H[?25h[?25lvoidstopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[21;48H[K[33;132H3[21;13H[?25h[?25lstopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[21;47H[K[33;132H2[21;12H[?25h[?25lstopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[21;46H[K[33;132H1[21;11H[?25h[?25lstopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[21;45H[K[33;132H0[21;10H[?25h[?25lstopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[21;44H[K[33;131H9 [21;9H[?25h[?25lstopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[21;43H[K[33;131H8[21;8H[?25h[?25l stopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);[33;131H9[21;9H[?25h[33;1H[K[21;8H[?25l[33;118H^[[21;8H[33;118H  [21;9H[33;128H91,8[10CBot[21;8H[?25h[?25l[33;118H:[21;8H[33;118H[K[33;1H:[?2004h[?25hw[?25l[?25hq[?25l[?25h[?25l[?2004l"dgemm.cpp" 102L, 2064C written
+[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ vi dgemm.cpp make[Kvi dgemm.cpp [6P./dgemmvi dgemm.cpp 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"dgemm.cpp" 102L, 2064C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;5HstartPAPI();[3;5H[32mint[m NUM_EVENTS = returnNumEventsPAPI();[5;5H[32mint[m EventSet = PAPI_NULL;
+    [32mlong[m [32mlong[m values[NUM_EVENTS];
+    [32mlong[m [32mlong[m values_avg[NUM_EVENTS] = {[8;9H[31m0[m,
+    };
+    [32mint[m trials = [31m1[m; [34m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[13;5H[34m// MEASUREMENTS START HERE[15;5H// Loop for measurements[m[17;5H[38;5;130mfor[m ([32mint[m i = [31m0[m; i < trials; i++)
+    {[19;9H[34m// Call matmul function[m[20;9H[32mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[21;9HstopPAPI([32mlong[m [32mlong[m *values, [32mint[m i);
+    }[24;5H[34m// Cleanup[m
+    cleanupPAPI([32mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[38;5;130mreturn[m [31m0[m;
+}[33;128H91,8[10CBot[21;8H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[1;5HstartPAPI();[3;5H[38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();[5;5H[38;5;121mint[m EventSet = PAPI_NULL;
+    [38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];
+    [38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {[8;9H[95m0[m,
+    };
+    [38;5;121mint[m trials = [95m1[m; [96m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[13;5H[96m// MEASUREMENTS START HERE[15;5H// Loop for measurements[m[17;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < trials; i++)
+    {[19;9H[96m// Call matmul function[m[20;9H[38;5;121mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[21;9HstopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);
+    }[24;5H[96m// Cleanup[m
+    cleanupPAPI([38;5;121mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[93mreturn[m [95m0[m;
+}[33;128H91,8[10CBot"dgemm.cpp" 102L, 2064C[21;8H[?25h[?25l[33;118H:[21;8H[33;1H[K[33;1H:[?2004h[?25hq[?25l[?25h[?25l[?2004l[33;1H[K[33;1H[?2004l[?1l>[?25h[?1049l[23;0;0t]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ make
+g++ -o dgemm dgemm.cpp -I/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include -L/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib -lpapi -lpfm -lpthread -lgomp -fopenmp
+[01m[Kdgemm.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kdgemm.cpp:91:18:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Klong[m[K’
+   91 |         stopPAPI([01;31m[Klong[m[K long *values, int i);
+      |                  [01;31m[K^~~~[m[K
+[01m[Kdgemm.cpp:91:37:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+   91 |         stopPAPI(long long *values, [01;31m[Kint[m[K i);
+      |                                     [01;31m[K^~~[m[K
+[01m[Kdgemm.cpp:95:17:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+   95 |     cleanupPAPI([01;31m[Kint[m[K EventSet);
+      |                 [01;31m[K^~~[m[K
+make: *** [Makefile:7: loop] Error 1
+]0;lcalder@wave8-login2:~/ycho_lab/logan_calder/COEN193/dgemm[lcalder@wave8-login2 dgemm]$ makevi dgemm.cpp 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[33;1H"dgemm.cpp" 102L, 2064C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;5HstartPAPI();[3;5H[32mint[m NUM_EVENTS = returnNumEventsPAPI();[5;5H[32mint[m EventSet = PAPI_NULL;
+    [32mlong[m [32mlong[m values[NUM_EVENTS];
+    [32mlong[m [32mlong[m values_avg[NUM_EVENTS] = {[8;9H[31m0[m,
+    };
+    [32mint[m trials = [31m1[m; [34m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[13;5H[34m// MEASUREMENTS START HERE[15;5H// Loop for measurements[m[17;5H[38;5;130mfor[m ([32mint[m i = [31m0[m; i < trials; i++)
+    {[19;9H[34m// Call matmul function[m[20;9H[32mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[21;9HstopPAPI([32mlong[m [32mlong[m *values, [32mint[m i);
+    }[24;5H[34m// Cleanup[m
+    cleanupPAPI([32mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[38;5;130mreturn[m [31m0[m;
+}[33;128H91,8[10CBot[21;8H[?25h[?12$p[27m[23m[29m[m[H[2J[?25l[1;5HstartPAPI();[3;5H[38;5;121mint[m NUM_EVENTS = returnNumEventsPAPI();[5;5H[38;5;121mint[m EventSet = PAPI_NULL;
+    [38;5;121mlong[m [38;5;121mlong[m values[NUM_EVENTS];
+    [38;5;121mlong[m [38;5;121mlong[m values_avg[NUM_EVENTS] = {[8;9H[95m0[m,
+    };
+    [38;5;121mint[m trials = [95m1[m; [96m// HOW MANY TO RUN[m
+    std::string fileName = getCurrentDateTimeString();[13;5H[96m// MEASUREMENTS START HERE[15;5H// Loop for measurements[m[17;5H[93mfor[m ([38;5;121mint[m i = [95m0[m; i < trials; i++)
+    {[19;9H[96m// Call matmul function[m[20;9H[38;5;121mdouble[m *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);[21;9HstopPAPI([38;5;121mlong[m [38;5;121mlong[m *values, [38;5;121mint[m i);
+    }[24;5H[96m// Cleanup[m
+    cleanupPAPI([38;5;121mint[m EventSet);[27;5Hfree(A);
+    free(B);
+    free(C);[31;5H[93mreturn[m [95m0[m;
+}[33;128H91,8[10CBot"dgemm.cpp" 102L, 2064C[21;8H[?25h[?25l[33;118H~@k[21;8H[33;118H   [21;9H[33;131H9[21;9H[?25h[?25l[33;118H~@k[21;9H[33;118H   [21;10H[33;131H10[21;10H[?25h[?25l[33;118H~@k[21;10H[33;118H   [21;11H[33;132H1[21;11H[?25h[?25l[33;118H~@k[21;11H[33;118H   [21;12H[33;132H2[21;12H[?25h[?25l[33;118H~@k[21;12H[33;118H   [21;13H[33;132H3[21;13H[?25h[?25l[33;118H~@k[21;13H[33;118H   [21;14H[33;132H4[21;14H[?25h[?25l[33;118H~@k[21;14H[33;118H   [21;15H[33;132H5[21;15H[?25h[?25l[33;118H~@k[21;15H[33;118H   [21;16H[33;132H6[21;16H[?25h[?25l[33;118H~@k[21;16H[33;118H   [21;17H[46m([24C)[m[33;132H7[21;17H[?25h[?25l[33;118H~@k[21;17H[33;118H   [21;18H([24C)[33;132H8[21;18H[?25h[?25l[33;118H~@k[21;18H[33;118H   [21;19H[33;132H9[21;19H[?25h[?25l[33;118H~@k[21;19H[33;118H   [21;20H[33;131H20[21;20H[?25h[?25l[33;118H~@k[21;20H[33;118H   [21;21H[33;132H1[21;21H[?25h[?25l[33;118H~@k[21;21H[33;118H   [21;22H[33;132H2[21;22H[?25h[?25l[33;118H~@k[21;22H[33;118H   [21;23H[33;132H3[21;23H[?25h[?25l[33;118H~@k[21;23H[33;118H   [21;24H[33;132H4[21;24H[?25h[?25l[33;118H~@k[21;24H[33;118H   [21;25H[33;132H5[21;25H[?25h[?25l[33;118H~@k[21;25H[33;118H   [21;26H[33;132H6[21;26H[?25h[?25l[33;118H~@k[21;26H[33;118H   [21;27H[33;132H7[21;27H[?25h[?25l[33;118H~@k[21;27H[33;118H   [21;28H[33;132H8[21;28H[?25h[?25l[33;118Hi[21;28H[33;118H [21;28H[33;1H[1m-- INSERT --[m[33;13H[K[33;128H91,28[9CBot[21;28H[?25h[?25l[33;132H9[21;29H[?25h[?25lvalues, [38;5;121mint[m i);[21;43H[K[33;132H8[21;28H[?25h[?25llongvalues, [38;5;121mint[m i);[21;42H[K[33;132H7[21;27H[?25h[?25lvalues, [38;5;121mint[m i);[21;41H[K[33;132H6[21;26H[?25h[?25lvalues, [38;5;121mint[m i);[21;40H[K[33;132H5[21;25H[?25h[?25lvalues, [38;5;121mint[m i);[21;39H[K[33;132H4[21;24H[?25h[?25lvalues, [38;5;121mint[m i);[21;38H[K[33;132H3[21;23H[?25h[?25llongvalues, [38;5;121mint[m i);[21;37H[K[33;132H2[21;22H[?25h[?25lvalues, [38;5;121mint[m i);[21;36H[K[33;132H1[21;21H[?25h[?25lvalues, [38;5;121mint[m i);[21;35H[K[33;132H0[21;20H[?25h[?25lvalues, [38;5;121mint[m i);[21;34H[K[33;131H19[21;19H[?25h[?25lvalues, [38;5;121mint[m i);[21;33H[K[21;17H[46m([13C)[m[33;132H8[21;18H[?25h[?25l([13C)[33;132H9[21;19H[?25h[?25l[33;131H20[21;20H[?25h[?25l[33;132H1[21;21H[?25h[?25l[33;132H2[21;22H[?25h[?25l[33;132H3[21;23H[?25h[?25l[33;132H4[21;24H[?25h[?25l[33;132H5[21;25H[?25h[?25l[33;132H6[21;26H[?25h[?25l[33;132H7[21;27H[?25h[?25l[33;132H8[21;28H[?25h[?25l[33;132H9[21;29H[?25h[?25l[33;131H30[21;30H[?25h[?25linti);[21;32H[K[33;131H29[21;29H[?25h[?25li);[21;31H[K[33;132H8[21;28H[?25h[?25li);[21;30H[K[33;132H7[21;27H[?25h[?25l);[21;29H[K[33;132H6[21;26H[?25h[?25li);[21;28H[K[33;132H5[21;25H[?25h[?25l i);[33;132H6[21;26H[?25h[?25l[33;132H5[21;25H[?25h[?25l[33;129H0[20;25H[?25h[?25l[33;132H4[20;24H[?25h[?25l[33;128H89[19;24H[?25h[?25l[18;5H[46m{[22;5H}[m[33;129H8,6 [18;6H[?25h[?25l{[22;5H}[33;129H9,24[19;24H[?25h[?25l[33;128H90[20;24H[?25h[?25l[33;129H1[21;24H[?25h[?25l[18;5H[46m{[22;5H}[m[33;129H2,6 [22;6H[?25h[?25l[18;5H{[22;5H}[33;129H3,1[23;1H[?25h[?25l[33;129H4,15[24;15H[?25h[?25l[33;129H5,24[25;24H[?25h[?25l[33;129H6,1 [26;1H[?25h[?25l[33;129H5,24[25;24H[?25h[?25l[33;132H3[25;23H[?25h[?25l[33;132H2[25;22H[?25h[?25l[33;132H1[25;21H[?25h[?25lintEventSet);[25;30H[K[33;132H0[25;20H[?25h[?25lEventSet);[25;29H[K[33;131H19[25;19H[?25h[?25lEventSet);[25;28H[K[33;132H8[25;18H[?25h[?25lEventSet);[25;27H[K[25;16H[46m([8C)[m[33;132H7[25;17H[?25h[?25l([8C)[33;129H4,15[24;15H[?25h[?25l[33;129H3,1 [23;1H[?25h[?25l[18;5H[46m{[22;5H}[m[33;129H2,6[22;6H[?25h[?25l[18;5H{[21;17H[46m([9C)[m
+    }[33;129H1,17[21;17H[?25h[?25l([9C)[33;129H0[20;17H[?25h[?25l[33;128H89[19;17H[?25h[?25l[18;5H[46m{[22;5H}[m[33;129H8,6 [18;6H[?25h[?25l{[22;5H}[33;129H7,17[17;17H[?25h[?25l[33;129H6,1 [16;1H[?25h[?25l[33;129H5,17[15;17H[?25h[?25l[33;129H4,1 [14;1H[?25h[?25l[33;129H3,17[13;17H[?25h[?25l[33;129H2,1 [12;1H[?25h[?25l[33;129H1,17[11;17H[?25h[?25l[33;129H0[10;17H[?25h[?25l[33;128H79,7 [9;7H[?25h[?25l[33;129H8,11[8;11H[?25h[?25l[33;129H7,17[7;17H[?25h[?25l[33;129H6[6;17H[?25h[?25l[1;32r[1;1H[L[1;33r[1;5HinitializePAPI([95m"PAPI_input.txt"[m);[33;128H[K[33;128H75,17[9C98%[6;17H[?25h[?25l[1;32r[1;1H[L[1;33r[33;128H[K[33;128H74,1[10C97%[6;1H[?25h[?25l[1;32r[1;1H[L[1;33r[1;5H[96m// Setup for PAPI[m[33;128H[K[33;128H73,17[9C95%[6;17H[?25h[?25l[1;32r[1;1H[L[1;33r[33;128H[K[33;128H72,1[10C94%[6;1H[?25h[?25l[1;32r[1;1H[L[1;33r[1;5H}[33;128H[K[33;128H71,17[9C92%[6;17H[?25h[?25l:[33;132H8[6;18H[?25h[?25lq[33;132H9[6;19H[?25h[?25l[7;32r[7;1H[L[1;33r[33;128H[K[33;128H72,6-13[7C91%[7;13H[?25h[?25l[33;131H5-12[7;12H[?25h[?25l[33;131H4-11[7;11H[?25h[?25l[33;131H3-10[7;10H[?25h[?25l[33;131H2-9 [7;9H[?25h[?25l[33;131H1  [7;1H[?25h[?25l[6;32r[32;1H
+[1;33r[6;5HstartPAPI();:q[32;5Hfree(A);[33;128H[K[33;128H71,19[9C92%[6;19H[?25h[?25l[6;18H[K[33;132H8[6;18H[?25h[?25l[6;17H[K[33;132H7[6;17H[
