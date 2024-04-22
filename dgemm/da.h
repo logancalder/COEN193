@@ -11,7 +11,7 @@
 
 int EventSet = PAPI_NULL;
 
-int numEvents = 0;
+int numEvents = 2;
 
 std::string fileName = getCurrentDateTimeString();
 
@@ -42,7 +42,7 @@ void initializePAPI()
 
     std::cout << "PAPI EventSet created" << std::endl;
 
-    for (int i = 0; i < sizeof(events); i++)
+    for (int i = 0; i < numEvents; i++)
     {
         std::cout << "Adding event: " << events[i] << std::endl;
 
