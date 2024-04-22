@@ -63,6 +63,7 @@ void initializePAPI(std::string inputFile)
 
 void startPAPI()
 {
+    printf("1");
     std::cout << "Starting PAPI..." << std::endl;
     // Start counting events
     if (PAPI_start(EventSet) != PAPI_OK)
