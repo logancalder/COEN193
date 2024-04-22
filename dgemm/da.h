@@ -30,12 +30,15 @@ void initializePAPI(std::string inputFile)
         return;
     }
 
+    std::cout << "PAPI Version: " << PAPI_VERSION << std::endl;
     // Create EventSet
     if (PAPI_create_eventset(&EventSet) != PAPI_OK)
     {
         std::cerr << "PAPI event creation failed!" << std::endl;
         return;
     }
+
+    std::cout << "PAPI EventSet created" << std::endl;
 
     // Read events from input file
     std::ifstream input(inputFile);
@@ -46,10 +49,14 @@ void initializePAPI(std::string inputFile)
     }
 
     std::string event;
+    std::cout << "Reading events from file..." << std::endl;
     while (std::getline(input, event))
     {
+        std::cout << "Adding event: " << event << std::endl;
         // Convert event string to integer
         int eventCode = std::stoi(event);
+
+        std::cout << "Event code: " << eventCode << std::endl;
 
         // Add event to EventSet
         if (PAPI_add_event(EventSet, eventCode) != PAPI_OK)
@@ -57,6 +64,7 @@ void initializePAPI(std::string inputFile)
             std::cerr << "PAPI event add failed for event: " << event << std::endl;
             return;
         }
+        std::cout << "Event added" << std::endl;
         numEvents++;
     }
 
