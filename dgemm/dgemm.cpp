@@ -67,12 +67,11 @@ int main(int argc, char *argv[])
 
     // Setup for PAPI
 
-    initializePAPI();
-
-    int NUM_EVENTS = returnNumEventsPAPI();
-
     int EventSet = PAPI_NULL;
-    long long values[NUM_EVENTS];
+    initializePAPI(EventSet);
+
+    int num_events = 2;
+    long long values[num_events];
     int trials = 1; // HOW MANY TO RUN
     std::string fileName = getCurrentDateTimeString();
 

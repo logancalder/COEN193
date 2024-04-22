@@ -9,9 +9,7 @@
 #include "matmul.h"
 #include "externals.h"
 
-int EventSet = PAPI_NULL;
-
-int numEvents = 2;
+int numEvents = 0;
 
 std::string fileName = getCurrentDateTimeString();
 
@@ -22,7 +20,7 @@ int returnNumEventsPAPI()
     return numEvents;
 }
 
-void initializePAPI()
+void initializePAPI(int EventSet)
 {
     std::cout << "Initializing PAPI..." << std::endl;
     // PAPI Initialization (move outside the loop)
@@ -42,7 +40,7 @@ void initializePAPI()
 
     std::cout << "PAPI EventSet created" << std::endl;
 
-    for (int i = 0; i < numEvents; i++)
+    for (int i = 0; i < 2; i++)
     {
         std::cout << "Adding event: " << events[i] << std::endl;
 
