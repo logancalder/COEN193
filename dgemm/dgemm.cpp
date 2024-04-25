@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
     // Setup for PAPI
 
     int EventSet = PAPI_NULL;
-    initializePAPI(EventSet);
+    EventSet = initializePAPI(EventSet);
 
     int num_events = 2;
     long long values[num_events];
