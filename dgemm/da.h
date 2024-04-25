@@ -40,12 +40,21 @@ int initializePAPI(int EventSet)
 
     std::cout << "PAPI EventSet created" << std::endl;
 
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 1; i++)
     {
         std::cout << "Adding event: " << events[i] << std::endl;
 
         // Add event to EventSet
-        if (PAPI_add_event(EventSet, events[i]) != PAPI_OK)
+        if (PAPI_add_event(EventSet, PAPI_TOT_CYC) != PAPI_OK)
+        {
+            std::cerr << "PAPI event add failed for event: " << events[i] << std::endl;
+            return -1;
+        }
+        std::cout << "Event added" << std::endl;
+        numEvents++;
+
+        // Add event to EventSet
+        if (PAPI_add_event(EventSet, PAPI_TOT_INS) != PAPI_OK)
         {
             std::cerr << "PAPI event add failed for event: " << events[i] << std::endl;
             return -1;
@@ -74,6 +83,7 @@ void stopPAPI(long long *values, int trialNumber, int EventSet, int numEvents)
         std::cout << "PAPI stop failed!" << std::endl;
         return;
     }
+
     // FILE WRITING PER TRIAL VALUES (should be outside the loop if you're measuring multiple iterations)
     std::string filepath = "papi_results/" + fileName + ".txt";
     std::ofstream file(filepath, std::ios::app);
