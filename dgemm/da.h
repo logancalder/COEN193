@@ -49,6 +49,7 @@ int initializePAPI(int EventSet)
     // Add event to EventSet
     if (PAPI_add_event(EventSet, PAPI_TOT_CYC) != PAPI_OK)
     {
+        std::cerr << "PAPI event add failed for event: " << PAPI_TOT_CYC << std::endl;
         return -1;
     }
     std::cout << "Event added" << std::endl;
@@ -56,6 +57,7 @@ int initializePAPI(int EventSet)
     // Add event to EventSet
     if (PAPI_add_event(EventSet, PAPI_TOT_INS) != PAPI_OK)
     {
+        std::cerr << "PAPI event add failed for event: " << PAPI_TOT_INS << std::endl;
         return -1;
     }
     std::cout << "Event added" << std::endl;
@@ -92,6 +94,7 @@ void stopPAPI(long long *values, int trialNumber, int EventSet, int numEvents)
 
     for (int i = 0; i < numEvents; i++)
     {
+        std::cout << values[i] << std::endl;
         file << "Value #" << i << ":\t" << values[i] << std::endl; // Write data into file
     }
 
