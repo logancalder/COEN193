@@ -9,16 +9,9 @@
 #include "matmul.h"
 #include "externals.h"
 
-int numEvents = 0;
-
 std::string fileName = getCurrentDateTimeString();
 
 long long events[2] = {PAPI_TOT_CYC, PAPI_TOT_INS};
-
-int returnNumEventsPAPI()
-{
-    return numEvents;
-}
 
 int initializePAPI(int EventSet)
 {
@@ -40,28 +33,32 @@ int initializePAPI(int EventSet)
 
     std::cout << "PAPI EventSet created" << std::endl;
 
-    for (int i = 0; i < 1; i++)
+    // for (int i = 0; i < 1; i++)
+    // {
+    //     std::cout << "Adding event: " << events[i] << std::endl;
+
+    //     // Add event to EventSet
+    //     if (PAPI_add_event(EventSet, events[i]) != PAPI_OK)
+    //     {
+    //         std::cerr << "PAPI event add failed for event: " << events[i] << std::endl;
+    //         return -1;
+    //     }
+    //     std::cout << "Event added" << std::endl;
+    // }
+
+    // Add event to EventSet
+    if (PAPI_add_event(EventSet, PAPI_TOT_CYC) != PAPI_OK)
     {
-        std::cout << "Adding event: " << events[i] << std::endl;
-
-        // Add event to EventSet
-        if (PAPI_add_event(EventSet, PAPI_TOT_CYC) != PAPI_OK)
-        {
-            std::cerr << "PAPI event add failed for event: " << events[i] << std::endl;
-            return -1;
-        }
-        std::cout << "Event added" << std::endl;
-        numEvents++;
-
-        // Add event to EventSet
-        if (PAPI_add_event(EventSet, PAPI_TOT_INS) != PAPI_OK)
-        {
-            std::cerr << "PAPI event add failed for event: " << events[i] << std::endl;
-            return -1;
-        }
-        std::cout << "Event added" << std::endl;
-        numEvents++;
+        return -1;
     }
+    std::cout << "Event added" << std::endl;
+
+    // Add event to EventSet
+    if (PAPI_add_event(EventSet, PAPI_TOT_INS) != PAPI_OK)
+    {
+        return -1;
+    }
+    std::cout << "Event added" << std::endl;
 
     std::cout << "Starting PAPI..." << std::endl;
     // Start counting events
