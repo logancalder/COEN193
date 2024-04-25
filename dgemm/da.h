@@ -65,7 +65,7 @@ int initializePAPI(int EventSet)
     return EventSet;
 }
 
-void stopPAPI(long long *values, int trialNumber, int EventSet)
+void stopPAPI(long long *values, int trialNumber, int EventSet, int numEvents)
 {
     std::cout << "Stopping PAPI..." << std::endl;
     // Stop counting events
@@ -83,9 +83,9 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
         std::cout << "Error opening file: " << filepath << std::endl;
     }
 
-    for (int i = 0; i < sizeof(events); i++)
+    for (int i = 0; i < numEvents; i++)
     {
-        file << events[i] << std::endl; // Write data into file
+        file << "Value #" << i << ":\t" << values[i] << std::endl; // Write data into file
     }
 
     std::cout << "Stopping" << std::endl;

@@ -68,10 +68,10 @@ int main(int argc, char *argv[])
     // Setup for PAPI
 
     int EventSet = PAPI_NULL;
+#define NUM_EVENTS 2
     EventSet = initializePAPI(EventSet);
 
-    int num_events = 2;
-    long long values[num_events];
+    long long values[NUM_EVENTS];
     int trials = 1; // HOW MANY TO RUN
     std::string fileName = getCurrentDateTimeString();
 
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
     {
         double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
 
-        stopPAPI(values, i, EventSet);
+        stopPAPI(values, i, EventSet, NUM_EVENTS);
     }
 
     free(A);
