@@ -14,7 +14,6 @@ int numEvents = 0;
 std::string fileName = getCurrentDateTimeString();
 
 long long events[2] = {PAPI_TOT_CYC, PAPI_TOT_INS};
-#define STRINGIFY(x) #x
 
 int returnNumEventsPAPI()
 {
@@ -86,7 +85,7 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
 
     for (int i = 0; i < sizeof(events); i++)
     {
-        file << STRINGIFY(events[i]) << "\t" << events[i] << std::endl; // Write data into file
+        file << events[i] << std::endl; // Write data into file
     }
 
     std::cout << "Stopping" << std::endl;
