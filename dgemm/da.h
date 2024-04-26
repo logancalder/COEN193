@@ -82,10 +82,12 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
         std::cout << "Error opening file: " << filepath << std::endl;
     }
 
+    char name[100]; // Declare the variable 'name' as an array of characters
+
     for (int i = 0; i < NUM_EVENTS; i++)
     {
         std::cout << values[i] << std::endl;
-        file << events[i] << ":\t" << values[i] << std::endl; // Write data into file
+        file << PAPI_event_code_to_name(values[i], name) << ":\t" << values[i] << std::endl; // Write data into file
     }
 
     std::cout << "Stopping" << std::endl;
