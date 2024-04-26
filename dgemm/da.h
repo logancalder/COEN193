@@ -82,12 +82,17 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
         std::cout << "Error opening file: " << filepath << std::endl;
     }
 
-    char name[100]; // Declare the variable 'name' as an array of characters
+    char name[100];
 
     for (int i = 0; i < NUM_EVENTS; i++)
     {
         std::cout << values[i] << std::endl;
-        file << PAPI_event_code_to_name(PAPI_TOT_CYC, name) << ":\t" << values[i] << std::endl; // Write data into file
+        if (PAPI_event_code_to_name(events[i], name) != PAPI_OK)
+        {
+            std::cerr << "PAPI event code to name conversion failed for event: " << events[i] << std::endl;
+            return;
+        }
+        file << name << ":\t" << values[i] << std::endl; // Write data into file
     }
 
     std::cout << "Stopping" << std::endl;
