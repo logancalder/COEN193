@@ -1,24 +1,60 @@
-#ifndef DA_H
-#define DA_H
 #include <iostream>
 #include <vector>
-#include <fstream>
 #include <chrono>
+#include <fstream>
 #include <papi.h>
 #include <iomanip>
 #include "matmul.h"
 #include "externals.h"
+#include "perfcounters.h"
 
+std::vector<std::string> eventNames;
 std::string fileName = getCurrentDateTimeString();
 
 char EventNameString[PAPI_MAX_STR_LEN];
+int EventCode = PAPI_NULL;
 
-#define NUM_EVENTS 2
-long long events[NUM_EVENTS] = {PAPI_TOT_CYC, PAPI_TOT_INS};
+int numEvents = 0;
+std::vector<long long> eventCodes;
+std::string line;
+
+void readInput()
+{
+    // Open the input file
+    std::ifstream inputFile("PAPI_input.txt");
+
+    if (!inputFile.is_open())
+    {
+        std::cerr << "Error: Failed to open the input file.\n";
+        return;
+    }
+
+    while (std::getline(inputFile, line))
+    {
+        numEvents++;
+        eventNames.push_back(line);
+        const char *lineChar = line.c_str();
+
+        if (PAPI_event_name_to_code(lineChar, &EventCode) != PAPI_OK)
+            std::cerr << "Error: Could not find event name.\n";
+
+        eventCodes.push_back(EventCode);
+    }
+
+    inputFile.close();
+
+    std::cout << "Lines read from the file:\n";
+    for (const auto &event : eventNames)
+    {
+        std::cout << event << '\n';
+    }
+
+    return;
+}
 
 int getNumEvents()
 {
-    return NUM_EVENTS;
+    return numEvents;
 }
 
 int initializePAPI(int &EventSet)
@@ -41,7 +77,7 @@ int initializePAPI(int &EventSet)
 
     std::cout << "PAPI EventSet created\nAdding events..." << std::endl;
 
-    for (int i = 0; i < NUM_EVENTS; i++)
+    for (int i = 0; i < numEvents; i++)
     {
         PAPI_event_code_to_name(events[i], EventNameString);
 
@@ -83,7 +119,7 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
         std::cout << "Error opening file: " << filepath << std::endl;
     }
 
-    for (int i = 0; i < NUM_EVENTS; i++)
+    for (int i = 0; i < numEvents; i++)
     {
         if (PAPI_event_code_to_name(events[i], EventNameString) != PAPI_OK)
         {
@@ -93,7 +129,6 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
         file << EventNameString << ":\t" << values[i] << std::endl; // Write data into file
     }
 
-    std::cout << "Stopping" << std::endl;
     file.close();
 
     // Clean up PAPI
@@ -103,5 +138,3 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
     PAPI_destroy_eventset(&EventSet);
     PAPI_shutdown();
 }
-
-#endif // DA_H

@@ -6,7 +6,7 @@
 #include <iomanip>
 #include "matmul.h"
 #include "externals.h"
-#include "da.h"
+#include "perfcounters.h"
 
 #define LAPACK_INT long int
 #ifdef __cplusplus
