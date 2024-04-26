@@ -11,7 +11,13 @@
 
 std::string fileName = getCurrentDateTimeString();
 
-long long events[2] = {PAPI_TOT_CYC, PAPI_TOT_INS};
+#define NUM_EVENTS 2
+long long events[NUM_EVENTS] = {PAPI_TOT_CYC, PAPI_TOT_INS};
+
+int getNumEvents()
+{
+    return NUM_EVENTS;
+}
 
 int initializePAPI(int &EventSet)
 {
@@ -33,7 +39,7 @@ int initializePAPI(int &EventSet)
 
     std::cout << "PAPI EventSet created" << std::endl;
 
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < NUM_EVENTS; i++)
     {
         std::cout << "Adding event: " << events[i] << std::endl;
 
@@ -57,7 +63,7 @@ int initializePAPI(int &EventSet)
     return EventSet;
 }
 
-void stopPAPI(long long *values, int trialNumber, int EventSet, int numEvents)
+void stopPAPI(long long *values, int trialNumber, int EventSet)
 {
     std::cout << "Stopping PAPI..." << std::endl;
     // Stop counting events
@@ -76,7 +82,7 @@ void stopPAPI(long long *values, int trialNumber, int EventSet, int numEvents)
         std::cout << "Error opening file: " << filepath << std::endl;
     }
 
-    for (int i = 0; i < numEvents; i++)
+    for (int i = 0; i < NUM_EVENTS; i++)
     {
         std::cout << values[i] << std::endl;
         file << events[i] << ":\t" << values[i] << std::endl; // Write data into file
