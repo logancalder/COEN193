@@ -13,7 +13,7 @@ std::string fileName = getCurrentDateTimeString();
 
 long long events[2] = {PAPI_TOT_CYC, PAPI_TOT_INS};
 
-int initializePAPI(int EventSet)
+int initializePAPI(int *EventSet)
 {
     std::cout << "Initializing PAPI..." << std::endl;
     // PAPI Initialization (move outside the loop)
@@ -25,7 +25,7 @@ int initializePAPI(int EventSet)
 
     std::cout << "PAPI Version: " << PAPI_VERSION << std::endl;
     // Create EventSet
-    if (PAPI_create_eventset(&EventSet) != PAPI_OK)
+    if (PAPI_create_eventset(EventSet) != PAPI_OK)
     {
         std::cerr << "PAPI event creation failed!" << std::endl;
         return -1;
@@ -47,7 +47,7 @@ int initializePAPI(int EventSet)
     // }
 
     // Add event to EventSet
-    if (PAPI_add_event(EventSet, PAPI_TOT_CYC) != PAPI_OK)
+    if (PAPI_add_event(*EventSet, PAPI_TOT_CYC) != PAPI_OK)
     {
         std::cerr << "PAPI event add failed for event: " << PAPI_TOT_CYC << std::endl;
         return -1;
@@ -55,7 +55,7 @@ int initializePAPI(int EventSet)
     std::cout << "Event added" << std::endl;
 
     // Add event to EventSet
-    if (PAPI_add_event(EventSet, PAPI_TOT_INS) != PAPI_OK)
+    if (PAPI_add_event(*EventSet, PAPI_TOT_INS) != PAPI_OK)
     {
         std::cerr << "PAPI event add failed for event: " << PAPI_TOT_INS << std::endl;
         return -1;
@@ -64,13 +64,13 @@ int initializePAPI(int EventSet)
 
     std::cout << "Starting PAPI..." << std::endl;
     // Start counting events
-    if (PAPI_start(EventSet) != PAPI_OK)
+    if (PAPI_start(*EventSet) != PAPI_OK)
     {
         std::cerr << "PAPI start failed!" << std::endl;
         return -1;
     }
 
-    return EventSet;
+    return *EventSet;
 }
 
 void stopPAPI(long long *values, int trialNumber, int EventSet, int numEvents)
