@@ -9,9 +9,9 @@
 #include "perfcounters.h"
 
 std::vector<std::string> eventNames;
-std::string fileName = getCurrentDateTimeString();
+std::string outputFileName = getCurrentDateTimeString();
 
-char EventNameString[PAPI_MAX_STR_LEN];
+char EventName[PAPI_MAX_STR_LEN];
 int EventCode = PAPI_NULL;
 
 int numEvents = 0;
@@ -79,12 +79,12 @@ int initializePAPI(int &EventSet)
 
     for (int i = 0; i < numEvents; i++)
     {
-        PAPI_event_code_to_name(events[i], EventNameString);
+        PAPI_event_code_to_name(events[i], EventName);
 
         // Add event to EventSet
         if (PAPI_add_event(EventSet, events[i]) != PAPI_OK)
         {
-            std::cerr << "PAPI event add failed for event: " << EventNameString << std::endl;
+            std::cerr << "PAPI event add failed for event: " << EventName << std::endl;
             return -1;
         }
     }
@@ -111,7 +111,7 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
     }
 
     // FILE WRITING PER TRIAL VALUES (should be outside the loop if you're measuring multiple iterations)
-    std::string filepath = "papi_results/" + fileName + ".txt";
+    std::string filepath = "papi_results/" + outputFileName + ".txt";
     std::ofstream file(filepath, std::ios::app);
 
     if (!file.is_open())
@@ -121,12 +121,12 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
 
     for (int i = 0; i < numEvents; i++)
     {
-        if (PAPI_event_code_to_name(events[i], EventNameString) != PAPI_OK)
+        if (PAPI_event_code_to_name(events[i], EventName) != PAPI_OK)
         {
             std::cerr << "PAPI event code to name conversion failed for event: " << events[i] << std::endl;
             return;
         }
-        file << EventNameString << ":\t" << values[i] << std::endl; // Write data into file
+        file << EventName << ":\t" << values[i] << std::endl; // Write data into file
     }
 
     file.close();
