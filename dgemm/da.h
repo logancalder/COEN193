@@ -87,7 +87,7 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
     for (int i = 0; i < NUM_EVENTS; i++)
     {
         std::cout << values[i] << std::endl;
-        file << PAPI_event_code_to_name(values[i], name) << ":\t" << values[i] << std::endl; // Write data into file
+        file << PAPI_event_code_to_name(PAPI_TOT_CYC, name) << ":\t" << values[i] << std::endl; // Write data into file
     }
 
     std::cout << "Stopping" << std::endl;
