@@ -12,6 +12,7 @@
 std::string fileName = getCurrentDateTimeString();
 
 #define NUM_EVENTS 2
+char EventNameString[PAPI_MAX_STR_LEN];
 long long events[NUM_EVENTS] = {PAPI_TOT_CYC, PAPI_TOT_INS};
 
 int getNumEvents()
@@ -82,11 +83,8 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
         std::cout << "Error opening file: " << filepath << std::endl;
     }
 
-    char EventNameString[PAPI_MAX_STR_LEN];
-
     for (int i = 0; i < NUM_EVENTS; i++)
     {
-        std::cout << events[i] << std::endl;
         if (PAPI_event_code_to_name(events[i], EventNameString) != PAPI_OK)
         {
             std::cerr << "PAPI event code to name conversion failed for event: " << events[i] << std::endl;
