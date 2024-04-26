@@ -33,34 +33,18 @@ int initializePAPI(int &EventSet)
 
     std::cout << "PAPI EventSet created" << std::endl;
 
-    // for (int i = 0; i < 1; i++)
-    // {
-    //     std::cout << "Adding event: " << events[i] << std::endl;
-
-    //     // Add event to EventSet
-    //     if (PAPI_add_event(EventSet, events[i]) != PAPI_OK)
-    //     {
-    //         std::cerr << "PAPI event add failed for event: " << events[i] << std::endl;
-    //         return -1;
-    //     }
-    //     std::cout << "Event added" << std::endl;
-    // }
-
-    // Add event to EventSet
-    if (PAPI_add_event(EventSet, PAPI_TOT_CYC) != PAPI_OK)
+    for (int i = 0; i < 1; i++)
     {
-        std::cerr << "PAPI event add failed for event: " << PAPI_TOT_CYC << std::endl;
-        return -1;
-    }
-    std::cout << "Event added" << std::endl;
+        std::cout << "Adding event: " << events[i] << std::endl;
 
-    // Add event to EventSet
-    if (PAPI_add_event(EventSet, PAPI_TOT_INS) != PAPI_OK)
-    {
-        std::cerr << "PAPI event add failed for event: " << PAPI_TOT_INS << std::endl;
-        return -1;
+        // Add event to EventSet
+        if (PAPI_add_event(EventSet, events[i]) != PAPI_OK)
+        {
+            std::cerr << "PAPI event add failed for event: " << events[i] << std::endl;
+            return -1;
+        }
+        std::cout << "Event added" << std::endl;
     }
-    std::cout << "Event added" << std::endl;
 
     std::cout << "Starting PAPI..." << std::endl;
     // Start counting events
@@ -95,7 +79,7 @@ void stopPAPI(long long *values, int trialNumber, int EventSet, int numEvents)
     for (int i = 0; i < numEvents; i++)
     {
         std::cout << values[i] << std::endl;
-        file << "Value #" << i << ":\t" << values[i] << std::endl; // Write data into file
+        file << events[i] << ":\t" << values[i] << std::endl; // Write data into file
     }
 
     std::cout << "Stopping" << std::endl;
