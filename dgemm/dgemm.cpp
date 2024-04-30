@@ -64,7 +64,9 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < NUM_TRIALS; i++)
     {
-        m = n = k = 100 * i;
+        std::string numThreads = std::to_string(i);
+        m = n = k = 100;
+        setenv("OMP_NUM_THREADS", numThreads.c_str(), 1);
         lda = m;
         ldb = k;
         ldc = m;
