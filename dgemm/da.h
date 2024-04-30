@@ -98,7 +98,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues)
             std::cerr << "PAPI event code to name conversion failed for event: " << events[i] << std::endl;
             return;
         }
-        file << EventNameString << "," << avgValues[i] << "\n"; // Write data into file
+        file << EventNameString << "," << (avgValues[i] / NUM_EVENTS) << "\n"; // Write data into file
     }
 
     file.close();
