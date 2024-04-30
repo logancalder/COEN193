@@ -99,12 +99,13 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
         avgValues[i] /= numTrials;
     }
 
-    for (int i = 0; i < numTrials; i++)
+    for (int i = 0; i < NUM_EVENTS; i++)
     {
         std::cout << EventNameString << "\t";
-        for (int j = 0; j < NUM_EVENTS; j++)
+
+        for (int j = 0; j < numTrials; j++)
         {
-            if (PAPI_event_code_to_name(events[j], EventNameString) != PAPI_OK)
+            if (PAPI_event_code_to_name(events[i], EventNameString) != PAPI_OK)
             {
                 std::cerr << "PAPI event code to name conversion failed for event: " << events[j] << std::endl;
                 return;
