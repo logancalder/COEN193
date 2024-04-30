@@ -91,7 +91,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues)
     }
 
     file << "Event Name,Value\n";
-    std::cout << "-------------------------------- OUTPUT ----------------------------------" << std::endl;
+    std::cout << "\n-------------------------------- OUTPUT ----------------------------------" << std::endl;
     for (int i = 0; i < NUM_EVENTS; i++)
     {
         if (PAPI_event_code_to_name(events[i], EventNameString) != PAPI_OK)
