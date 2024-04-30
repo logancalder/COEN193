@@ -60,7 +60,7 @@ void startPAPI(int EventSet)
     }
 }
 
-void stopPAPI(long long *values, int trialNumber, int EventSet, long long *avgValues)
+void stopPAPI(long long *values, int EventSet, long long *avgValues)
 {
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
@@ -71,6 +71,7 @@ void stopPAPI(long long *values, int trialNumber, int EventSet, long long *avgVa
 
     for (int i; i < NUM_EVENTS; i++)
     {
+        std::cout << avgValues[i] << std::endl;
         avgValues[i] += values[i];
     }
 }

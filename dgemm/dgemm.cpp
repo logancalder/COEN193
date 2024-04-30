@@ -82,8 +82,7 @@ int main(int argc, char *argv[])
         std::cout << "Trial " << i << std::endl;
         startPAPI(EventSet);
         double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
-
-        stopPAPI(values, i, EventSet, averageValues);
+        stopPAPI(values, EventSet, averageValues);
     }
 
     cleanUpPAPI(EventSet, averageValues);
