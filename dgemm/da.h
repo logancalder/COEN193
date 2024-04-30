@@ -102,6 +102,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
     for (int i = 0; i < NUM_EVENTS; i++)
     {
         std::cout << EventNameString << "\t";
+        file << EventNameString;
 
         for (int j = 0; j < numTrials; j++)
         {
@@ -111,9 +112,9 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
                 return;
             }
 
-            std::cout << avgValues[i + (j * NUM_EVENTS)] << ",";
+            std::cout << avgValues[i + (j * NUM_EVENTS)] << std::endl;
 
-            file << EventNameString << "," << avgValues[i + (j * NUM_EVENTS)] << ","; // Write data into file
+            file << "," << avgValues[i + (j * NUM_EVENTS)]; // Write data into file
         }
 
         std::cout << std::endl;
