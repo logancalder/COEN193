@@ -44,14 +44,23 @@ int main(int argc, char *argv[])
     int EventSet = PAPI_NULL;
     EventSet = initializePAPI(EventSet);
 
-    int runs = 2; // HOW MANY TO RUN IN A TRIAL
+#define NUM_TRIALS 10
+#define NUM_RUNS 2 // HOW MANY TO RUN IN A TRIAL
     std::string fileName = getCurrentDateTimeString();
 
     // Setup for PAPI
-#define NUM_TRIALS 10
 
     long long values[getNumEvents()];
     long long averageValues[getNumEvents() * 10];
+
+    for (int i; i < getNumEvents(); i++)
+    {
+        values[i] = 0;
+    }
+    for (int i; i < getNumEvents() * NUM_TRIALS; i++)
+    {
+        averageValues[i] = 0;
+    }
 
     for (int i = 0; i < NUM_TRIALS; i++)
     {
@@ -79,22 +88,16 @@ int main(int argc, char *argv[])
             C[i] = 0;
         }
 
-        for (int i; i < getNumEvents(); i++)
-        {
-            values[i] = 0;
-        }
-        for (int i; i < getNumEvents() * NUM_TRIALS; i++)
-        {
-            averageValues[i] = 0;
-        }
-
         // Loop for measurements
 
-        for (int j = 0; j < runs; j++)
+        for (int j = 0; j < NUM_RUNS; j++)
         {
-            std::cout << "Trial " << i << "Run " << j << std::endl;
+            std::cout << "Trial #" << i << " Run #" << j << std::endl;
+
             startPAPI(EventSet);
+
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
+
             stopPAPI(values, EventSet, averageValues, i);
         }
     }
