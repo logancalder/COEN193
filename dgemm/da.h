@@ -101,7 +101,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
 
     for (int i = 0; i < numTrials; i++)
     {
-        file << "," << i * 100 << "x" << i * 100;
+        file << "," << i + 1 << " Threads";
     }
 
     for (int i = 0; i < NUM_EVENTS; i++)
