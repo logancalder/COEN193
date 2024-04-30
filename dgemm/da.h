@@ -101,6 +101,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
 
     for (int i = 0; i < numTrials; i++)
     {
+        std::cout << EventNameString << "\t";
         for (int j = 0; j < NUM_EVENTS; j++)
         {
             if (PAPI_event_code_to_name(events[j], EventNameString) != PAPI_OK)
@@ -109,11 +110,12 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
                 return;
             }
 
-            std::cout << EventNameString << "\t";
-            std::cout << avgValues[i + (j * NUM_EVENTS)] << std::endl;
+            std::cout << avgValues[i + (j * NUM_EVENTS)];
 
-            file << EventNameString << "," << avgValues[i + (j * NUM_EVENTS)] << "\n"; // Write data into file
+            file << EventNameString << "," << avgValues[i + (j * NUM_EVENTS)] << ","; // Write data into file
         }
+
+        std::cout << std::endl;
     }
 
     file.close();
