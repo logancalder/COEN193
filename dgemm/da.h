@@ -90,8 +90,6 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
         std::cout << "Error opening file: " << filepath << std::endl;
     }
 
-    file << "Event Name,Value\n"; // Write column headers of csv file
-
     std::cout << "\n-------------------------------- OUTPUT ----------------------------------" << std::endl;
 
     for (int i = 0; i < numTrials * NUM_EVENTS; i++) // Average data
@@ -99,10 +97,18 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
         avgValues[i] /= numTrials;
     }
 
+    file << "Event Name"; // Write column headers of csv file
+
+    for (int i = 0; i < numTrials; i++)
+    {
+        file << "," << i * 100 << "x" << i * 100;
+    }
+
     for (int i = 0; i < NUM_EVENTS; i++)
     {
-        std::cout << EventNameString << "\t";
-        file << EventNameString;
+        std::cout << EventNameString << std::endl;
+        file << "\n"
+             << EventNameString;
 
         for (int j = 0; j < numTrials; j++)
         {
