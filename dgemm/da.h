@@ -23,23 +23,17 @@ int getNumEvents()
 
 int initializePAPI(int &EventSet)
 {
-    std::cout << "Initializing PAPI..." << std::endl;
-
     if (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
     {
         std::cerr << "PAPI initialization failed!" << std::endl;
         return -1;
     }
 
-    std::cout << "PAPI Version: " << PAPI_VERSION << std::endl;
-
     if (PAPI_create_eventset(&EventSet) != PAPI_OK)
     {
         std::cerr << "PAPI event creation failed!" << std::endl;
         return -1;
     }
-
-    std::cout << "PAPI EventSet created\nAdding events..." << std::endl;
 
     for (int i = 0; i < NUM_EVENTS; i++)
     {
@@ -53,7 +47,6 @@ int initializePAPI(int &EventSet)
         }
     }
 
-    std::cout << "Starting PAPI..." << std::endl;
     // Start counting events
     if (PAPI_start(EventSet) != PAPI_OK)
     {
@@ -66,7 +59,6 @@ int initializePAPI(int &EventSet)
 
 void stopPAPI(long long *values, int trialNumber, int EventSet)
 {
-    std::cout << "Stopping PAPI..." << std::endl;
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
     {
@@ -75,7 +67,7 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
     }
 
     // FILE WRITING PER TRIAL VALUES (should be outside the loop if you're measuring multiple iterations)
-    std::string filepath = "papi_results/" + fileName + ".txt";
+    std::string filepath = "papi_results/" + fileName + ".csv";
     std::ofstream file(filepath, std::ios::app);
 
     if (!file.is_open())
@@ -83,6 +75,7 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
         std::cout << "Error opening file: " << filepath << std::endl;
     }
 
+    file << "Event Name,Value\n";
     for (int i = 0; i < NUM_EVENTS; i++)
     {
         if (PAPI_event_code_to_name(events[i], EventNameString) != PAPI_OK)
@@ -90,15 +83,12 @@ void stopPAPI(long long *values, int trialNumber, int EventSet)
             std::cerr << "PAPI event code to name conversion failed for event: " << events[i] << std::endl;
             return;
         }
-        file << EventNameString << ":\t" << values[i] << std::endl; // Write data into file
+        file << EventNameString << "," << values[i] << "\n"; // Write data into file
     }
 
-    std::cout << "Stopping" << std::endl;
     file.close();
 
     // Clean up PAPI
-
-    std::cout << "Cleaning up PAPI..." << std::endl;
     PAPI_cleanup_eventset(EventSet);
     PAPI_destroy_eventset(&EventSet);
     PAPI_shutdown();
