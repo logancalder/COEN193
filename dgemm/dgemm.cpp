@@ -41,57 +41,65 @@ int main(int argc, char *argv[])
     double ALPHA = 2;
     double BETA = 2;
 
-    m = n = k = 512;
-    lda = m;
-    ldb = k;
-    ldc = m;
-
-    A = (double *)malloc(sizeof(double) * m * k);
-#pragma omp parallel for
-    for (int i = 0; i < m * k; i++)
-    {
-        A[i] = 0;
-    }
-    B = (double *)malloc(sizeof(double) * k * n);
-#pragma omp parallel for
-    for (int i = 0; i < k * n; i++)
-    {
-        B[i] = ((float)rand() / (float)(RAND_MAX));
-    }
-    C = (double *)malloc(sizeof(double) * m * n);
-#pragma omp parallel for
-    for (int i = 0; i < m * n; i++)
-    {
-        C[i] = 0;
-    }
-
-    // Setup for PAPI
-
     int EventSet = PAPI_NULL;
     EventSet = initializePAPI(EventSet);
 
-    long long values[getNumEvents()];
-    long long averageValues[getNumEvents()];
-
-    for (int i; i < getNumEvents(); i++)
-    {
-        averageValues[i] = values[i] = 0;
-    }
-
-    int trials = 2; // HOW MANY TO RUN
+    int runs = 2; // HOW MANY TO RUN IN A TRIAL
     std::string fileName = getCurrentDateTimeString();
 
-    // Loop for measurements
+    // Setup for PAPI
+#define NUM_TRIALS 10
 
-    for (int i = 0; i < trials; i++)
+    long long values[getNumEvents()];
+    long long averageValues[getNumEvents() * 10];
+
+    for (int i = 0; i < NUM_TRIALS; i++)
     {
-        std::cout << "Trial " << i << std::endl;
-        startPAPI(EventSet);
-        double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
-        stopPAPI(values, EventSet, averageValues);
+        m = n = k = 100 * i;
+        lda = m;
+        ldb = k;
+        ldc = m;
+
+        A = (double *)malloc(sizeof(double) * m * k);
+#pragma omp parallel for
+        for (int i = 0; i < m * k; i++)
+        {
+            A[i] = 0;
+        }
+        B = (double *)malloc(sizeof(double) * k * n);
+#pragma omp parallel for
+        for (int i = 0; i < k * n; i++)
+        {
+            B[i] = ((float)rand() / (float)(RAND_MAX));
+        }
+        C = (double *)malloc(sizeof(double) * m * n);
+#pragma omp parallel for
+        for (int i = 0; i < m * n; i++)
+        {
+            C[i] = 0;
+        }
+
+        for (int i; i < getNumEvents(); i++)
+        {
+            values[i] = 0;
+        }
+        for (int i; i < getNumEvents() * NUM_TRIALS; i++)
+        {
+            averageValues[i] = 0;
+        }
+
+        // Loop for measurements
+
+        for (int j = 0; j < runs; j++)
+        {
+            std::cout << "Trial " << i << "Run " << j << std::endl;
+            startPAPI(EventSet);
+            double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
+            stopPAPI(values, EventSet, averageValues, i);
+        }
     }
 
-    cleanUpPAPI(EventSet, averageValues);
+    cleanUpPAPI(EventSet, averageValues, NUM_TRIALS);
 
     free(A);
     free(B);

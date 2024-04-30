@@ -60,7 +60,7 @@ void startPAPI(int EventSet)
     }
 }
 
-void stopPAPI(long long *values, int EventSet, long long *avgValues)
+void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNumber)
 {
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
@@ -71,11 +71,11 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues)
 
     for (int i; i < NUM_EVENTS; i++)
     {
-        avgValues[i] += values[i];
+        avgValues[i + (trialNumber * NUM_EVENTS)] += values[i];
     }
 }
 
-void cleanUpPAPI(int EventSet, long long *avgValues)
+void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
 {
     PAPI_cleanup_eventset(EventSet);
     PAPI_destroy_eventset(&EventSet);
@@ -90,8 +90,10 @@ void cleanUpPAPI(int EventSet, long long *avgValues)
         std::cout << "Error opening file: " << filepath << std::endl;
     }
 
-    file << "Event Name,Value\n";
+    file << "Event Name,Value\n"; // Write column headers of csv file
+
     std::cout << "\n-------------------------------- OUTPUT ----------------------------------" << std::endl;
+
     for (int i = 0; i < NUM_EVENTS; i++)
     {
         avgValues[i] /= NUM_EVENTS;
@@ -100,8 +102,12 @@ void cleanUpPAPI(int EventSet, long long *avgValues)
             std::cerr << "PAPI event code to name conversion failed for event: " << events[i] << std::endl;
             return;
         }
-        std::cout << EventNameString << "\t" << avgValues[i] << std::endl;
-        file << EventNameString << "," << (avgValues[i] / NUM_EVENTS) << "\n"; // Write data into file
+        std::cout << EventNameString << "\t";
+        for (int j; j < numTrials; j++)
+        {
+            std::cout << avgValues[i + (j * NUM_EVENTS)] << "\t";
+            file << EventNameString << "," << avgValues[i + (j * NUM_EVENTS)] << "\n"; // Write data into file
+        }
     }
 
     file.close();
