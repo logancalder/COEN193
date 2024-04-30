@@ -72,6 +72,11 @@ int main(int argc, char *argv[])
 
     long long values[getNumEvents()];
     long long averageValues[getNumEvents()];
+    for (int i; i < getNumEvents(); i++)
+    {
+        std::cout << "average " << averageValues[i] << std::endl;
+        std::cout << "val " << values[i] << std::endl;
+    }
     int trials = 2; // HOW MANY TO RUN
     std::string fileName = getCurrentDateTimeString();
 

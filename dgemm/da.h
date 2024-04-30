@@ -71,7 +71,6 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues)
 
     for (int i; i < NUM_EVENTS; i++)
     {
-        std::cout << avgValues[i] << std::endl;
         avgValues[i] += values[i];
     }
 }
