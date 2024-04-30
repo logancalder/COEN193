@@ -13,8 +13,8 @@ std::string fileName = getCurrentDateTimeString();
 
 char EventNameString[PAPI_MAX_STR_LEN];
 
-#define NUM_EVENTS 2
-long long events[NUM_EVENTS] = {PAPI_TOT_CYC, PAPI_TOT_INS};
+#define NUM_EVENTS 3
+long long events[NUM_EVENTS] = {PAPI_TOT_CYC, PAPI_REF_CYC, PAPI_TOT_INS};
 
 int getNumEvents()
 {

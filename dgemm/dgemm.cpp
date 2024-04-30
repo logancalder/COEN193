@@ -44,8 +44,8 @@ int main(int argc, char *argv[])
     int EventSet = PAPI_NULL;
     EventSet = initializePAPI(EventSet);
 
-#define NUM_TRIALS 10
-#define NUM_RUNS 2 // HOW MANY TO RUN IN A TRIAL
+#define NUM_TRIALS 5
+#define NUM_RUNS 10 // The higher the better averaged data
     std::string fileName = getCurrentDateTimeString();
 
     // Setup for PAPI
