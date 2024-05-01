@@ -52,6 +52,9 @@ int main(int argc, char *argv[])
     double ALPHA = 2;
     double BETA = 2;
 
+    int counter = 0;
+    int total_calculations = NUM_TRIALS * NUM_RUNS;
+
     // Initialize values of arrays to 0
 
     for (int i; i < n_events; i++)
@@ -62,6 +65,11 @@ int main(int argc, char *argv[])
     {
         averageValues[i + 1] = 0;
     }
+
+    // Percentage progress bar
+
+    std::cout << "Progress: [          ] 0%\r";
+    std::cout.flush();
 
     // Matmul calculations that loops NUM_TRIALS times
 
@@ -107,6 +115,20 @@ int main(int argc, char *argv[])
             startPAPI(EventSet);
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
             stopPAPI(values, EventSet, averageValues, i, n_events);
+
+            // Percentage progress bar
+
+            std::cout << "Progress: [";
+            for (int k = 0; k < (counter / total_calculations) * 10; k++)
+            {
+                std::cout << "#";
+            }
+            for (int k = 0; k < 10 - (counter / total_calculations * 10); k++)
+            {
+                std::cout << " ";
+            }
+            std::cout << "] " << (counter / total_calculations * 100) << "%\r";
+            std::cout.flush();
         }
     }
 
