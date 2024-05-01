@@ -109,6 +109,7 @@ int main(int argc, char *argv[])
 
         for (int j = 0; j < NUM_RUNS; j++)
         {
+            counter++;
             // Dgemm calculations
 
             startPAPI(EventSet);
@@ -118,7 +119,7 @@ int main(int argc, char *argv[])
             // Percentage progress bar
 
             std::cout << "Progress: [";
-            for (int k; k < (++counter / TOTAL_CALCULATIONS) * 10; k++)
+            for (int k; k < (counter / TOTAL_CALCULATIONS) * 10; k++)
             {
                 std::cout << "#";
             }
