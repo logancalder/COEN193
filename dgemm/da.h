@@ -13,6 +13,28 @@ std::string fileName = getCurrentDateTimeString();
 
 #define events_path "papi_events.txt"
 
+void initializeCompletion()
+{
+    std::cout << "Progress: [          ] 0%\r";
+    std::cout.flush();
+}
+
+void displayCompletion(float counter, float total_calculations)
+{
+    // Percentage progress bar
+    std::cout << "Progress: [";
+    for (int j = 0; j < counter; ++j)
+    {
+        std::cout << "#";
+    }
+    for (int j = counter; j < total_calculations; ++j)
+    {
+        std::cout << " ";
+    }
+    std::cout << "] " << (counter * 100 / total_calculations) << "%\r";
+    std::cout.flush(); // Flush the output to ensure it's displayed immediately
+}
+
 int get_events(std::vector<std::string> &events)
 {
     // Native events
@@ -139,28 +161,6 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials, int num_even
     }
 
     file.close();
-}
-
-void initializeCompletion()
-{
-    std::cout << "Progress: [          ] 0%\r";
-    std::cout.flush();
-}
-
-void displayCompletion(float counter, float total_calculations)
-{
-    // Percentage progress bar
-    std::cout << "Progress: [";
-    for (int j = 0; j < counter; ++j)
-    {
-        std::cout << "#";
-    }
-    for (int j = counter; j < total_calculations; ++j)
-    {
-        std::cout << " ";
-    }
-    std::cout << "] " << (counter * 100 / total_calculations) << "%\r";
-    std::cout.flush(); // Flush the output to ensure it's displayed immediately
 }
 
 #endif // DA_H
