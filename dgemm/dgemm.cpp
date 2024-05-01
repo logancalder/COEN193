@@ -118,11 +118,11 @@ int main(int argc, char *argv[])
             // Percentage progress bar
 
             std::cout << "Progress: [";
-            for (int k; k < ++counter / TOTAL_CALCULATIONS * 100; k++)
+            for (int k; k < (++counter / TOTAL_CALCULATIONS) * 10; k++)
             {
                 std::cout << "#";
             }
-            for (int k; k < 100 - counter / TOTAL_CALCULATIONS * 100; k++)
+            for (int k; k < 10 - (counter / TOTAL_CALCULATIONS) * 10; k++)
             {
                 std::cout << " ";
             }
