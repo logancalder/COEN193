@@ -68,8 +68,7 @@ int main(int argc, char *argv[])
 
     // Percentage progress bar
 
-    std::cout << "Progress: [          ] 0%\r";
-    std::cout.flush();
+    initializeCompletion();
 
     // Matmul calculations that loops NUM_TRIALS times
 
@@ -114,27 +113,13 @@ int main(int argc, char *argv[])
             counter++;
             startPAPI(EventSet);
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
-            stopPAPI(values, EventSet, averageValues, i, n_events);
-
-            // Percentage progress bar
-
-            std::cout << "Progress: [";
-            for (int k = 0; k < (counter / total_calculations) * 10; k++)
-            {
-                std::cout << "#";
-            }
-            for (int k = 0; k < 10 - (counter / total_calculations * 10); k++)
-            {
-                std::cout << " ";
-            }
-            std::cout << "] " << (counter / total_calculations * 100) << "%\r";
-            std::cout.flush();
+            stopPAPI(values, EventSet, averageValues, i, n_events, counter, total_calculations);
         }
     }
 
     cleanUpPAPI(EventSet, averageValues, NUM_TRIALS, n_events, events);
 
-    std::cout << std::endl;
+    std::cout << "Progress: [##########] 100%" << std::endl;
 
     free(A);
     free(B);
