@@ -74,7 +74,7 @@ void startPAPI(int EventSet)
     }
 }
 
-void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNumber, int num_events, float counter, float total_completions)
+void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNumber, int num_events, float counter, float total_calculations)
 {
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
@@ -87,6 +87,8 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNu
     {
         avgValues[i + (trialNumber * num_events)] += values[i];
     }
+
+    displayCompletion(counter, total_calculations);
 }
 
 void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials, int num_events, std::vector<std::string> events)
