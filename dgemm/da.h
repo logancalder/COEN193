@@ -21,18 +21,17 @@ void initializeCompletion()
 
 void displayCompletion(float counter, float total_calculations)
 {
-    // Percentage progress bar
     std::cout << "Progress: [";
-    for (int j = 0; j < (counter / total_calculations) * 10; j++)
+    for (int k = 0; k < (counter / total_calculations) * 10; k++)
     {
         std::cout << "#";
     }
-    for (int j = counter; j < 10 - (counter / total_calculations) * 10; j++)
+    for (int k = 0; k < 10 - (counter / total_calculations * 10); k++)
     {
         std::cout << " ";
     }
-    std::cout << "] " << (counter * 100 / total_calculations) << "%\r";
-    std::cout.flush(); // Flush the output to ensure it's displayed immediately
+    std::cout << "] " << (counter / total_calculations * 100) << "%\r";
+    std::cout.flush();
 }
 
 int get_events(std::vector<std::string> &events)

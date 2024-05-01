@@ -119,8 +119,6 @@ int main(int argc, char *argv[])
 
     cleanUpPAPI(EventSet, averageValues, NUM_TRIALS, n_events, events);
 
-    std::cout << "Progress: [##########] 100%" << std::endl;
-
     free(A);
     free(B);
     free(C);
