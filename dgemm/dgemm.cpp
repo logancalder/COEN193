@@ -33,10 +33,10 @@ int main(int argc, char *argv[])
 {
 
 #define NUM_TRIALS 5
-#define NUM_RUNS 100 // The higher the better averaged data
-#define TOTAL_CALCULATIONS NUM_TRIALS *NUM_RUNS
+#define NUM_RUNS 10 // The higher the better averaged data
 
-    std::vector<std::string> events;
+    std::vector<std::string>
+        events;
     int n_events = get_events(events);
     int EventSet = PAPI_NULL;
     EventSet = initializePAPI(EventSet, events);
@@ -53,6 +53,7 @@ int main(int argc, char *argv[])
     double BETA = 2;
 
     int counter = 0;
+    int total_calculations = NUM_TRIALS * NUM_RUNS;
 
     // Initialize values of arrays to 0
 
@@ -119,15 +120,15 @@ int main(int argc, char *argv[])
             // Percentage progress bar
 
             std::cout << "Progress: [";
-            for (int k = 0; k < (counter / TOTAL_CALCULATIONS) * 10; k++)
+            for (int k = 0; k < (counter / total_calculations) * 10; k++)
             {
                 std::cout << "#";
             }
-            for (int k = 0; k < 10 - (counter / TOTAL_CALCULATIONS * 10); k++)
+            for (int k = 0; k < 10 - (counter / total_calculations * 10); k++)
             {
                 std::cout << " ";
             }
-            std::cout << "] " << (i * 10) << "%\r";
+            std::cout << "] " << (counter / total_calculations * 10) << "%\r";
             std::cout.flush();
         }
     }
