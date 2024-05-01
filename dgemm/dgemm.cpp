@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 {
 
 #define NUM_TRIALS 5
-#define NUM_RUNS 10 // The higher the better averaged data
+#define NUM_RUNS 100 // The higher the better averaged data
 
     std::vector<std::string>
         events;
@@ -128,7 +128,7 @@ int main(int argc, char *argv[])
             {
                 std::cout << " ";
             }
-            std::cout << "] " << (counter / total_calculations * 10) << "%\r";
+            std::cout << "] " << (counter / total_calculations * 100) << "%\r";
             std::cout.flush();
         }
     }
