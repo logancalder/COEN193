@@ -57,11 +57,11 @@ int main(int argc, char *argv[])
 
     // Initialize values of arrays to 0
 
-    for (int i; i < n_events; i++)
+    for (int i = 0; i < n_events; i++)
     {
         values[i] = 0;
     }
-    for (int i; i < n_events * NUM_TRIALS; i++)
+    for (int i = 0; i < n_events * NUM_TRIALS; i++)
     {
         averageValues[i + 1] = 0;
     }
