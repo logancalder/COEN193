@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 {
 
 #define NUM_TRIALS 5
-#define NUM_RUNS 100 // The higher the better averaged data
+#define NUM_RUNS 2 // The higher the better averaged data
 #define TOTAL_CALCULATIONS NUM_TRIALS *NUM_RUNS
 
     std::vector<std::string> events;
@@ -121,11 +121,11 @@ int main(int argc, char *argv[])
             std::cout << "Progress: [";
             for (int k; k < (counter / TOTAL_CALCULATIONS) * 10; k++)
             {
-                std::cout << "#";
+                std::cout << counter / TOTAL_CALCULATIONS << std::endl;
             }
-            for (int k; k < 10 - (counter / TOTAL_CALCULATIONS) * 10; k++)
+            for (int k; k < 10 - (counter / TOTAL_CALCULATIONS * 10); k++)
             {
-                std::cout << " ";
+                std::cout << 10 - counter / TOTAL_CALCULATIONS * 10 << std::endl;
             }
             std::cout << "] " << (i * 10) << "%\r";
             std::cout.flush();
