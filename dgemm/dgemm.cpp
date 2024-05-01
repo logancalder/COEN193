@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
     {
         // Configure trial parameters here
 
-        std::string numThreads = std::to_string(i);
+        std::string numThreads = std::to_string(i + 1);
         setenv("OMP_NUM_THREADS", numThreads.c_str(), 1);
 
         // Dgemm setup
