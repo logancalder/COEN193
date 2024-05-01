@@ -23,11 +23,11 @@ void displayCompletion(float counter, float total_calculations)
 {
     // Percentage progress bar
     std::cout << "Progress: [";
-    for (int j = 0; j < counter; ++j)
+    for (int j = 0; j < (counter / total_calculations) * 10; j++)
     {
         std::cout << "#";
     }
-    for (int j = counter; j < total_calculations; ++j)
+    for (int j = counter; j < 10 - (counter / total_calculations) * 10; j++)
     {
         std::cout << " ";
     }
