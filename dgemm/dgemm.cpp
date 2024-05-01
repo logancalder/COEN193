@@ -52,8 +52,8 @@ int main(int argc, char *argv[])
     double ALPHA = 2;
     double BETA = 2;
 
-    int counter = 0;
-    int total_calculations = NUM_TRIALS * NUM_RUNS;
+    float counter = 0;
+    float total_calculations = NUM_TRIALS * NUM_RUNS;
 
     // Initialize values of arrays to 0
 
@@ -112,7 +112,6 @@ int main(int argc, char *argv[])
         {
             // Dgemm calculations
             counter++;
-            std::cout << counter / total_calculations;
             startPAPI(EventSet);
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
             stopPAPI(values, EventSet, averageValues, i, n_events);
