@@ -104,7 +104,7 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNu
         return;
     }
 
-    for (int i; i < num_events; i++)
+    for (int i = 0; i < num_events; i++)
     {
         avgValues[i + (trialNumber * num_events)] += values[i];
     }
