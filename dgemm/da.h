@@ -74,7 +74,7 @@ void startPAPI(int EventSet)
     }
 }
 
-void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNumber, int num_events)
+void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNumber, int num_events, int counter, int total_completions)
 {
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
@@ -94,6 +94,8 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials, int num_even
     PAPI_cleanup_eventset(EventSet);
     PAPI_destroy_eventset(&EventSet);
     PAPI_shutdown();
+
+    std::cout << "Progress: [##########] 100%" << std::endl; // Progress bar completion
 
     // FILE WRITING PER TRIAL VALUES (should be outside the loop if you're measuring multiple iterations)
     std::string filepath = "papi_results/" + fileName + ".csv";
@@ -135,6 +137,28 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials, int num_even
     }
 
     file.close();
+}
+
+void initializeCompletion()
+{
+    std::cout << "Progress: [          ] 0%\r";
+    std::cout.flush();
+}
+
+void displayCompletion(int counter, int total_calculations)
+{
+    // Percentage progress bar
+    std::cout << "Progress: [";
+    for (int j = 0; j < counter; ++j)
+    {
+        std::cout << "#";
+    }
+    for (int j = counter; j < total_calculations; ++j)
+    {
+        std::cout << " ";
+    }
+    std::cout << "] " << (counter * 100 / total_calculations) << "%\r";
+    std::cout.flush(); // Flush the output to ensure it's displayed immediately
 }
 
 #endif // DA_H
