@@ -118,7 +118,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials, int num_even
     PAPI_destroy_eventset(&EventSet);
     PAPI_shutdown();
 
-    std::cout << "Progress: [##########] 100%" << std::endl; // Progress bar completion
+    std::cout << "Progress: [##########] 100% Completed" << std::endl; // Progress bar completion
 
     // FILE WRITING PER TRIAL VALUES (should be outside the loop if you're measuring multiple iterations)
     std::string filepath = "papi_results/" + fileName + ".csv";
