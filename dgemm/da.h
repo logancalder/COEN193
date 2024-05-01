@@ -74,7 +74,7 @@ void startPAPI(int EventSet)
     }
 }
 
-void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNumber, int num_events, int counter, int total_completions)
+void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNumber, int num_events, float counter, float total_completions)
 {
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
@@ -145,7 +145,7 @@ void initializeCompletion()
     std::cout.flush();
 }
 
-void displayCompletion(int counter, int total_calculations)
+void displayCompletion(float counter, float total_calculations)
 {
     // Percentage progress bar
     std::cout << "Progress: [";
