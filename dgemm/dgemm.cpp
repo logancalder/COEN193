@@ -5,7 +5,6 @@
 #include <papi.h>
 #include <iomanip>
 #include "matmul.h"
-#include "externals.h"
 #include "da.h"
 
 #define LAPACK_INT long int
@@ -32,6 +31,18 @@ extern "C"
 #endif
 int main(int argc, char *argv[])
 {
+
+#define NUM_TRIALS 5
+#define NUM_RUNS 100 // The higher the better averaged data
+#define TOTAL_CALCULATIONS NUM_TRIALS *NUM_RUNS
+
+    std::vector<std::string> events;
+    int n_events = get_events(events);
+    int EventSet = PAPI_NULL;
+    EventSet = initializePAPI(EventSet, events);
+    long long values[n_events];
+    long long averageValues[n_events * NUM_TRIALS];
+
     double *A;
     double *B;
     double *C;
@@ -41,19 +52,9 @@ int main(int argc, char *argv[])
     double ALPHA = 2;
     double BETA = 2;
 
-    std::vector<std::string> events;
-    int n_events = get_events(events);
-    int EventSet = PAPI_NULL;
-    EventSet = initializePAPI(EventSet, events);
+    int counter = 0;
 
-#define NUM_TRIALS 5
-#define NUM_RUNS 100 // The higher the better averaged data
-    std::string fileName = getCurrentDateTimeString();
-
-    // Setup for PAPI
-
-    long long values[n_events];
-    long long averageValues[n_events * 10];
+    // Initialize values of arrays to 0
 
     for (int i; i < n_events; i++)
     {
@@ -64,11 +65,23 @@ int main(int argc, char *argv[])
         averageValues[i + 1] = 0;
     }
 
+    // Percentage progress bar
+
+    std::cout << "Progress: [          ] 0%\r";
+    std::cout.flush();
+
+    // Matmul calculations that loops NUM_TRIALS times
+
     for (int i = 0; i < NUM_TRIALS; i++)
     {
+        // Configure trial parameters here
+
         std::string numThreads = std::to_string(i);
-        m = n = k = 100;
         setenv("OMP_NUM_THREADS", numThreads.c_str(), 1);
+
+        // Dgemm setup
+
+        m = n = k = 100;
         lda = m;
         ldb = k;
         ldc = m;
@@ -92,21 +105,35 @@ int main(int argc, char *argv[])
             C[i] = 0;
         }
 
-        // Loop for measurements
+        // Loop for measurements that runs NUM_RUNS times
 
         for (int j = 0; j < NUM_RUNS; j++)
         {
-            std::cout << "Trial #" << i << " Run #" << j << std::endl;
+            // Dgemm calculations
 
             startPAPI(EventSet);
-
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
-
             stopPAPI(values, EventSet, averageValues, i, n_events);
+
+            // Percentage progress bar
+
+            std::cout << "Progress: [";
+            for (int k; k < ++counter / TOTAL_CALCULATIONS * 100; k++)
+            {
+                std::cout << "#";
+            }
+            for (int k; k < 100 - counter / TOTAL_CALCULATIONS * 100; k++)
+            {
+                std::cout << " ";
+            }
+            std::cout << "] " << (i * 10) << "%\r";
+            std::cout.flush();
         }
     }
 
     cleanUpPAPI(EventSet, averageValues, NUM_TRIALS, n_events, events);
+
+    std::cout << std::endl;
 
     free(A);
     free(B);
