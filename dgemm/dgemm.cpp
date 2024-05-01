@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
             std::cout << "Progress: [";
             for (int k; k < (counter / TOTAL_CALCULATIONS) * 10; k++)
             {
-                std::cout << counter / TOTAL_CALCULATIONS << std::endl;
+                std::cout << counter << " " << TOTAL_CALCULATIONS << std::endl;
             }
             for (int k; k < 10 - (counter / TOTAL_CALCULATIONS * 10); k++)
             {
