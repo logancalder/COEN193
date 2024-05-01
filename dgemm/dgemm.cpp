@@ -41,8 +41,10 @@ int main(int argc, char *argv[])
     double ALPHA = 2;
     double BETA = 2;
 
+    std::vector<std::string> events;
+    int n_events = get_events(events);
     int EventSet = PAPI_NULL;
-    EventSet = initializePAPI(EventSet);
+    EventSet = initializePAPI(EventSet, events);
 
 #define NUM_TRIALS 5
 #define NUM_RUNS 100 // The higher the better averaged data
@@ -50,14 +52,14 @@ int main(int argc, char *argv[])
 
     // Setup for PAPI
 
-    long long values[getNumEvents()];
-    long long averageValues[getNumEvents() * 10];
+    long long values[n_events];
+    long long averageValues[n_events * 10];
 
-    for (int i; i < getNumEvents(); i++)
+    for (int i; i < n_events; i++)
     {
         values[i] = 0;
     }
-    for (int i; i < getNumEvents() * NUM_TRIALS; i++)
+    for (int i; i < n_events * NUM_TRIALS; i++)
     {
         averageValues[i + 1] = 0;
     }
@@ -100,11 +102,11 @@ int main(int argc, char *argv[])
 
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
 
-            stopPAPI(values, EventSet, averageValues, i);
+            stopPAPI(values, EventSet, averageValues, i, n_events);
         }
     }
 
-    cleanUpPAPI(EventSet, averageValues, NUM_TRIALS);
+    cleanUpPAPI(EventSet, averageValues, NUM_TRIALS, n_events, events);
 
     free(A);
     free(B);

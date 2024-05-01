@@ -11,17 +11,33 @@
 
 std::string fileName = getCurrentDateTimeString();
 
-char EventNameString[PAPI_MAX_STR_LEN];
+#define events_path "papi_events.txt"
 
-#define NUM_EVENTS 3
-long long events[NUM_EVENTS] = {PAPI_TOT_CYC, PAPI_REF_CYC, PAPI_TOT_INS};
-
-int getNumEvents()
+int get_events(std::vector<std::string> &events)
 {
-    return NUM_EVENTS;
+    // Native events
+    std::ifstream events_file(events_path);
+    if (!events_file.is_open())
+    {
+        std::cerr << "Unable to read native events" << std::endl;
+        exit(1);
+    }
+
+    std::string line;
+    while (getline(events_file, line))
+    {
+        if (!line.empty())
+        {
+            events.push_back(line);
+        }
+    }
+
+    events_file.close();
+
+    return events.size();
 }
 
-int initializePAPI(int &EventSet)
+int initializePAPI(int &EventSet, std::vector<std::string> events)
 {
     if (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
     {
@@ -35,14 +51,12 @@ int initializePAPI(int &EventSet)
         return -1;
     }
 
-    for (int i = 0; i < NUM_EVENTS; i++)
+    for (int i = 0; i < events.size(); i++)
     {
-        PAPI_event_code_to_name(events[i], EventNameString);
-
         // Add event to EventSet
-        if (PAPI_add_event(EventSet, events[i]) != PAPI_OK)
+        if (PAPI_add_named_event(EventSet, events.at(i).c_str()) != PAPI_OK)
         {
-            std::cerr << "PAPI event add failed for event: " << EventNameString << std::endl;
+            std::cerr << "PAPI event add failed for event: " << events.at(i) << std::endl;
             return -1;
         }
     }
@@ -60,7 +74,7 @@ void startPAPI(int EventSet)
     }
 }
 
-void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNumber)
+void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNumber, int num_events)
 {
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
@@ -69,13 +83,13 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNu
         return;
     }
 
-    for (int i; i < NUM_EVENTS; i++)
+    for (int i; i < num_events; i++)
     {
-        avgValues[i + (trialNumber * NUM_EVENTS)] += values[i];
+        avgValues[i + (trialNumber * num_events)] += values[i];
     }
 }
 
-void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
+void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials, int num_events, std::vector<std::string> events)
 {
     PAPI_cleanup_eventset(EventSet);
     PAPI_destroy_eventset(&EventSet);
@@ -92,7 +106,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
 
     std::cout << "\n-------------------------------- OUTPUT ----------------------------------" << std::endl;
 
-    for (int i = 0; i < numTrials * NUM_EVENTS; i++) // Average data
+    for (int i = 0; i < numTrials * num_events; i++) // Average data
     {
         avgValues[i] /= numTrials;
     }
@@ -104,23 +118,17 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials)
         file << "," << i + 1 << " Threads";
     }
 
-    for (int i = 0; i < NUM_EVENTS; i++)
+    for (int i = 0; i < num_events; i++)
     {
-        std::cout << EventNameString << std::endl;
+        std::cout << events.at(i) << std::endl;
         file << "\n"
-             << EventNameString;
+             << events.at(i);
 
         for (int j = 0; j < numTrials; j++)
         {
-            if (PAPI_event_code_to_name(events[i], EventNameString) != PAPI_OK)
-            {
-                std::cerr << "PAPI event code to name conversion failed for event: " << events[j] << std::endl;
-                return;
-            }
+            std::cout << avgValues[i + (j * num_events)] << std::endl;
 
-            std::cout << avgValues[i + (j * NUM_EVENTS)] << std::endl;
-
-            file << "," << avgValues[i + (j * NUM_EVENTS)]; // Write data into file
+            file << "," << avgValues[i + (j * num_events)]; // Write data into file
         }
 
         std::cout << std::endl;
