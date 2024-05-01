@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
         {
             // Dgemm calculations
             counter++;
-            std::cout << counter;
+            std::cout << counter / total_calculations;
             startPAPI(EventSet);
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
             stopPAPI(values, EventSet, averageValues, i, n_events);
