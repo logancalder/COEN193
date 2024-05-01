@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
     }
     for (int i = 0; i < n_events * NUM_TRIALS; i++)
     {
-        averageValues[i + 1] = 0;
+        averageValues[i] = 0;
     }
 
     // Percentage progress bar
