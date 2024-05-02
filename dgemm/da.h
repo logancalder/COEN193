@@ -145,7 +145,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials, int num_even
 
     for (int i = 0; i < num_events; i++)
     {
-        std::cout << events.at(i) << std::endl;
+        std::cout << events.at(i) << "\t" << i + 1 << " Threads" << std::endl;
         file << "\n"
              << events.at(i);
 
