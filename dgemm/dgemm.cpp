@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 {
 
 #define NUM_TRIALS 5
-#define NUM_RUNS 10 // The higher the better averaged data
+#define NUM_RUNS 1000 // The higher the better averaged data
 
     std::vector<std::string>
         events;
