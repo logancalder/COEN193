@@ -4,10 +4,11 @@
 #include <chrono>
 #include <iostream>
 #include <random>
+#include <omp.h>
 
 double *matmul(double *A, double *B, double *C, int alpha, int beta, int m, int n, int k)
 {
-#pragma omp parallel for collapse(2)
+#pragma omp parallel for private(i, j, k) shared(A, B, C)
     for (int i = 0; i < m; ++i)
     {
         for (int j = 0; j < n; ++j)

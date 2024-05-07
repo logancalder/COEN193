@@ -4,6 +4,7 @@
 #include <fstream>
 #include <papi.h>
 #include <iomanip>
+#include <omp.h>
 #include "matmul.h"
 #include "da.h"
 
@@ -43,6 +44,8 @@ int main(int argc, char *argv[])
     long long values[n_events];
     long long averageValues[n_events * NUM_TRIALS];
 
+    double start_time, end_time;
+
     double *A;
     double *B;
     double *C;
@@ -70,49 +73,47 @@ int main(int argc, char *argv[])
 
     initializeCompletion();
 
-    // Matmul calculations that loops NUM_TRIALS times
+    // Dgemm setup
+
+    m = n = k = 100;
+    lda = m;
+    ldb = k;
+    ldc = m;
+
+    A = (double *)malloc(sizeof(double) * m * k);
+#pragma omp parallel for
+    for (int i = 0; i < m * k; i++)
+    {
+        A[i] = 0;
+    }
+    B = (double *)malloc(sizeof(double) * k * n);
+#pragma omp parallel for
+    for (int i = 0; i < k * n; i++)
+    {
+        B[i] = ((float)rand() / (float)(RAND_MAX));
+    }
+    C = (double *)malloc(sizeof(double) * m * n);
+#pragma omp parallel for
+    for (int i = 0; i < m * n; i++)
+    {
+        C[i] = 0;
+    }
 
     for (int i = 0; i < NUM_TRIALS; i++)
     {
         // Configure trial parameters here
 
         std::string numThreads = std::to_string(i + 1);
-        setenv("OMP_NUM_THREADS", numThreads.c_str(), 1);
-
-        // Dgemm setup
-
-        m = n = k = 100;
-        lda = m;
-        ldb = k;
-        ldc = m;
-
-        A = (double *)malloc(sizeof(double) * m * k);
-#pragma omp parallel for
-        for (int i = 0; i < m * k; i++)
-        {
-            A[i] = 0;
-        }
-        B = (double *)malloc(sizeof(double) * k * n);
-#pragma omp parallel for
-        for (int i = 0; i < k * n; i++)
-        {
-            B[i] = ((float)rand() / (float)(RAND_MAX));
-        }
-        C = (double *)malloc(sizeof(double) * m * n);
-#pragma omp parallel for
-        for (int i = 0; i < m * n; i++)
-        {
-            C[i] = 0;
-        }
-
+        omp_set_num_threads(numThreads);
         // Loop for measurements that runs NUM_RUNS times
-
         for (int j = 0; j < NUM_RUNS; j++)
         {
             // Dgemm calculations
             counter++;
             startPAPI(EventSet);
+            start_time = omp_get_wtime();
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
+            end_time = omp_get_wtime();
             stopPAPI(values, EventSet, averageValues, i, n_events, counter, total_calculations);
         }
     }
@@ -122,6 +123,8 @@ int main(int argc, char *argv[])
     free(A);
     free(B);
     free(C);
+
+    std::cout << end_time - start_time << std::endl;
 
     return 0;
 }
