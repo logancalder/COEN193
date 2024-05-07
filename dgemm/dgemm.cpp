@@ -104,7 +104,7 @@ int main(int argc, char *argv[])
         // Configure trial parameters here
 
         std::string numThreads = std::to_string(i + 1);
-        omp_set_num_threads(numThreads);
+        setenv("OMP_NUM_THREADS", numThreads.c_str(), 1);
         // Loop for measurements that runs NUM_RUNS times
         for (int j = 0; j < NUM_RUNS; j++)
         {

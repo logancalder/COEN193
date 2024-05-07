@@ -8,14 +8,15 @@
 
 double *matmul(double *A, double *B, double *C, int alpha, int beta, int m, int n, int k)
 {
+    int i, j, x;
 #pragma omp parallel for private(i, j, k) shared(A, B, C)
-    for (int i = 0; i < m; ++i)
+    for (i = 0; i < m; ++i)
     {
-        for (int j = 0; j < n; ++j)
+        for (j = 0; j < n; ++j)
         {
             C[m * j + i] = beta * C[m * j + i];
 
-            for (int x = 0; x < k; ++x)
+            for (x = 0; x < k; ++x)
             {
                 C[m * j + i] += alpha * A[m * i + x] * B[k * x + j];
             }
