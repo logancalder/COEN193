@@ -132,5 +132,6 @@
     "utility": "cpp",
     "format": "cpp"
   },
-  "dotnet.defaultSolution": "disable"
+  "dotnet.defaultSolution": "disable",
+  "cmake.configureOnOpen": false
 }
