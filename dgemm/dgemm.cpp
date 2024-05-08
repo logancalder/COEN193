@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
         for (int j = 0; j < NUM_RUNS; j++)
         {
             EventSet = PAPI_NULL;
-            EventSet = initializePAPI(EventSet, events);
+            EventSet = initializePAPI(EventSet, events[currentEventNumber]);
 
             // Dgemm calculations
 
