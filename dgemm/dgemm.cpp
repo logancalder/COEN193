@@ -66,9 +66,7 @@ int main(int argc, char *argv[])
         averageValues[i] = 0;
     }
 
-    // Percentage progress bar
-
-    initializeCompletion();
+    // initializeCompletion();
 
     // Dgemm setup
 
