@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 
     // Dgemm setup
 
-    m = n = k = 500;
+    m = n = k = 100;
     lda = m;
     ldb = k;
     ldc = m;
