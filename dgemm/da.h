@@ -103,7 +103,7 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int current
 
     avgValues[currentEventNumber] += values[0];
 
-    // displayCompletion(counter, numEvents);
+    displayCompletion(counter, numEvents);
 }
 
 void cleanUpPAPI(int EventSet, long long *avgValues, float averageRuntime, int num_events, std::vector<std::string> events, float totalRuns)

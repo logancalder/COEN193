@@ -67,8 +67,6 @@ int main(int argc, char *argv[])
         averageValues[i] = 0;
     }
 
-    // initializeCompletion();
-
     // Dgemm setup
 
     m = n = k = 100;
@@ -94,6 +92,8 @@ int main(int argc, char *argv[])
     {
         C[i] = 0;
     }
+
+    initializeCompletion();
 
     for (int currentEventNumber = 0; currentEventNumber < numEvents; currentEventNumber++)
     {
