@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
         double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
         end_time = omp_get_wtime();
 
-        avgValues[numEvents + 1] += end_time - start_time;
+        averageValues[numEvents + 1] += end_time - start_time;
     }
 
     cleanUpPAPI(EventSet, averageValues, numEvents, events, NUM_RUNS);
