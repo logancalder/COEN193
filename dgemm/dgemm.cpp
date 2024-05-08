@@ -55,7 +55,6 @@ int main(int argc, char *argv[])
     double BETA = 2;
 
     float counter = 0;
-    float total_calculations = NUM_RUNS;
 
     // Initialize values of arrays to 0
 
@@ -107,7 +106,7 @@ int main(int argc, char *argv[])
         start_time = omp_get_wtime();
         double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
         end_time = omp_get_wtime();
-        stopPAPI(values, EventSet, averageValues, i + 1, n_events, counter, total_calculations);
+        stopPAPI(values, EventSet, averageValues, n_events, counter, NUM_RUNS);
     }
 
     cleanUpPAPI(EventSet, averageValues, n_events, events);
