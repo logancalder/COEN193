@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 
     // Dgemm setup
 
-    m = n = k = 1000;
+    m = n = k = 500;
     lda = m;
     ldb = k;
     ldc = m;
@@ -99,12 +99,12 @@ int main(int argc, char *argv[])
         C[i] = 0;
     }
 
-    for (int i = 1; i <= NUM_TRIALS; i++)
+    for (int i = 0; i < NUM_TRIALS; i++)
     {
         // Configure trial parameters here
 
-        std::string numThreads = std::to_string(i);
-        setenv("OMP_NUM_THREADS", "4", 1);
+        std::string numThreads = std::to_string(i + 1);
+        std::setenv("OMP_NUM_THREADS", "4", 1);
         // Loop for measurements that runs NUM_RUNS times
         for (int j = 0; j < NUM_RUNS; j++)
         {
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
             start_time = omp_get_wtime();
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
             end_time = omp_get_wtime();
-            stopPAPI(values, EventSet, averageValues, i, n_events, counter, total_calculations);
+            stopPAPI(values, EventSet, averageValues, i + 1, n_events, counter, total_calculations);
         }
     }
 
