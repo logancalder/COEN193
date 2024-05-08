@@ -105,6 +105,7 @@ int main(int argc, char *argv[])
 
         std::string numThreads = std::to_string(i + 1);
         setenv("OMP_NUM_THREADS", numThreads.c_str(), 1);
+        putenv(const_cast<char *>("OMP_NUM_THREADS", numThreads.c_str()));
         // Loop for measurements that runs NUM_RUNS times
         for (int j = 0; j < NUM_RUNS; j++)
         {
