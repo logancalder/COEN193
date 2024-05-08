@@ -130,7 +130,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector
 
     for (int i = 0; i < num_events; i++)
     {
-        std::cout << "Event: " << events.at(i) << " average total: " << avgValues[i] << std::endl;
+        std::cout << "Event: " << events.at(i) << " average total: " << avgValues[i] << " num_events: " << std::endl;
         avgValues[i] /= num_events; // Average the data
 
         std::cout << events.at(i) << std::endl;
