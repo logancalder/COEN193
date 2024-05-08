@@ -112,7 +112,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector
     PAPI_destroy_eventset(&EventSet);
     PAPI_shutdown();
 
-    // std::cout << "Progress: [##########] 100% Completed" << std::endl; // Progress bar completion
+    std::cout << "Progress: [##########] 100% Completed" << std::endl; // Progress bar completion
 
     // FILE WRITING PER TRIAL VALUES (should be outside the loop if you're measuring multiple iterations)
     std::string filepath = "papi_results/" + fileName + ".csv";
@@ -127,7 +127,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector
 
     file << "Event Name"; // Write column headers of csv file
 
-    for (int i = 0; i < num_events; i++)
+    for (int i = 0; i < num_events + 1; i++)
     {
         avgValues[i] /= totalRuns; // Average the data
 
