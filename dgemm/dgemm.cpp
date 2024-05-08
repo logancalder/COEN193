@@ -30,13 +30,12 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif
+
 int main(int argc, char *argv[])
 {
-
 #define NUM_RUNS 10 // The higher the better averaged data
 
-    std::vector<std::string>
-        events;
+    std::vector<std::string> events;
     int numEvents = get_events(events);
     int EventSet;
     long long values[numEvents];
@@ -57,7 +56,6 @@ int main(int argc, char *argv[])
     float counter = 0;
 
     // Initialize values of arrays to 0
-
     for (int i = 0; i < numEvents; i++)
     {
         values[i] = 0;
@@ -68,7 +66,6 @@ int main(int argc, char *argv[])
     }
 
     // Dgemm setup
-
     m = n = k = 100;
     lda = m;
     ldb = k;
