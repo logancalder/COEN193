@@ -38,8 +38,7 @@ int main(int argc, char *argv[])
     std::vector<std::string>
         events;
     int n_events = get_events(events);
-    int EventSet = PAPI_NULL;
-    EventSet = initializePAPI(EventSet, events);
+    int EventSet;
     long long values[n_events];
     long long averageValues[n_events];
 
@@ -97,16 +96,23 @@ int main(int argc, char *argv[])
         C[i] = 0;
     }
 
-    // Loop for measurements that runs NUM_RUNS times
-    for (int j = 0; j < NUM_RUNS; j++)
+    for (int currentEventNumber = 0; currentEventNumber < n_events; currentEventNumber++)
     {
-        // Dgemm calculations
-        counter++;
-        startPAPI(EventSet);
-        start_time = omp_get_wtime();
-        double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
-        end_time = omp_get_wtime();
-        stopPAPI(values, EventSet, averageValues, n_events, counter, NUM_RUNS);
+        // Loop for measurements that runs NUM_RUNS times
+        for (int j = 0; j < NUM_RUNS; j++)
+        {
+            EventSet = PAPI_NULL;
+            EventSet = initializePAPI(EventSet, events);
+
+            // Dgemm calculations
+
+            counter++;
+            startPAPI(EventSet);
+            start_time = omp_get_wtime();
+            double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
+            end_time = omp_get_wtime();
+            stopPAPI(values, EventSet, averageValues, currentEventNumber, counter, NUM_RUNS);
+        }
     }
 
     cleanUpPAPI(EventSet, averageValues, n_events, events);

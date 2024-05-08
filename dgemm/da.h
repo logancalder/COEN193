@@ -58,7 +58,7 @@ int get_events(std::vector<std::string> &events)
     return events.size();
 }
 
-int initializePAPI(int &EventSet, std::vector<std::string> events)
+int initializePAPI(int &EventSet, std::string event)
 {
     if (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
     {
@@ -72,14 +72,11 @@ int initializePAPI(int &EventSet, std::vector<std::string> events)
         return -1;
     }
 
-    for (int i = 0; i < events.size(); i++)
+    // Add event to EventSet
+    if (PAPI_add_named_event(EventSet, event.c_str()) != PAPI_OK)
     {
-        // Add event to EventSet
-        if (PAPI_add_named_event(EventSet, events.at(i).c_str()) != PAPI_OK)
-        {
-            std::cerr << "PAPI event add failed for event: " << events.at(i) << std::endl;
-            return -1;
-        }
+        std::cerr << "PAPI event add failed for event: " << event.c_str() << std::endl;
+        return -1;
     }
 
     return EventSet;
@@ -95,7 +92,7 @@ void startPAPI(int EventSet)
     }
 }
 
-void stopPAPI(long long *values, int EventSet, long long *avgValues, int num_events, float counter, float total_calculations)
+void stopPAPI(long long *values, int EventSet, long long *avgValues, int currentEventNumber, float counter, float total_calculations)
 {
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
@@ -104,10 +101,7 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int num_eve
         return;
     }
 
-    for (int i = 0; i < num_events; i++)
-    {
-        avgValues[i + num_events] += values[i];
-    }
+    avgValues[currentEventNumber] += values[i];
 
     displayCompletion(counter, total_calculations);
 }
