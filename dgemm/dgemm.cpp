@@ -33,8 +33,8 @@ extern "C"
 int main(int argc, char *argv[])
 {
 
-#define NUM_TRIALS 5
-#define NUM_RUNS 1000 // The higher the better averaged data
+#define NUM_TRIALS 4
+#define NUM_RUNS 10 // The higher the better averaged data
 
     std::vector<std::string>
         events;
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 
     // Dgemm setup
 
-    m = n = k = 100;
+    m = n = k = 1000;
     lda = m;
     ldb = k;
     ldc = m;
@@ -99,13 +99,12 @@ int main(int argc, char *argv[])
         C[i] = 0;
     }
 
-    for (int i = 0; i < NUM_TRIALS; i++)
+    for (int i = 1; i <= NUM_TRIALS; i++)
     {
         // Configure trial parameters here
 
-        std::string numThreads = std::to_string(i + 1);
-        setenv("OMP_NUM_THREADS", numThreads.c_str(), 1);
-        putenv(const_cast<char *>("OMP_NUM_THREADS", numThreads.c_str()));
+        std::string numThreads = std::to_string(i);
+        setenv("OMP_NUM_THREADS", "4", 1);
         // Loop for measurements that runs NUM_RUNS times
         for (int j = 0; j < NUM_RUNS; j++)
         {
