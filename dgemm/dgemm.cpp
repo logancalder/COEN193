@@ -113,7 +113,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    cleanUpPAPI(EventSet, averageValues, n_events, events);
+    cleanUpPAPI(EventSet, averageValues, n_events, events, NUM_RUNS);
 
     free(A);
     free(B);
