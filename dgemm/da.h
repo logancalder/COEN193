@@ -148,6 +148,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector
     // Write runtime to file
     // ==================================================================================
 
+    std::cout << "RUNTIME avg total" << avgValues[num_events + 1] << std::endl;
     avgValues[num_events + 1] /= totalRuns;
     std::cout << "RUNTIME\n"
               << avgValues[num_events + 1] << std::endl;
