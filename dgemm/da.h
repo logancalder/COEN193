@@ -19,18 +19,18 @@ void initializeCompletion()
     std::cout.flush();
 }
 
-void displayCompletion(float counter, float total_calculations)
+void displayCompletion(float counter, float totalRuns)
 {
     std::cout << "Progress: [";
-    for (int k = 0; k < (counter / total_calculations) * 10; k++)
+    for (int k = 0; k < (counter / totalRuns) * 10; k++)
     {
         std::cout << "#";
     }
-    for (int k = 0; k < 10 - (counter / total_calculations * 10); k++)
+    for (int k = 0; k < 10 - (counter / totalRuns * 10); k++)
     {
         std::cout << " ";
     }
-    std::cout << "] " << (counter / total_calculations * 100) << "%\r";
+    std::cout << "] " << (counter / totalRuns * 100) << "%\r";
     std::cout.flush();
 }
 
@@ -92,7 +92,7 @@ void startPAPI(int EventSet)
     }
 }
 
-void stopPAPI(long long *values, int EventSet, long long *avgValues, int currentEventNumber, float counter, float totalRuns)
+void stopPAPI(long long *values, int EventSet, long long *avgValues, int currentEventNumber, float counter, float totalRuns, int numEvents)
 {
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
@@ -103,7 +103,7 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int current
 
     avgValues[currentEventNumber] += values[0];
 
-    displayCompletion(counter, totalRuns);
+    displayCompletion(counter, numEvents);
 }
 
 void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector<std::string> events, int totalRuns)

@@ -37,10 +37,10 @@ int main(int argc, char *argv[])
 
     std::vector<std::string>
         events;
-    int n_events = get_events(events);
+    int numEvents = get_events(events);
     int EventSet;
-    long long values[n_events];
-    long long averageValues[n_events];
+    long long values[numEvents];
+    long long averageValues[numEvents];
 
     double start_time, end_time;
 
@@ -57,11 +57,11 @@ int main(int argc, char *argv[])
 
     // Initialize values of arrays to 0
 
-    for (int i = 0; i < n_events; i++)
+    for (int i = 0; i < numEvents; i++)
     {
         values[i] = 0;
     }
-    for (int i = 0; i < n_events; i++)
+    for (int i = 0; i < numEvents; i++)
     {
         averageValues[i] = 0;
     }
@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
         C[i] = 0;
     }
 
-    for (int currentEventNumber = 0; currentEventNumber < n_events; currentEventNumber++)
+    for (int currentEventNumber = 0; currentEventNumber < numEvents; currentEventNumber++)
     {
         counter++;
         // Loop for measurements that runs NUM_RUNS times
@@ -109,11 +109,11 @@ int main(int argc, char *argv[])
             start_time = omp_get_wtime();
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
             end_time = omp_get_wtime();
-            stopPAPI(values, EventSet, averageValues, currentEventNumber, counter, NUM_RUNS);
+            stopPAPI(values, EventSet, averageValues, currentEventNumber, counter, NUM_RUNS, numEvents);
         }
     }
 
-    cleanUpPAPI(EventSet, averageValues, n_events, events, NUM_RUNS);
+    cleanUpPAPI(EventSet, averageValues, numEvents, events, NUM_RUNS);
 
     free(A);
     free(B);
