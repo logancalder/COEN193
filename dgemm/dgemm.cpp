@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
         averageValues[i] = 0;
     }
 
-    // initializeCompletion();
+    initializeCompletion();
 
     // Dgemm setup
 
@@ -96,6 +96,7 @@ int main(int argc, char *argv[])
 
     for (int currentEventNumber = 0; currentEventNumber < n_events; currentEventNumber++)
     {
+        counter++;
         // Loop for measurements that runs NUM_RUNS times
         for (int j = 0; j < NUM_RUNS; j++)
         {
@@ -104,7 +105,6 @@ int main(int argc, char *argv[])
 
             // Dgemm calculations
 
-            counter++;
             startPAPI(EventSet);
             start_time = omp_get_wtime();
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
