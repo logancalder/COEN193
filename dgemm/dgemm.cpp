@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
         averageValues[i] = 0;
     }
 
-    initializeCompletion();
+    // initializeCompletion();
 
     // Dgemm setup
 
@@ -117,6 +117,7 @@ int main(int argc, char *argv[])
         double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
         end_time = omp_get_wtime();
 
+        std::cout << "Runtime: " << end_time - start_time << std::endl;
         averageValues[numEvents + 1] += (end_time - start_time);
     }
 
