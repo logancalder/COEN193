@@ -92,7 +92,7 @@ void startPAPI(int EventSet)
     }
 }
 
-void stopPAPI(long long *values, int EventSet, long long *avgValues, int currentEventNumber, float counter, float total_calculations)
+void stopPAPI(long long *values, int EventSet, long long *avgValues, int currentEventNumber, float counter, float totalRuns)
 {
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
@@ -104,10 +104,10 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int current
     std::cout << values[0] << std::endl; // Print the value of the event
     avgValues[currentEventNumber] += values[0];
 
-    // displayCompletion(counter, total_calculations);
+    // displayCompletion(counter, totalRuns);
 }
 
-void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector<std::string> events)
+void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector<std::string> events, int totalRuns)
 {
     PAPI_cleanup_eventset(EventSet);
     PAPI_destroy_eventset(&EventSet);
@@ -130,8 +130,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector
 
     for (int i = 0; i < num_events; i++)
     {
-        std::cout << "Event: " << events.at(i) << " average total: " << avgValues[i] << " num_events: " << num_events << std::endl;
-        avgValues[i] /= num_events; // Average the data
+        avgValues[i] /= totalRuns; // Average the data
 
         std::cout << events.at(i) << std::endl;
         std::cout << avgValues[i] << std::endl;
