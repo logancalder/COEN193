@@ -131,12 +131,12 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector
     for (int i = 0; i < num_events; i++)
     {
         std::cout << events.at(i) << std::endl;
+        std::cout << avgValues[i] << std::endl;
+
         file << "\n"
              << events.at(i);
 
-        std::cout << avgValues[i + num_events] << std::endl;
-
-        file << "," << avgValues[i + num_events]; // Write data into file
+        file << "," << avgValues[i]; // Write data into file
 
         std::cout << std::endl;
     }
