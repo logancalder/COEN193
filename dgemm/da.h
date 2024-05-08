@@ -95,7 +95,7 @@ void startPAPI(int EventSet)
     }
 }
 
-void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNumber, int num_events, float counter, float total_calculations)
+void stopPAPI(long long *values, int EventSet, long long *avgValues, int num_events, float counter, float total_calculations)
 {
     // Stop counting events
     if (PAPI_stop(EventSet, values) != PAPI_OK)
@@ -106,7 +106,7 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNu
 
     for (int i = 0; i < num_events; i++)
     {
-        avgValues[i + (trialNumber * num_events)] += values[i];
+        avgValues[i + num_events] += values[i];
     }
 
     displayCompletion(counter, total_calculations);
