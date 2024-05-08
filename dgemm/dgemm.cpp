@@ -39,8 +39,9 @@ int main(int argc, char *argv[])
         events;
     int numEvents = get_events(events);
     int EventSet;
-    long long values[numEvents + 1]; // We add 1 for runtime
-    long long averageValues[numEvents + 1];
+    long long values[numEvents];
+    long long averageValues[numEvents];
+    float averageRuntime = 0;
 
     double start_time, end_time;
 
@@ -117,11 +118,10 @@ int main(int argc, char *argv[])
         double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
         end_time = omp_get_wtime();
 
-        averageValues[numEvents + 1] += (end_time - start_time);
+        averageRuntime += (end_time - start_time);
     }
-    std::cout << "Runtime total: " << averageValues[numEvents + 1] << std::endl;
 
-    cleanUpPAPI(EventSet, averageValues, numEvents, events, NUM_RUNS);
+    cleanUpPAPI(EventSet, averageValues, averageRuntime, numEvents, events, NUM_RUNS);
 
     free(A);
     free(B);

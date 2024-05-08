@@ -106,7 +106,7 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int current
     // displayCompletion(counter, numEvents);
 }
 
-void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector<std::string> events, float totalRuns)
+void cleanUpPAPI(int EventSet, long long *avgValues, float averageRuntime, int num_events, std::vector<std::string> events, float totalRuns)
 {
     PAPI_cleanup_eventset(EventSet);
     PAPI_destroy_eventset(&EventSet);
@@ -148,15 +148,15 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector
     // Write runtime to file
     // ==================================================================================
 
-    std::cout << "RUNTIME avg total" << avgValues[num_events + 1] << std::endl;
-    avgValues[num_events + 1] /= totalRuns;
+    averageRuntime /= totalRuns;
+
     std::cout << "RUNTIME\n"
-              << avgValues[num_events + 1] << std::endl;
+              << averageRuntime << std::endl;
 
     file << "\n"
          << "RUNTIME";
 
-    file << "," << avgValues[num_events + 1]; // Write data into file
+    file << "," << averageRuntime; // Write data into file
 
     std::cout << std::endl;
 
