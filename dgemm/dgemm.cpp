@@ -33,7 +33,6 @@ extern "C"
 int main(int argc, char *argv[])
 {
 
-#define NUM_TRIALS 4
 #define NUM_RUNS 10 // The higher the better averaged data
 
     std::vector<std::string>
@@ -42,7 +41,7 @@ int main(int argc, char *argv[])
     int EventSet = PAPI_NULL;
     EventSet = initializePAPI(EventSet, events);
     long long values[n_events];
-    long long averageValues[n_events * NUM_TRIALS];
+    long long averageValues[n_events];
 
     double start_time, end_time;
 
@@ -56,7 +55,7 @@ int main(int argc, char *argv[])
     double BETA = 2;
 
     float counter = 0;
-    float total_calculations = NUM_TRIALS * NUM_RUNS;
+    float total_calculations = NUM_RUNS;
 
     // Initialize values of arrays to 0
 
@@ -64,7 +63,7 @@ int main(int argc, char *argv[])
     {
         values[i] = 0;
     }
-    for (int i = 0; i < n_events * NUM_TRIALS; i++)
+    for (int i = 0; i < n_events; i++)
     {
         averageValues[i] = 0;
     }
@@ -99,26 +98,19 @@ int main(int argc, char *argv[])
         C[i] = 0;
     }
 
-    for (int i = 0; i < NUM_TRIALS; i++)
+    // Loop for measurements that runs NUM_RUNS times
+    for (int j = 0; j < NUM_RUNS; j++)
     {
-        // Configure trial parameters here
-
-        std::string numThreads = std::to_string(i + 1);
-        std::setenv("OMP_NUM_THREADS", "4", 1);
-        // Loop for measurements that runs NUM_RUNS times
-        for (int j = 0; j < NUM_RUNS; j++)
-        {
-            // Dgemm calculations
-            counter++;
-            startPAPI(EventSet);
-            start_time = omp_get_wtime();
-            double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
-            end_time = omp_get_wtime();
-            stopPAPI(values, EventSet, averageValues, i + 1, n_events, counter, total_calculations);
-        }
+        // Dgemm calculations
+        counter++;
+        startPAPI(EventSet);
+        start_time = omp_get_wtime();
+        double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
+        end_time = omp_get_wtime();
+        stopPAPI(values, EventSet, averageValues, i + 1, n_events, counter, total_calculations);
     }
 
-    cleanUpPAPI(EventSet, averageValues, NUM_TRIALS, n_events, events);
+    cleanUpPAPI(EventSet, averageValues, n_events, events);
 
     free(A);
     free(B);

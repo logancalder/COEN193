@@ -112,7 +112,7 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int trialNu
     displayCompletion(counter, total_calculations);
 }
 
-void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials, int num_events, std::vector<std::string> events)
+void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector<std::string> events)
 {
     PAPI_cleanup_eventset(EventSet);
     PAPI_destroy_eventset(&EventSet);
@@ -131,17 +131,7 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials, int num_even
 
     std::cout << "\n-------------------------------- OUTPUT ----------------------------------" << std::endl;
 
-    for (int i = 0; i < numTrials * num_events; i++) // Average data
-    {
-        avgValues[i] /= numTrials;
-    }
-
     file << "Event Name"; // Write column headers of csv file
-
-    for (int i = 0; i < numTrials; i++)
-    {
-        file << "," << i + 1 << " Threads";
-    }
 
     for (int i = 0; i < num_events; i++)
     {
@@ -149,12 +139,9 @@ void cleanUpPAPI(int EventSet, long long *avgValues, int numTrials, int num_even
         file << "\n"
              << events.at(i);
 
-        for (int j = 0; j < numTrials; j++)
-        {
-            std::cout << avgValues[i + (j * num_events)] << std::endl;
+        std::cout << avgValues[i + num_events] << std::endl;
 
-            file << "," << avgValues[i + (j * num_events)]; // Write data into file
-        }
+        file << "," << avgValues[i + num_events]; // Write data into file
 
         std::cout << std::endl;
     }
