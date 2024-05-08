@@ -101,7 +101,7 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int current
         return;
     }
 
-    avgValues[currentEventNumber] += values[i];
+    avgValues[currentEventNumber] += values[0];
 
     displayCompletion(counter, total_calculations);
 }
