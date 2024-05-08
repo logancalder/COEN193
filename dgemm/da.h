@@ -106,7 +106,7 @@ void stopPAPI(long long *values, int EventSet, long long *avgValues, int current
     displayCompletion(counter, numEvents);
 }
 
-void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector<std::string> events, int totalRuns)
+void cleanUpPAPI(int EventSet, long long *avgValues, int num_events, std::vector<std::string> events, float totalRuns)
 {
     PAPI_cleanup_eventset(EventSet);
     PAPI_destroy_eventset(&EventSet);
