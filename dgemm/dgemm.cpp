@@ -37,10 +37,11 @@ int main(int argc, char *argv[])
 
     std::vector<std::string> events;
     int numEvents = get_events(events);
-    int EventSet;
-    long long values[numEvents];
+    int EventSet[omp_get_max_threads()];
+    long long values[omp_get_max_threads()];
     long long averageValues[numEvents];
     float averageRuntime = 0;
+    float counter = 0;
 
     double start_time, end_time;
 
@@ -53,10 +54,8 @@ int main(int argc, char *argv[])
     double ALPHA = 2;
     double BETA = 2;
 
-    float counter = 0;
-
     // Initialize values of arrays to 0
-    for (int i = 0; i < numEvents; i++)
+    for (int i = 0; i < omp_get_max_threads(); i++)
     {
         values[i] = 0;
     }
@@ -92,33 +91,33 @@ int main(int argc, char *argv[])
 
     initializeCompletion();
 
+    if (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
+    {
+        std::cerr << "PAPI initialization failed!" << std::endl;
+    }
+
     for (int currentEventNumber = 0; currentEventNumber < numEvents; currentEventNumber++)
     {
         counter++;
 
         for (int j = 0; j < NUM_RUNS; j++) // Loop for PAPI measurements
         {
-            EventSet = PAPI_NULL;
-            EventSet = initializePAPI(EventSet, events[currentEventNumber]);
+            initializePAPI(EventSet, events[currentEventNumber]);
 
             // Dgemm calculations
-
+            start_time = omp_get_wtime();
             startPAPI(EventSet);
+
             double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
+
             stopPAPI(values, EventSet, averageValues, currentEventNumber, counter, NUM_RUNS, numEvents);
+
+            end_time = omp_get_wtime();
+            averageRuntime += (end_time - start_time);
         }
     }
 
-    for (int j = 0; j < NUM_RUNS; j++) // Loop for runtime measurements
-    {
-        start_time = omp_get_wtime();
-        double *matmulOutput = matmul(A, B, C, ALPHA, BETA, m, n, k);
-        end_time = omp_get_wtime();
-
-        averageRuntime += (end_time - start_time);
-    }
-
-    cleanUpPAPI(EventSet, averageValues, averageRuntime, numEvents, events, NUM_RUNS);
+    cleanUpPAPI(EventSet, averageValues, averageRuntime, numEvents, events, NUM_RUNS, "dgemm");
 
     free(A);
     free(B);
@@ -126,3 +125,36 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+/*
+
+for (int currentEventNumber = 0; currentEventNumber < numEvents; currentEventNumber++)
+{
+    counter++;
+
+    for (int j = 0; j < NUM_RUNS; j++) // Loop for PAPI measurements
+    {
+        EventSet = PAPI_NULL;
+        EventSet = initializePAPI(EventSet, events[currentEventNumber]);
+
+        // Dgemm calculations
+
+        start_time = omp_get_wtime();
+        startPAPI(EventSet);
+
+        // >>>>> Your measured code here <<<<<<
+
+        stopPAPI(values, EventSet, averageValues, currentEventNumber, counter, NUM_RUNS, numEvents);
+        end_time = omp_get_wtime();
+        averageRuntime += (end_time - start_time);
+    }
+}
+
+cleanUpPAPI(EventSet, averageValues, averageRuntime, numEvents, events, NUM_RUNS);
+
+std::string sampleName = "Dgemm_Calculations";
+
+cleanUpPAPI(EventSet, averageValues, averageRuntime, numEvents, events, NUM_RUNS, sampleName);
+
+*/
+

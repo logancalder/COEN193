@@ -6,8 +6,21 @@
 #include <chrono>
 #include <papi.h>
 #include <iomanip>
-#include "matmul.h"
-#include "externals.h"
+
+std::string getCurrentDateTimeString() {
+    std::time_t currentTime = std::time(nullptr);
+    std::tm* localTime = std::localtime(&currentTime);
+
+    std::ostringstream oss;
+    oss << "data-" << (localTime->tm_year + 1900) << "-" // Year is offset from 1900
+        << (localTime->tm_mon + 1) << "-"                  // Month ranges from 0 to 11
+        << localTime->tm_mday << "-"
+        << localTime->tm_hour << "-" // Hour
+        << localTime->tm_min << "-"  // Minute
+        << localTime->tm_sec;        // Second
+
+    return oss.str();
+}
 
 std::string fileName = getCurrentDateTimeString();
 
@@ -111,18 +124,14 @@ void stopPAPI(long long *values, int *EventSet, long long *avgValues, int curren
     {
         avgValues[currentEventNumber] += values[i];
     }
-
-    displayCompletion(counter, numEvents);
 }
 
-void cleanUpPAPI(int *EventSet, long long *avgValues, float averageRuntime, int num_events, std::vector<std::string> events, float totalRuns, string name)
+void cleanUpPAPI(int *EventSet, long long *avgValues, float averageRuntime, int num_events, std::vector<std::string> events, float totalRuns, std::string name)
 {
 #pragma omp parallel
     {
         int threadID = omp_get_thread_num();
     }
-
-    std::cout << "Progress: [##########] 100% Completed" << std::endl; // Progress bar completion
 
     // FILE WRITING PER TRIAL VALUES (should be outside the loop if you're measuring multiple iterations)
     std::string filepath = "papi_results/" + name + "_" + fileName + ".csv";
