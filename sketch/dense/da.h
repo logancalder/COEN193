@@ -26,27 +26,6 @@ std::string fileName = getCurrentDateTimeString();
 
 #define events_path "papi_events.txt"
 
-void initializeCompletion()
-{
-    std::cout << "Progress: [          ] 0%\r";
-    std::cout.flush();
-}
-
-void displayCompletion(float counter, float totalRuns)
-{
-    std::cout << "Progress: [";
-    for (int k = 0; k < (counter / totalRuns) * 10; k++)
-    {
-        std::cout << "#";
-    }
-    for (int k = 0; k < 10 - (counter / totalRuns * 10); k++)
-    {
-        std::cout << " ";
-    }
-    std::cout << "] " << (counter / totalRuns * 100) << "%\r";
-    std::cout.flush();
-}
-
 int get_events(std::vector<std::string> &events)
 {
     // Native events

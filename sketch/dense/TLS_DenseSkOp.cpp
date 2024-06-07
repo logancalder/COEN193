@@ -150,46 +150,9 @@ int main(int argc, char *argv[])
     // Initialize dense distribution struct for the sketching operator
 
 
-
-    RandBLAS::DenseDist Dist(sk_dim,   // Number of rows of the sketching operator 
-                             m,        // Number of columns of the sketching operator
-                             dn);     // Distribution of the entires
-
-    //Construct the dense sketching operator
-    RandBLAS::DenseSkOp<double> S(Dist, seed);  
-    RandBLAS::fill_dense(S);
-    auto time_constructsketch2 = high_resolution_clock::now();
-
-    // Sketch AB
-    // SAB = alpha * \op(S) * \op(AB) + beta * SAB
-    auto time_sketch1 = high_resolution_clock::now();
-
-
-    RandBLAS::sketch_general<double>(
-        blas::Layout::ColMajor, // Matrix storage layout of AB and SAB
-        blas::Op::NoTrans,      // NoTrans => \op(S) = S, Trans => \op(S) = S^T
-        blas::Op::NoTrans,      // NoTrans => \op(AB) = AB, Trans => \op(AB) = AB^T
-        sk_dim,                 // Number of rows of S and SAB
-        n + 1,                  // Number of columns of AB and SAB
-        m,                      // Number of rows of AB and columns of S
-        1,                      // Scalar alpha - if alpha is zero AB is not accessed
-        S,                      // A DenseSkOp or SparseSkOp sketching operator
-        AB,                     // Matrix to be sketched
-        m,                      // Leading dimension of AB
-        0,                      // Scalar beta - if beta is zero SAB is not accessed
-        SAB,                    // Sketched matrix SAB
-        sk_dim                  // Leading dimension of SAB
-    );
-
-    auto time_sketch2 = high_resolution_clock::now();
-
-    // Perform SVD operation on SAB
-    auto time_TLS1 = high_resolution_clock::now();
-
-
-
-    // 3. PAPI measurements for SVD operation
+    // 1. PAPI measurements for the sketching operator
     // ----------------------------------------------------------------------------
+
 
     for (int currentEventNumber = 0; currentEventNumber < numEvents; currentEventNumber++)
     {
@@ -197,13 +160,20 @@ int main(int argc, char *argv[])
 
         for (int j = 0; j < NUM_RUNS; j++) // Loop for PAPI measurements
         {
+            RandBLAS::DenseDist Dist(sk_dim, // Number of rows of the sketching operator
+                                     m,      // Number of columns of the sketching operator
+                                     dn);    // Distribution of the entires
+
+            // Construct the dense sketching operator
+            RandBLAS::DenseSkOp<double> S(Dist, seed);
+            
             initializePAPI(EventSet, events[currentEventNumber]);
 
             // Dgemm calculations
             start_time = omp_get_wtime();
             startPAPI(EventSet);
 
-            lapack::gesdd(lapack::Job::AllVec, sk_dim, (n + 1), SAB, sk_dim, svals, U, sk_dim, VT, n + 1);
+            RandBLAS::fill_dense(S);
 
             stopPAPI(values, EventSet, averageValues, currentEventNumber, counter, NUM_RUNS, numEvents);
 
@@ -213,7 +183,7 @@ int main(int argc, char *argv[])
     }
 
     std::stringstream ss;
-    ss << m << "x" << n << "_" << numThreads << "_" << "Dense_Dist";
+    ss << m << "x" << n << "_" << numThreads << "_" << "Dense_Fill";
     sampleName = ss.str();
 
     cleanUpPAPI(EventSet, averageValues, averageRuntime, numEvents, events, NUM_RUNS, sampleName);
@@ -221,31 +191,6 @@ int main(int argc, char *argv[])
     std::cout << "Matrix dimensions: " << m << " by " << n + 1 << '\n';
 
     // ----------------------------------------------------------------------------
-
-
-
-    for (int i = 0; i < n; i++)
-    {
-        X[i] = VT[n + i * (n + 1)]; // Take the right n by 1 block of V
-    }
-
-    // Scale X by the inverse of the 1 by 1 bottom right block of V
-    blas::scal(n, -1 / VT[(n + 1) * (n + 1) - 1], X, 1);
-    auto time_TLS2 = high_resolution_clock::now();
-
-    // Check TLS solution. Expected to be close to a vector of 1's
-    double res_infnorm = 0;
-    double res_twonorm = 0;
-
-    for (int i = 0; i < n; i++)
-    {
-        res[i] = abs(X[i] - 1);
-        res_twonorm += res[i] * res[i];
-        if (res_infnorm < res[i])
-        {
-            res_infnorm = res[i];
-        }
-    }
 
     delete[] AB;
     delete[] SAB;

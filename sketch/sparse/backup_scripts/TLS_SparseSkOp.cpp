@@ -11,6 +11,9 @@
 #include <stdlib.h>
 #include <chrono>
 
+#include <papi.h>
+#include "da.h"
+
 using std::chrono::high_resolution_clock;
 using std::chrono::duration_cast;
 using std::chrono::duration;
@@ -53,6 +56,42 @@ void init_noisy_data(int64_t m, int64_t n, int64_t d, double* AB){
 // of A respectively. We expect m > 2*n.
 int main(int argc, char* argv[]){
 
+ // PAPI Setup
+
+#define NUM_RUNS 10 // The higher the better averaged data
+
+    // PAPI Setup Here
+    // ----------------------------------------------------------------------------
+
+    std::vector<std::string> events;
+    int numEvents = get_events(events);
+    int EventSet[omp_get_max_threads()];
+    int numThreads;
+    long long values[omp_get_max_threads()];
+    long long averageValues[numEvents];
+    float averageRuntime = 0;
+    float counter = 0;
+    std::string sampleName;
+
+    double start_time, end_time;
+
+    // Initialize values of arrays to 0
+    for (int i = 0; i < omp_get_max_threads(); i++)
+    {
+        values[i] = 0;
+    }
+    for (int i = 0; i < numEvents; i++)
+    {
+        averageValues[i] = 0;
+    }
+
+    if (PAPI_library_init(PAPI_VER_CURRENT) != PAPI_VER_CURRENT)
+    {
+        std::cerr << "PAPI initialization failed!" << std::endl;
+    }
+
+    // ----------------------------------------------------------------------------
+
     // Initialize dimensions
     int64_t m;           // Number of rows of A, B
     int64_t n;           // Number of columns of A
@@ -60,10 +99,13 @@ int main(int argc, char* argv[]){
     if (argc == 1) {
         m = 10000;
         n = 500;
-    } else if (argc == 3) {
+    else if (argc == 4)
+    {
         m = atoi(argv[1]);
         n = atoi(argv[2]);
-        if (n > m) {
+        numThreads = atoi(argv[3]);
+        if (n > m)
+        {
             std::cout << "Make sure number of rows are greater than number of cols" << '\n';
             exit(0);
         }

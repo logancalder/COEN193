@@ -13,7 +13,7 @@ total_steps=$((2 * 3 * 4))  # Total number of iterations: 2 (m values) * 3 (n va
 step=0
 
 for m in 10000 50000; do
-    for n in 10000 1000 2000; do
+    for n in 500 1000 2000; do
         for threads in 1 2 3 4; do
             export OMP_NUM_THREADS=${threads}
             ./TLS_DenseSkOp ${m} ${n} ${threads}

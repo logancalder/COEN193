@@ -16,7 +16,7 @@ for m in 10000 50000; do
     for n in 10000 1000 2000; do
         for threads in 1 2 3 4; do
             export OMP_NUM_THREADS=${threads}
-            ./TLS_DenseSkOp ${m} ${n}
+            ./TLS_DenseSkOp ${m} ${n} ${threads}
             
             step=$((step + 1))
             progress=$((step * 100 / total_steps))
