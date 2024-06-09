@@ -157,16 +157,6 @@ int main(int argc, char* argv[]){
     // 2. PAPI measurements for the sketching operator
     // ----------------------------------------------------------------------------
 
-    RandBLAS::SparseDist Dist = {.n_rows = sk_dim,                            // Number of rows of the sketching operator 
-                            .n_cols = m,                                 // Number of columns of the sketching operator
-                            .vec_nnz = 4,                               // Number of non-zero entires per major axis
-                            .major_axis = RandBLAS::MajorAxis::Short     // Defines the major axis of the sketching operator 
-                        };
-
-    //Construct the sparse sketching operator
-    RandBLAS::SparseSkOp<double> S(Dist, seed);  
-    RandBLAS::fill_sparse(S);
-
     for (int currentEventNumber = 0; currentEventNumber < numEvents; currentEventNumber++)
     {
         counter++;

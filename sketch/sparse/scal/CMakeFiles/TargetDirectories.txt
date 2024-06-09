@@ -1,0 +1,8 @@
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/scal/CMakeFiles/TLS_DenseSkOp.dir
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/scal/CMakeFiles/TLS_SparseSkOp.dir
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/scal/CMakeFiles/edit_cache.dir
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/scal/CMakeFiles/rebuild_cache.dir
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/scal/CMakeFiles/list_install_components.dir
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/scal/CMakeFiles/install.dir
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/scal/CMakeFiles/install/local.dir
+/WAVE/users/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/scal/CMakeFiles/install/strip.dir

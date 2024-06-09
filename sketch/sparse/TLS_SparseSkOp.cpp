@@ -137,11 +137,25 @@ int main(int argc, char* argv[]){
     
     // Initialize sparse distribution struct for the sketching operator
     uint32_t seed = 0;     // Initialize seed for random number generation
+    RandBLAS::SparseDist Dist = {.n_rows = sk_dim,                            // Number of rows of the sketching operator 
+                                 .n_cols = m,                                 // Number of columns of the sketching operator
+                                 .vec_nnz = 4,                               // Number of non-zero entires per major axis
+                                 .major_axis = RandBLAS::MajorAxis::Short     // Defines the major axis of the sketching operator 
+                                };
+
+    //Construct the sparse sketching operator
+    RandBLAS::SparseSkOp<double> S(Dist, seed);  
+    RandBLAS::fill_sparse(S);
+    auto time_constructsketch2 = high_resolution_clock::now();
+
+    // Sketch AB
+    // SAB = alpha * \op(S) * \op(AB) + beta * SAB
+    auto time_sketch1 = high_resolution_clock::now();
 
 
-    // 1. PAPI measurements for the fill operator
+
+    // 2. PAPI measurements for the sketching operator
     // ----------------------------------------------------------------------------
-
 
     for (int currentEventNumber = 0; currentEventNumber < numEvents; currentEventNumber++)
     {
@@ -149,14 +163,6 @@ int main(int argc, char* argv[]){
 
         for (int j = 0; j < NUM_RUNS; j++) // Loop for PAPI measurements
         {
-            RandBLAS::SparseDist Dist = {.n_rows = sk_dim,                            // Number of rows of the sketching operator 
-                                 .n_cols = m,                                 // Number of columns of the sketching operator
-                                 .vec_nnz = 4,                               // Number of non-zero entires per major axis
-                                 .major_axis = RandBLAS::MajorAxis::Short     // Defines the major axis of the sketching operator 
-                                };
-
-            //Construct the sparse sketching operator
-            RandBLAS::SparseSkOp<double> S(Dist, seed);  
             
             initializePAPI(EventSet, events[currentEventNumber]);
 
@@ -164,8 +170,21 @@ int main(int argc, char* argv[]){
             start_time = omp_get_wtime();
             startPAPI(EventSet);
 
-            
-            RandBLAS::fill_sparse(S);
+            RandBLAS::sketch_general<double>(
+                    blas::Layout::ColMajor,    // Matrix storage layout of AB and SAB
+                    blas::Op::NoTrans,         // NoTrans => \op(S) = S, Trans => \op(S) = S^T
+                    blas::Op::NoTrans,         // NoTrans => \op(AB) = AB, Trans => \op(AB) = AB^T
+                    sk_dim,                    // Number of rows of S and SAB
+                    n+1,                       // Number of columns of AB and SAB
+                    m,                         // Number of rows of AB and columns of S
+                    1,                         // Scalar alpha - if alpha is zero AB is not accessed
+                    S,                         // A DenseSkOp or SparseSkOp sketching operator
+                    AB,                        // Matrix to be sketched
+                    m,                         // Leading dimension of AB
+                    0,                         // Scalar beta - if beta is zero SAB is not accessed
+                    SAB,                       // Sketched matrix SAB
+                    sk_dim                     // Leading dimension of SAB
+            );
 
             stopPAPI(values, EventSet, averageValues, currentEventNumber, counter, NUM_RUNS, numEvents);
 
@@ -175,7 +194,7 @@ int main(int argc, char* argv[]){
     }
 
     std::stringstream ss;
-    ss << m << "x" << n << "_" << numThreads << "_" << "Fill_Sparse";
+    ss << m << "x" << n << "_" << numThreads << "_" << "Sparse_Sketch";
     sampleName = ss.str();
 
     cleanUpPAPI(EventSet, averageValues, averageRuntime, numEvents, events, NUM_RUNS, sampleName);
@@ -183,6 +202,7 @@ int main(int argc, char* argv[]){
     std::cout << "Matrix dimensions: " << m << " by " << n + 1 << '\n';
 
     // ----------------------------------------------------------------------------
+
 
     delete[] AB;
     delete[] SAB;
@@ -194,6 +214,4 @@ int main(int argc, char* argv[]){
     return 0;
 }
 
-
-    
 
