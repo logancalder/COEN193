@@ -12,8 +12,8 @@ module load CUDA/12.1.1
 total_steps=$((2 * 3 * 3))  # Total number of iterations: 2 (m values) * 3 (n values) * 4 (threads values)
 step=0
 
-for m in 10000 50000; do
-    for n in 500 1000 2000; do
+for m in 40 50; do
+    for n in 10 15 20; do
         for threads in 5 10 20; do
             export OMP_NUM_THREADS=${threads}
             echo $OMP_NUM_THREADS

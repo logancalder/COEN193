@@ -20,7 +20,7 @@ $ source run.sh
 
 To start a CPU node:
 ```bash
-$ srun --partition=cpu --nodes 1 --ntasks 1 --exclusive --cpus-per-task 20 --mem=32G --time 4-04:00:00 --pty /bin/bash
+$ srun --partition=cpu --nodes 1 --ntasks 1 --exclusive --cpus-per-task 96 --mem=256G --time 4-04:00:00 --pty /bin/bash
 ```
 
 This will start a node with 4 CPUs and 32G RAM total >> 32/4 = 8GB RAM/CPU.

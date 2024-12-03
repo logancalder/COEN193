@@ -107,10 +107,8 @@ void stopPAPI(long long *values, int *EventSet, long long *avgValues, int curren
 
 void cleanUpPAPI(int *EventSet, long long *avgValues, float averageRuntime, int num_events, std::vector<std::string> events, float totalRuns, std::string name)
 {
-#pragma omp parallel
-    {
-        int threadID = omp_get_thread_num();
-    }
+// #pragma omp parallel
+
 
     // FILE WRITING PER TRIAL VALUES (should be outside the loop if you're measuring multiple iterations)
     std::string filepath = "papi_results/" + name + "_" + fileName + ".csv";
@@ -130,7 +128,7 @@ void cleanUpPAPI(int *EventSet, long long *avgValues, float averageRuntime, int 
 
     for (int i = 0; i < num_events; i++)
     {
-        avgValues[i] /= totalRuns;
+        // avgValues[i] /= omp_get_max_threads();
 
         std::cout << events.at(i) << std::endl;
         std::cout << avgValues[i] << std::endl;
@@ -146,7 +144,7 @@ void cleanUpPAPI(int *EventSet, long long *avgValues, float averageRuntime, int 
     // Write runtime to file
     // ==================================================================================
 
-    averageRuntime /= totalRuns;
+    averageRuntime /= num_events;
 
     std::cout << "RUNTIME\n"
               << averageRuntime << std::endl;

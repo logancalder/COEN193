@@ -1,0 +1,1336 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      The system is: Linux - 4.18.0-553.16.1.el8_10.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/3.26.5/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/3.26.5/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-E62Ea0"
+      binary: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-E62Ea0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-E62Ea0
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_46803/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_46803.dir/build.make CMakeFiles/cmTC_46803.dir/build
+        gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-E62Ea0'
+        Building C object CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc   -v -o CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.3.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46803.dir/'
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/cc1 -quiet -v -iprefix /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/ /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_46803.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cce9Qpqs.s
+        GNU C17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"
+        ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/include
+         /WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include
+         /WAVE/apps/el8/packages/UCX/1.14.1/app/include
+         /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include
+         /WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include
+         /WAVE/apps/el8/conda/envs/Python/20240305/include
+         /WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include
+         /WAVE/apps/el8/eb/software/GCCcore/12.3.0/include
+         /usr/include
+        End of search list.
+        GNU C17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 8dd5801c5071d23c77b91c24cd53abd5
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46803.dir/'
+         as -v --64 -o CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o /tmp/cce9Qpqs.s
+        GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40
+        COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_46803
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46803.dir/link.txt --verbose=1
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc  -v CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o -o cmTC_46803 
+        Using built-in specs.
+        COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc
+        COLLECT_LTO_WRAPPER=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.3.0 (GCC) 
+        COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_46803' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_46803.'
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2 -plugin /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgOk5o5.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_46803 /lib/../lib64/crt1.o /lib/../lib64/crti.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64 -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib -L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib -L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib -L/WAVE/apps/el8/conda/envs/Python/20240305/lib -L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../.. CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o /lib/../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_46803' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_46803.'
+        gmake[1]: Leaving directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-E62Ea0'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include]
+          add: [/WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include]
+          add: [/WAVE/apps/el8/eb/software/CUDA/12.1.1/include]
+          add: [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include]
+          add: [/WAVE/apps/el8/packages/UCX/1.14.1/app/include]
+          add: [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include]
+          add: [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include]
+          add: [/WAVE/apps/el8/conda/envs/Python/20240305/include]
+          add: [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include]
+          add: [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include]
+          add: [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include]
+        collapse include dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include]
+        collapse include dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/include] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/include]
+        collapse include dir [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include] ==> [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include]
+        collapse include dir [/WAVE/apps/el8/packages/UCX/1.14.1/app/include] ==> [/WAVE/apps/el8/packages/UCX/1.14.1/app/include]
+        collapse include dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include] ==> [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include]
+        collapse include dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include] ==> [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include]
+        collapse include dir [/WAVE/apps/el8/conda/envs/Python/20240305/include] ==> [/WAVE/apps/el8/conda/envs/Python/20240305/include]
+        collapse include dir [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include] ==> [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include]
+        collapse include dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/include]
+        collapse include dir [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/include] ==> [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include;/WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include;/WAVE/apps/el8/eb/software/CUDA/12.1.1/include;/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include;/WAVE/apps/el8/packages/UCX/1.14.1/app/include;/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include;/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include;/WAVE/apps/el8/conda/envs/Python/20240305/include;/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/include;/WAVE/apps/el8/eb/software/GCCcore/12.3.0/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-E62Ea0]
+        ignore line: []
+        ignore line: [Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_46803/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_46803.dir/build.make CMakeFiles/cmTC_46803.dir/build]
+        ignore line: [gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-E62Ea0']
+        ignore line: [Building C object CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc   -v -o CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.3.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46803.dir/']
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/cc1 -quiet -v -iprefix /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/ /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_46803.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cce9Qpqs.s]
+        ignore line: [GNU C17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.3.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/include]
+        ignore line: [ /WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include]
+        ignore line: [ /WAVE/apps/el8/packages/UCX/1.14.1/app/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/conda/envs/Python/20240305/include]
+        ignore line: [ /WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include]
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/GCCcore/12.3.0/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.3.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 8dd5801c5071d23c77b91c24cd53abd5]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46803.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o /tmp/cce9Qpqs.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40]
+        ignore line: [COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_46803]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46803.dir/link.txt --verbose=1]
+        ignore line: [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc  -v CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o -o cmTC_46803 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.3.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_46803' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_46803.']
+        link line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2 -plugin /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgOk5o5.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_46803 /lib/../lib64/crt1.o /lib/../lib64/crti.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64 -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib -L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib -L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib -L/WAVE/apps/el8/conda/envs/Python/20240305/lib -L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../.. CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o /lib/../lib64/crtn.o]
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccgOk5o5.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_46803] ==> ignore
+          arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o] ==> obj [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64] ==> dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64] ==> dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib]
+          arg [-L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib] ==> dir [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib]
+          arg [-L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib] ==> dir [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib]
+          arg [-L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib] ==> dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib]
+          arg [-L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib] ==> dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib]
+          arg [-L/WAVE/apps/el8/conda/envs/Python/20240305/lib] ==> dir [/WAVE/apps/el8/conda/envs/Python/20240305/lib]
+          arg [-L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib] ==> dir [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..]
+          arg [CMakeFiles/cmTC_46803.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o] ==> obj [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o]
+        collapse obj [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64] ==> [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64] ==> [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib64]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib]
+        collapse library dir [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib] ==> [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib]
+        collapse library dir [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib] ==> [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib]
+        collapse library dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib] ==> [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib]
+        collapse library dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib] ==> [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib]
+        collapse library dir [/WAVE/apps/el8/conda/envs/Python/20240305/lib] ==> [/WAVE/apps/el8/conda/envs/Python/20240305/lib]
+        collapse library dir [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib] ==> [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/lib64/crt1.o;/lib64/crti.o;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc;/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64;/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib64;/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib64;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib64;/lib64;/usr/lib64;/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib;/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib;/WAVE/apps/el8/packages/UCX/1.14.1/app/lib;/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib;/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib;/WAVE/apps/el8/conda/envs/Python/20240305/lib;/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-FmMqwQ"
+      binary: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-FmMqwQ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-FmMqwQ
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c8a2e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c8a2e.dir/build.make CMakeFiles/cmTC_c8a2e.dir/build
+        gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-FmMqwQ'
+        Building CXX object CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++   -v -o CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.3.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8a2e.dir/'
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/cc1plus -quiet -v -iprefix /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/ -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_c8a2e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccN2vlRz.s
+        GNU C++17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"
+        ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0"
+        ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/x86_64-pc-linux-gnu"
+        ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward"
+        ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/include
+         /WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include
+         /WAVE/apps/el8/packages/UCX/1.14.1/app/include
+         /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include
+         /WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include
+         /WAVE/apps/el8/conda/envs/Python/20240305/include
+         /WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/x86_64-pc-linux-gnu
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include
+         /WAVE/apps/el8/eb/software/GCCcore/12.3.0/include
+         /usr/include
+        End of search list.
+        GNU C++17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 85a5df532263a2e62cc36f7d1d54021d
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8a2e.dir/'
+         as -v --64 -o CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccN2vlRz.s
+        GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40
+        COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_c8a2e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8a2e.dir/link.txt --verbose=1
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++  -v CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_c8a2e 
+        Using built-in specs.
+        COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++
+        COLLECT_LTO_WRAPPER=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.3.0 (GCC) 
+        COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c8a2e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c8a2e.'
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2 -plugin /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6O5Wlf.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_c8a2e /lib/../lib64/crt1.o /lib/../lib64/crti.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64 -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib -L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib -L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib -L/WAVE/apps/el8/conda/envs/Python/20240305/lib -L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../.. CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o /lib/../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c8a2e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c8a2e.'
+        gmake[1]: Leaving directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-FmMqwQ'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include]
+          add: [/WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include]
+          add: [/WAVE/apps/el8/eb/software/CUDA/12.1.1/include]
+          add: [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include]
+          add: [/WAVE/apps/el8/packages/UCX/1.14.1/app/include]
+          add: [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include]
+          add: [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include]
+          add: [/WAVE/apps/el8/conda/envs/Python/20240305/include]
+          add: [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include]
+          add: [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0]
+          add: [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/x86_64-pc-linux-gnu]
+          add: [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward]
+          add: [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include]
+          add: [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include]
+        collapse include dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include]
+        collapse include dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/include] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/include]
+        collapse include dir [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include] ==> [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include]
+        collapse include dir [/WAVE/apps/el8/packages/UCX/1.14.1/app/include] ==> [/WAVE/apps/el8/packages/UCX/1.14.1/app/include]
+        collapse include dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include] ==> [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include]
+        collapse include dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include] ==> [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include]
+        collapse include dir [/WAVE/apps/el8/conda/envs/Python/20240305/include] ==> [/WAVE/apps/el8/conda/envs/Python/20240305/include]
+        collapse include dir [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include] ==> [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include]
+        collapse include dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/include/c++/12.3.0]
+        collapse include dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/x86_64-pc-linux-gnu] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/include/c++/12.3.0/x86_64-pc-linux-gnu]
+        collapse include dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/include/c++/12.3.0/backward]
+        collapse include dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/include]
+        collapse include dir [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/include] ==> [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include;/WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include;/WAVE/apps/el8/eb/software/CUDA/12.1.1/include;/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include;/WAVE/apps/el8/packages/UCX/1.14.1/app/include;/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include;/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include;/WAVE/apps/el8/conda/envs/Python/20240305/include;/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/include/c++/12.3.0;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/include/c++/12.3.0/x86_64-pc-linux-gnu;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/include/c++/12.3.0/backward;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/include;/WAVE/apps/el8/eb/software/GCCcore/12.3.0/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-FmMqwQ]
+        ignore line: []
+        ignore line: [Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c8a2e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c8a2e.dir/build.make CMakeFiles/cmTC_c8a2e.dir/build]
+        ignore line: [gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-FmMqwQ']
+        ignore line: [Building CXX object CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++   -v -o CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.3.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8a2e.dir/']
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/cc1plus -quiet -v -iprefix /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/ -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_c8a2e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccN2vlRz.s]
+        ignore line: [GNU C++17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.3.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0"]
+        ignore line: [ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/x86_64-pc-linux-gnu"]
+        ignore line: [ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward"]
+        ignore line: [ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/include]
+        ignore line: [ /WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include]
+        ignore line: [ /WAVE/apps/el8/packages/UCX/1.14.1/app/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/conda/envs/Python/20240305/include]
+        ignore line: [ /WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include]
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0]
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/x86_64-pc-linux-gnu]
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward]
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/GCCcore/12.3.0/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.3.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 85a5df532263a2e62cc36f7d1d54021d]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8a2e.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccN2vlRz.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40]
+        ignore line: [COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_c8a2e]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8a2e.dir/link.txt --verbose=1]
+        ignore line: [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++  -v CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_c8a2e ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.3.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c8a2e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c8a2e.']
+        link line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2 -plugin /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6O5Wlf.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_c8a2e /lib/../lib64/crt1.o /lib/../lib64/crti.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64 -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib -L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib -L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib -L/WAVE/apps/el8/conda/envs/Python/20240305/lib -L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../.. CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o /lib/../lib64/crtn.o]
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc6O5Wlf.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_c8a2e] ==> ignore
+          arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o] ==> obj [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64] ==> dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64] ==> dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib]
+          arg [-L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib] ==> dir [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib]
+          arg [-L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib] ==> dir [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib]
+          arg [-L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib] ==> dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib]
+          arg [-L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib] ==> dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib]
+          arg [-L/WAVE/apps/el8/conda/envs/Python/20240305/lib] ==> dir [/WAVE/apps/el8/conda/envs/Python/20240305/lib]
+          arg [-L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib] ==> dir [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..]
+          arg [CMakeFiles/cmTC_c8a2e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o] ==> obj [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o]
+        collapse obj [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64] ==> [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64] ==> [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib64]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib]
+        collapse library dir [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib] ==> [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib]
+        collapse library dir [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib] ==> [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib]
+        collapse library dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib] ==> [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib]
+        collapse library dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib] ==> [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib]
+        collapse library dir [/WAVE/apps/el8/conda/envs/Python/20240305/lib] ==> [/WAVE/apps/el8/conda/envs/Python/20240305/lib]
+        collapse library dir [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib] ==> [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib64/crt1.o;/lib64/crti.o;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc;/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64;/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib64;/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib64;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib64;/lib64;/usr/lib64;/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib;/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib;/WAVE/apps/el8/packages/UCX/1.14.1/app/lib;/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib;/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib;/WAVE/apps/el8/conda/envs/Python/20240305/lib;/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:219 (try_compile)"
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:483 (_OPENMP_GET_FLAGS)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/blaspp-install/lib64/cmake/blaspp/blasppConfig.cmake:10 (find_dependency)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake/RandBLASConfig.cmake:14 (find_dependency)"
+      - "CMakeLists.txt:12 (find_package)"
+    description: "Detecting C OpenMP compiler info"
+    directories:
+      source: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-D9M4uL"
+      binary: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-D9M4uL"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/CMake;/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake"
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_C_fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-D9M4uL
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_76a45/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_76a45.dir/build.make CMakeFiles/cmTC_76a45.dir/build
+        gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-D9M4uL'
+        Building C object CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc   -fopenmp -v -o CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o -c /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-D9M4uL/OpenMPTryFlag.c
+        Using built-in specs.
+        COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.3.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_76a45.dir/'
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/cc1 -quiet -v -iprefix /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/ -D_REENTRANT /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-D9M4uL/OpenMPTryFlag.c -quiet -dumpdir CMakeFiles/cmTC_76a45.dir/ -dumpbase OpenMPTryFlag.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fopenmp -o /tmp/ccQpyBQG.s
+        GNU C17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"
+        ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/include
+         /WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include
+         /WAVE/apps/el8/packages/UCX/1.14.1/app/include
+         /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include
+         /WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include
+         /WAVE/apps/el8/conda/envs/Python/20240305/include
+         /WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include
+         /WAVE/apps/el8/eb/software/GCCcore/12.3.0/include
+         /usr/include
+        End of search list.
+        GNU C17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 8dd5801c5071d23c77b91c24cd53abd5
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_76a45.dir/'
+         as -v --64 -o CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o /tmp/ccQpyBQG.s
+        GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40
+        COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.'
+        Linking C executable cmTC_76a45
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76a45.dir/link.txt --verbose=1
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc  -fopenmp -v CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o -o cmTC_76a45  -v 
+        Using built-in specs.
+        COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc
+        COLLECT_LTO_WRAPPER=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.3.0 (GCC) 
+        COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/
+        Reading specs from /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/libgomp.spec
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_76a45' '-v' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'cmTC_76a45.'
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2 -plugin /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5D4C5a.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_76a45 /lib/../lib64/crt1.o /lib/../lib64/crti.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtoffloadbegin.o -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64 -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib -L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib -L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib -L/WAVE/apps/el8/conda/envs/Python/20240305/lib -L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../.. CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o -lgomp -lgcc --push-state --as-needed -lgcc_s --pop-state -lpthread -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o /lib/../lib64/crtn.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtoffloadend.o
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_76a45' '-v' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'cmTC_76a45.'
+        gmake[1]: Leaving directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-D9M4uL'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:262 (message)"
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:483 (_OPENMP_GET_FLAGS)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/blaspp-install/lib64/cmake/blaspp/blasppConfig.cmake:10 (find_dependency)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake/RandBLASConfig.cmake:14 (find_dependency)"
+      - "CMakeLists.txt:12 (find_package)"
+    message: |
+      Parsed C OpenMP implicit link information from above output:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-D9M4uL]
+        ignore line: []
+        ignore line: [Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_76a45/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_76a45.dir/build.make CMakeFiles/cmTC_76a45.dir/build]
+        ignore line: [gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-D9M4uL']
+        ignore line: [Building C object CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o]
+        ignore line: [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc   -fopenmp -v -o CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o -c /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-D9M4uL/OpenMPTryFlag.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.3.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_76a45.dir/']
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/cc1 -quiet -v -iprefix /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/ -D_REENTRANT /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-D9M4uL/OpenMPTryFlag.c -quiet -dumpdir CMakeFiles/cmTC_76a45.dir/ -dumpbase OpenMPTryFlag.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fopenmp -o /tmp/ccQpyBQG.s]
+        ignore line: [GNU C17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.3.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/include]
+        ignore line: [ /WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include]
+        ignore line: [ /WAVE/apps/el8/packages/UCX/1.14.1/app/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/conda/envs/Python/20240305/include]
+        ignore line: [ /WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include]
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/GCCcore/12.3.0/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.3.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 8dd5801c5071d23c77b91c24cd53abd5]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_76a45.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o /tmp/ccQpyBQG.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40]
+        ignore line: [COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.']
+        ignore line: [Linking C executable cmTC_76a45]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76a45.dir/link.txt --verbose=1]
+        ignore line: [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc  -fopenmp -v CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o -o cmTC_76a45  -v ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.3.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/]
+        ignore line: [Reading specs from /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/libgomp.spec]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_76a45' '-v' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'cmTC_76a45.']
+        link line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2 -plugin /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5D4C5a.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_76a45 /lib/../lib64/crt1.o /lib/../lib64/crti.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtoffloadbegin.o -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64 -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib -L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib -L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib -L/WAVE/apps/el8/conda/envs/Python/20240305/lib -L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../.. CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o -lgomp -lgcc --push-state --as-needed -lgcc_s --pop-state -lpthread -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o /lib/../lib64/crtn.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtoffloadend.o]
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc5D4C5a.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_76a45] ==> ignore
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64] ==> dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64] ==> dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib]
+          arg [-L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib] ==> dir [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib]
+          arg [-L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib] ==> dir [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib]
+          arg [-L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib] ==> dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib]
+          arg [-L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib] ==> dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib]
+          arg [-L/WAVE/apps/el8/conda/envs/Python/20240305/lib] ==> dir [/WAVE/apps/el8/conda/envs/Python/20240305/lib]
+          arg [-L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib] ==> dir [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..]
+          arg [CMakeFiles/cmTC_76a45.dir/OpenMPTryFlag.c.o] ==> ignore
+          arg [-lgomp] ==> lib [gomp]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64] ==> [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64] ==> [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib64]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib]
+        collapse library dir [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib] ==> [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib]
+        collapse library dir [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib] ==> [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib]
+        collapse library dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib] ==> [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib]
+        collapse library dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib] ==> [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib]
+        collapse library dir [/WAVE/apps/el8/conda/envs/Python/20240305/lib] ==> [/WAVE/apps/el8/conda/envs/Python/20240305/lib]
+        collapse library dir [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib] ==> [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib]
+        implicit libs: [gomp;gcc;gcc_s;pthread;c;gcc;gcc_s]
+        implicit objs: []
+        implicit dirs: [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc;/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64;/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib64;/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib64;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib64;/lib64;/usr/lib64;/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib;/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib;/WAVE/apps/el8/packages/UCX/1.14.1/app/lib;/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib;/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib;/WAVE/apps/el8/conda/envs/Python/20240305/lib;/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:219 (try_compile)"
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:483 (_OPENMP_GET_FLAGS)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/blaspp-install/lib64/cmake/blaspp/blasppConfig.cmake:10 (find_dependency)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake/RandBLASConfig.cmake:14 (find_dependency)"
+      - "CMakeLists.txt:12 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-WnJdWh"
+      binary: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-WnJdWh"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/CMake;/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake"
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-WnJdWh
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0d377/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0d377.dir/build.make CMakeFiles/cmTC_0d377.dir/build
+        gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-WnJdWh'
+        Building CXX object CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++   -fopenmp -v -std=gnu++20 -o CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o -c /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-WnJdWh/OpenMPTryFlag.cpp
+        Using built-in specs.
+        COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.3.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-std=gnu++20' '-o' 'CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_0d377.dir/'
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/cc1plus -quiet -v -iprefix /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/ -D_GNU_SOURCE -D_REENTRANT /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-WnJdWh/OpenMPTryFlag.cpp -quiet -dumpdir CMakeFiles/cmTC_0d377.dir/ -dumpbase OpenMPTryFlag.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -std=gnu++20 -version -fopenmp -o /tmp/cczZBPFI.s
+        GNU C++20 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"
+        ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0"
+        ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/x86_64-pc-linux-gnu"
+        ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward"
+        ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"
+        ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include
+         /WAVE/apps/el8/eb/software/CUDA/12.1.1/include
+         /WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include
+         /WAVE/apps/el8/packages/UCX/1.14.1/app/include
+         /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include
+         /WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include
+         /WAVE/apps/el8/conda/envs/Python/20240305/include
+         /WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/x86_64-pc-linux-gnu
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include
+         /WAVE/apps/el8/eb/software/GCCcore/12.3.0/include
+         /usr/include
+        End of search list.
+        GNU C++20 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 85a5df532263a2e62cc36f7d1d54021d
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-std=gnu++20' '-o' 'CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_0d377.dir/'
+         as -v --64 -o CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o /tmp/cczZBPFI.s
+        GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40
+        COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-std=gnu++20' '-o' 'CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.'
+        Linking CXX executable cmTC_0d377
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d377.dir/link.txt --verbose=1
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++  -fopenmp -v CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o -o cmTC_0d377  -v 
+        Using built-in specs.
+        COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++
+        COLLECT_LTO_WRAPPER=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.3.0 (GCC) 
+        COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/
+        Reading specs from /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/libgomp.spec
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_0d377' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'cmTC_0d377.'
+         /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2 -plugin /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsxMOq2.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_0d377 /lib/../lib64/crt1.o /lib/../lib64/crti.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtoffloadbegin.o -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64 -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib -L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib -L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib -L/WAVE/apps/el8/conda/envs/Python/20240305/lib -L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../.. CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lgomp -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o /lib/../lib64/crtn.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtoffloadend.o
+        COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_0d377' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'cmTC_0d377.'
+        gmake[1]: Leaving directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-WnJdWh'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:262 (message)"
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:483 (_OPENMP_GET_FLAGS)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/blaspp-install/lib64/cmake/blaspp/blasppConfig.cmake:10 (find_dependency)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake/RandBLASConfig.cmake:14 (find_dependency)"
+      - "CMakeLists.txt:12 (find_package)"
+    message: |
+      Parsed CXX OpenMP implicit link information from above output:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-WnJdWh]
+        ignore line: []
+        ignore line: [Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0d377/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0d377.dir/build.make CMakeFiles/cmTC_0d377.dir/build]
+        ignore line: [gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-WnJdWh']
+        ignore line: [Building CXX object CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o]
+        ignore line: [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++   -fopenmp -v -std=gnu++20 -o CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o -c /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-WnJdWh/OpenMPTryFlag.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.3.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-std=gnu++20' '-o' 'CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_0d377.dir/']
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/cc1plus -quiet -v -iprefix /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/ -D_GNU_SOURCE -D_REENTRANT /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-WnJdWh/OpenMPTryFlag.cpp -quiet -dumpdir CMakeFiles/cmTC_0d377.dir/ -dumpbase OpenMPTryFlag.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -std=gnu++20 -version -fopenmp -o /tmp/cczZBPFI.s]
+        ignore line: [GNU C++20 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.3.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0"]
+        ignore line: [ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/x86_64-pc-linux-gnu"]
+        ignore line: [ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward"]
+        ignore line: [ignoring duplicate directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/nvvm/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/extras/CUPTI/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/CUDA/12.1.1/include]
+        ignore line: [ /WAVE/apps/el8/packages/OpenMPI/4.1.5/app/include]
+        ignore line: [ /WAVE/apps/el8/packages/UCX/1.14.1/app/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/conda/envs/Python/20240305/include]
+        ignore line: [ /WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/include]
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0]
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/x86_64-pc-linux-gnu]
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward]
+        ignore line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/include]
+        ignore line: [ /WAVE/apps/el8/eb/software/GCCcore/12.3.0/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++20 (GCC) version 12.3.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.3.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 85a5df532263a2e62cc36f7d1d54021d]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-std=gnu++20' '-o' 'CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_0d377.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o /tmp/cczZBPFI.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.40]
+        ignore line: [COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-std=gnu++20' '-o' 'CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.']
+        ignore line: [Linking CXX executable cmTC_0d377]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d377.dir/link.txt --verbose=1]
+        ignore line: [/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++  -fopenmp -v CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o -o cmTC_0d377  -v ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../configure --enable-languages=c,c++,fortran --without-cuda-driver --enable-offload-targets=nvptx-none --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-plugins --enable-gold --enable-ld=default --prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --with-local-prefix=/WAVE/apps/el8/eb/software/GCCcore/12.3.0 --enable-bootstrap --with-isl=/WAVE/apps/el8/eb/build/GCCcore/12.3.0/system-system/gcc-12.3.0/stage2_stuff --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.3.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/:/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib/:/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib/:/WAVE/apps/el8/packages/UCX/1.14.1/app/lib/:/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/:/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/:/WAVE/apps/el8/conda/envs/Python/20240305/lib/:/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib/:/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/]
+        ignore line: [Reading specs from /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64/libgomp.spec]
+        ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_0d377' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread' '-dumpdir' 'cmTC_0d377.']
+        link line: [ /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2 -plugin /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsxMOq2.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_0d377 /lib/../lib64/crt1.o /lib/../lib64/crti.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtbegin.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtoffloadbegin.o -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64 -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64 -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64 -L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib -L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib -L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib -L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib -L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib -L/WAVE/apps/el8/conda/envs/Python/20240305/lib -L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib -L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../.. CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lgomp -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtend.o /lib/../lib64/crtn.o /WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/crtoffloadend.o]
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/12.3.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccsxMOq2.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_0d377] ==> ignore
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64] ==> dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64] ==> dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+          arg [-L/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib] ==> dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib]
+          arg [-L/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib] ==> dir [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib]
+          arg [-L/WAVE/apps/el8/packages/UCX/1.14.1/app/lib] ==> dir [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib]
+          arg [-L/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib] ==> dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib]
+          arg [-L/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib] ==> dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib]
+          arg [-L/WAVE/apps/el8/conda/envs/Python/20240305/lib] ==> dir [/WAVE/apps/el8/conda/envs/Python/20240305/lib]
+          arg [-L/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib] ==> dir [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib]
+          arg [-L/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..] ==> dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..]
+          arg [CMakeFiles/cmTC_0d377.dir/OpenMPTryFlag.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgomp] ==> lib [gomp]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64/../lib64] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib/../lib64] ==> [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib/../lib64] ==> [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib64]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../../../lib64] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64]
+        collapse library dir [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib] ==> [/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib]
+        collapse library dir [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib] ==> [/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib]
+        collapse library dir [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib] ==> [/WAVE/apps/el8/packages/UCX/1.14.1/app/lib]
+        collapse library dir [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib] ==> [/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib]
+        collapse library dir [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib] ==> [/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib]
+        collapse library dir [/WAVE/apps/el8/conda/envs/Python/20240305/lib] ==> [/WAVE/apps/el8/conda/envs/Python/20240305/lib]
+        collapse library dir [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib] ==> [/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib]
+        collapse library dir [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/../../..] ==> [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib]
+        implicit libs: [stdc++;m;gomp;gcc_s;gcc;pthread;c;gcc_s;gcc]
+        implicit objs: []
+        implicit dirs: [/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc/x86_64-pc-linux-gnu/12.3.0;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib/gcc;/WAVE/apps/el8/eb/software/CUDA/12.1.1/stubs/lib64;/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib64;/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib64;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib64;/lib64;/usr/lib64;/WAVE/apps/el8/eb/software/CUDA/12.1.1/lib;/WAVE/apps/el8/packages/OpenMPI/4.1.5/app/lib;/WAVE/apps/el8/packages/UCX/1.14.1/app/lib;/WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/lib;/WAVE/apps/el8/eb/software/zlib/1.2.13-GCCcore-12.3.0/lib;/WAVE/apps/el8/conda/envs/Python/20240305/lib;/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/lib;/WAVE/apps2/el8/eb/software/GCCcore/12.3.0/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:419 (try_compile)"
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_SPEC_DATE)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/blaspp-install/lib64/cmake/blaspp/blasppConfig.cmake:10 (find_dependency)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake/RandBLASConfig.cmake:14 (find_dependency)"
+      - "CMakeLists.txt:12 (find_package)"
+    description: "Detecting C OpenMP version"
+    directories:
+      source: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-gObDhW"
+      binary: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-gObDhW"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/CMake;/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake"
+    buildResult:
+      variable: "OpenMP_SPECTEST_C_"
+      cached: true
+      stdout: |
+        Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-gObDhW
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a8854/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a8854.dir/build.make CMakeFiles/cmTC_a8854.dir/build
+        gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-gObDhW'
+        Building C object CMakeFiles/cmTC_a8854.dir/OpenMPCheckVersion.c.o
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc   -fopenmp -o CMakeFiles/cmTC_a8854.dir/OpenMPCheckVersion.c.o -c /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-gObDhW/OpenMPCheckVersion.c
+        Linking C executable cmTC_a8854
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8854.dir/link.txt --verbose=1
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc  -fopenmp CMakeFiles/cmTC_a8854.dir/OpenMPCheckVersion.c.o -o cmTC_a8854 
+        gmake[1]: Leaving directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-gObDhW'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:419 (try_compile)"
+      - "/usr/share/cmake/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_SPEC_DATE)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/blaspp-install/lib64/cmake/blaspp/blasppConfig.cmake:10 (find_dependency)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake/RandBLASConfig.cmake:14 (find_dependency)"
+      - "CMakeLists.txt:12 (find_package)"
+    description: "Detecting CXX OpenMP version"
+    directories:
+      source: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-ClP2gn"
+      binary: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-ClP2gn"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/CMake;/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake"
+    buildResult:
+      variable: "OpenMP_SPECTEST_CXX_"
+      cached: true
+      stdout: |
+        Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-ClP2gn
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_209be/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_209be.dir/build.make CMakeFiles/cmTC_209be.dir/build
+        gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-ClP2gn'
+        Building CXX object CMakeFiles/cmTC_209be.dir/OpenMPCheckVersion.cpp.o
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++   -fopenmp -std=gnu++20 -o CMakeFiles/cmTC_209be.dir/OpenMPCheckVersion.cpp.o -c /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-ClP2gn/OpenMPCheckVersion.cpp
+        Linking CXX executable cmTC_209be
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_209be.dir/link.txt --verbose=1
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/c++  -fopenmp CMakeFiles/cmTC_209be.dir/OpenMPCheckVersion.cpp.o -o cmTC_209be 
+        gmake[1]: Leaving directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-ClP2gn'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:76 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/usr/share/cmake/Modules/FindCUDAToolkit.cmake:1043 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/blaspp-install/lib64/cmake/blaspp/blasppConfig.cmake:14 (find_dependency)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake/RandBLASConfig.cmake:14 (find_dependency)"
+      - "CMakeLists.txt:12 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-C8WVSJ"
+      binary: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-C8WVSJ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/CMake;/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-C8WVSJ
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4bbff/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4bbff.dir/build.make CMakeFiles/cmTC_4bbff.dir/build
+        gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-C8WVSJ'
+        Building C object CMakeFiles/cmTC_4bbff.dir/src.c.o
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_4bbff.dir/src.c.o -c /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-C8WVSJ/src.c
+        Linking C executable cmTC_4bbff
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4bbff.dir/link.txt --verbose=1
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc CMakeFiles/cmTC_4bbff.dir/src.c.o -o cmTC_4bbff 
+        /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/bin/ld: CMakeFiles/cmTC_4bbff.dir/src.c.o: in function `main':
+        src.c:(.text+0x2d): undefined reference to `pthread_create'
+        /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/bin/ld: src.c:(.text+0x39): undefined reference to `pthread_detach'
+        /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/bin/ld: src.c:(.text+0x45): undefined reference to `pthread_cancel'
+        /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/bin/ld: src.c:(.text+0x56): undefined reference to `pthread_join'
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_4bbff.dir/build.make:99: cmTC_4bbff] Error 1
+        gmake[1]: Leaving directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-C8WVSJ'
+        gmake: *** [Makefile:127: cmTC_4bbff/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "/usr/share/cmake/Modules/FindCUDAToolkit.cmake:1043 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/blaspp-install/lib64/cmake/blaspp/blasppConfig.cmake:14 (find_dependency)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake/RandBLASConfig.cmake:14 (find_dependency)"
+      - "CMakeLists.txt:12 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-clqbLY"
+      binary: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-clqbLY"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/CMake;/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-clqbLY
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bd5c5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_bd5c5.dir/build.make CMakeFiles/cmTC_bd5c5.dir/build
+        gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-clqbLY'
+        Building C object CMakeFiles/cmTC_bd5c5.dir/CheckFunctionExists.c.o
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_bd5c5.dir/CheckFunctionExists.c.o -c /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-clqbLY/CheckFunctionExists.c
+        Linking C executable cmTC_bd5c5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd5c5.dir/link.txt --verbose=1
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_bd5c5.dir/CheckFunctionExists.c.o -o cmTC_bd5c5  -lpthreads 
+        /WAVE/apps/el8/eb/software/binutils/2.40-GCCcore-12.3.0/bin/ld: cannot find -lpthreads: No such file or directory
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_bd5c5.dir/build.make:99: cmTC_bd5c5] Error 1
+        gmake[1]: Leaving directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-clqbLY'
+        gmake: *** [Makefile:127: cmTC_bd5c5/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "/usr/share/cmake/Modules/FindCUDAToolkit.cmake:1043 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/blaspp-install/lib64/cmake/blaspp/blasppConfig.cmake:14 (find_dependency)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake/RandBLASConfig.cmake:14 (find_dependency)"
+      - "CMakeLists.txt:12 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-Xmec1c"
+      binary: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-Xmec1c"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/CMake;/WAVE/users/unix/lcalder/ycho_lab/software/RandBLAS/RandBLAS-install/lib64/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-Xmec1c
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f4b26/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f4b26.dir/build.make CMakeFiles/cmTC_f4b26.dir/build
+        gmake[1]: Entering directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-Xmec1c'
+        Building C object CMakeFiles/cmTC_f4b26.dir/CheckFunctionExists.c.o
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_f4b26.dir/CheckFunctionExists.c.o -c /WAVE/users2/unix/lcalder/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-Xmec1c/CheckFunctionExists.c
+        Linking C executable cmTC_f4b26
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4b26.dir/link.txt --verbose=1
+        /WAVE/apps/el8/eb/software/GCCcore/12.3.0/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_f4b26.dir/CheckFunctionExists.c.o -o cmTC_f4b26  -lpthread 
+        gmake[1]: Leaving directory '/WAVE/projects2/ycho_lab/logan_calder/COEN193/sketch/sparse/NEW_create_sketch/CMakeFiles/CMakeScratch/TryCompile-Xmec1c'
+        
+      exitCode: 0
+...

@@ -20,10 +20,10 @@ using std::chrono::duration_cast;
 using std::chrono::high_resolution_clock;
 using std::chrono::milliseconds;
 
-void init_noisy_data(int64_t m, int64_t n, int64_t d, double *AB)
+void init_noisy_data(int64_t m, int64_t n, int64_t d, float *AB)
 {
-    double target_x[n * d];
-    double eps[m * d];
+    float target_x[n * d];
+    float eps[m * d];
     for (int i = 0; i < n; i++)
     {
         target_x[i] = 1; // Target X is the vector of 1's
@@ -34,8 +34,8 @@ void init_noisy_data(int64_t m, int64_t n, int64_t d, double *AB)
     auto state = RandBLAS::RNGState(0);
     auto state1 = RandBLAS::RNGState(1);
 
-    RandBLAS::fill_dense<double>(Dist_A, AB, state);     // Fill A to be a random gaussian
-    RandBLAS::fill_dense<double>(Dist_eps, eps, state1); // Fill A to be a random gaussian
+    RandBLAS::fill_dense<float>(Dist_A, AB, state);     // Fill A to be a random gaussian
+    RandBLAS::fill_dense<float>(Dist_eps, eps, state1); // Fill A to be a random gaussian
 
     blas::gemm(blas::Layout::ColMajor, blas::Op::NoTrans, blas::Op::NoTrans, m, d, n, 1, AB, m, target_x, n, 0, &AB[m * n], m);
 
@@ -56,10 +56,6 @@ void init_noisy_data(int64_t m, int64_t n, int64_t d, double *AB)
 // of A respectively. We expect m > 2*n.
 int main(int argc, char *argv[])
 {
-    // PAPI Setup
-
-#define NUM_RUNS 10 // The higher the better averaged data
-
     // PAPI Setup Here
     // ----------------------------------------------------------------------------
 
@@ -69,11 +65,8 @@ int main(int argc, char *argv[])
     int numThreads;
     long long values[omp_get_max_threads()];
     long long averageValues[numEvents];
-    float averageRuntime = 0;
-    float counter = 0;
+    float runtime = 0;
     std::string sampleName;
-
-    double start_time, end_time;
 
     // Initialize values of arrays to 0
     for (int i = 0; i < omp_get_max_threads(); i++)
@@ -118,176 +111,132 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    int64_t sk_dim = 2 * (n + 1);
+    for (int currentEventNumber = 0; currentEventNumber < numEvents; currentEventNumber++)
+        {
 
-    // Initialize workspace
-    double *AB = new double[m * (n + 1)]; // Store [A B] in column major format
-    double *SAB = new double[sk_dim * (n + 1)];
-    double *X = new double[n];
-    double *res = new double[n];
+        int64_t sk_dim = 2 * (n + 1);
 
-    // Initialize workspace for the sketched svd
-    double *U = new double[sk_dim * sk_dim];
-    double *svals = new double[n + 1];
-    double *VT = new double[(n + 1) * (n + 1)];
+        // Initialize workspace
+        float *AB = new float[m * (n + 1)]; // Store [A B] in column major format
+        float *SAB = new float[sk_dim * (n + 1)];
+        float *X = new float[n];
+        float *res = new float[n];
 
-    // Initialize noisy gaussian data
-    init_noisy_data(m, n, 1, AB);
+        // Initialize workspace for the sketched svd
+        float *U = new float[sk_dim * sk_dim];
+        float *svals = new float[n + 1];
+        float *VT = new float[(n + 1) * (n + 1)];
 
-    // Define properties of the sketching operator
+        // Initialize noisy gaussian data
+        init_noisy_data(m, n, 1, AB);
 
-    // Initialize seed for random number generation
-    uint32_t seed = 0;
+        // Define properties of the sketching operator
 
-    // Define the dense distribution that the sketching operator will sample from
-    /* Additional dense distributions: RandBLAS::DenseDistName::Uniform - entries are iid drawn uniform [-1,1]
-     *                                 RandBLAS::DenseDistName::BlackBox - entires are user provided through a buffer
-     */
+        // Initialize seed for random number generation
+        uint32_t seed = 0;
 
-    auto time_constructsketch1 = high_resolution_clock::now();
-    RandBLAS::DenseDistName dn = RandBLAS::DenseDistName::Gaussian;
+        // Define the dense distribution that the sketching operator will sample from
+        /* Additional dense distributions: RandBLAS::DenseDistName::Uniform - entries are iid drawn uniform [-1,1]
+        *                                 RandBLAS::DenseDistName::BlackBox - entires are user provided through a buffer
+        */
 
-    // Initialize dense distribution struct for the sketching operator
-
-
-    // 1. PAPI measurements for the distribution operator
-    // ----------------------------------------------------------------------------
+        // Initialize dense distribution struct for the sketching operator
 
 
-    initializePAPI(EventSet, events[currentEventNumber]);
+        RandBLAS::DenseDistName dn = RandBLAS::DenseDistName::Gaussian;
+        RandBLAS::DenseDist Dist(sk_dim, // Number of rows of the sketching operator
+                                    m,      // Number of columns of the sketching operator
+                                    dn);    // Distribution of the entires
 
-    // Dgemm calculations
-    start_time = omp_get_wtime();
-    startPAPI(EventSet);
+        //Construct the dense sketching operator
+        RandBLAS::DenseSkOp<float> S(Dist, seed);  
+        RandBLAS::fill_dense(S);
 
-    RandBLAS::DenseDist Dist(sk_dim, // Number of rows of the sketching operator
-                                m,      // Number of columns of the sketching operator
-                                dn);    // Distribution of the entires
 
-    stopPAPI(values, EventSet, averageValues, 0, 1, NUM_RUNS, numEvents);
+        // ----------------------------------------------------------------------------
 
-    end_time = omp_get_wtime();
-    averageRuntime = (end_time - start_time);
+        // 1. PAPI measurements for the distribution operator
+        // ----------------------------------------------------------------------------
+
+
+        
+
+        // Sketch AB
+        // SAB = alpha * \op(S) * \op(AB) + beta * SAB
+        RandBLAS::sketch_general<float>(
+                blas::Layout::ColMajor,    // Matrix storage layout of AB and SAB
+                blas::Op::NoTrans,         // NoTrans => \op(S) = S, Trans => \op(S) = S^T
+                blas::Op::NoTrans,         // NoTrans => \op(AB) = AB, Trans => \op(AB) = AB^T
+                sk_dim,                    // Number of rows of S and SAB
+                n+1,                       // Number of columns of AB and SAB
+                m,                         // Number of rows of AB and columns of S
+                1,                         // Scalar alpha - if alpha is zero AB is not accessed
+                S,                         // A DenseSkOp or SparseSkOp sketching operator
+                AB,                        // Matrix to be sketched
+                m,                         // Leading dimension of AB
+                0,                         // Scalar beta - if beta is zero SAB is not accessed
+                SAB,                       // Sketched matrix SAB
+                sk_dim                     // Leading dimension of SAB
+        );
+
+        
+
+        
+        try {
+            initializePAPI(EventSet, events[currentEventNumber]);
+
+            // Dgemm calculations
+            startPAPI(EventSet);
+            auto start_time = high_resolution_clock::now(); 
+            lapack::gesdd(lapack::Job::AllVec, sk_dim, (n+1), SAB, sk_dim, svals, U, sk_dim, VT, n+1);
+            auto end_time = high_resolution_clock::now();
+            stopPAPI(values, EventSet, averageValues, currentEventNumber, 1, 1, numEvents);
+
+            runtime += (float) duration_cast<milliseconds>(end_time - start_time).count()/1000;
+        } catch(const lapack::Error& e) {
+        std::cout << "Caught lapack error ; " << e.what() << std::endl;
+        }
+                
+        for (int i = 0; i < n; i++) {
+            X[i] = VT[n + i*(n+1)]; // Take the right n by 1 block of V
+        }
+
+        // Scale X by the inverse of the 1 by 1 bottom right block of V
+        blas::scal(n, -1/VT[(n+1)*(n+1)-1], X, 1); 
+
+        //Check TLS solution. Expected to be close to a vector of 1's
+        float res_infnorm = 0;
+        float res_twonorm = 0;
+
+        for (int i = 0; i < n; i++) {
+            res[i] = abs(X[i] - 1);
+            res_twonorm += res[i]*res[i];
+            if (res_infnorm < res[i]) {
+                res_infnorm = res[i];
+            }
+        }
+
+        delete[] AB;
+        delete[] SAB;
+        delete[] X;
+        delete[] res;
+        delete[] U;
+        delete[] svals;
+        delete[] VT;
+    }
 
     std::stringstream ss;
-    ss << m << "x" << n << "_" << numThreads << "_" << "Dense_Dist";
+    ss << m << "x" << n << "_" << numThreads << "_" << "Create_Dense_Dist";
     sampleName = ss.str();
 
-    cleanUpPAPI(EventSet, averageValues, averageRuntime, numEvents, events, 1, sampleName);
-
-
-    
-
-    // Construct the dense sketching operator
-    RandBLAS::DenseSkOp<double> S(Dist, seed);
-
-
-    // 2. PAPI measurements for the fill operator
-    // ----------------------------------------------------------------------------
-
-    
-    initializePAPI(EventSet, events[currentEventNumber]);
-
-    // Dgemm calculations
-    start_time = omp_get_wtime();
-    startPAPI(EventSet);
-
-    RandBLAS::fill_dense(S);
-
-    stopPAPI(values, EventSet, averageValues, 0, 1, NUM_RUNS, numEvents);
-
-    end_time = omp_get_wtime();
-    averageRuntime = (end_time - start_time);
-
-    std::stringstream ss;
-    ss << m << "x" << n << "_" << numThreads << "_" << "Dense_Fill";
-    sampleName = ss.str();
-
-    cleanUpPAPI(EventSet, averageValues, averageRuntime, numEvents, events, 1, sampleName);
+    cleanUpPAPI(EventSet, averageValues, runtime, numEvents, events, 1, sampleName);
 
     std::cout << "Matrix dimensions: " << m << " by " << n + 1 << '\n';
 
-    auto time_constructsketch2 = high_resolution_clock::now();
-
-    // Sketch AB
-    // SAB = alpha * \op(S) * \op(AB) + beta * SAB
-    auto time_sketch1 = high_resolution_clock::now();
-    SimRoiStart();
-    RandBLAS::sketch_general<float>(
-            blas::Layout::ColMajor,    // Matrix storage layout of AB and SAB
-            blas::Op::NoTrans,         // NoTrans => \op(S) = S, Trans => \op(S) = S^T
-            blas::Op::NoTrans,         // NoTrans => \op(AB) = AB, Trans => \op(AB) = AB^T
-            sk_dim,                    // Number of rows of S and SAB
-            n+1,                       // Number of columns of AB and SAB
-            m,                         // Number of rows of AB and columns of S
-            1,                         // Scalar alpha - if alpha is zero AB is not accessed
-            S,                         // A DenseSkOp or SparseSkOp sketching operator
-            AB,                        // Matrix to be sketched
-            m,                         // Leading dimension of AB
-            0,                         // Scalar beta - if beta is zero SAB is not accessed
-            SAB,                       // Sketched matrix SAB
-            sk_dim                     // Leading dimension of SAB
-    );
-    SimRoiEnd();
-    auto time_sketch2 = high_resolution_clock::now();
-
-    // Perform SVD operation on SAB
-    auto time_TLS1 = high_resolution_clock::now();
-
-
-    // 3. PAPI measurements for the svd operator
     // ----------------------------------------------------------------------------
-
-
-    try {
-        initializePAPI(EventSet, events[currentEventNumber]);
-
-        // Dgemm calculations
-        start_time = omp_get_wtime();
-        startPAPI(EventSet);
-
-        lapack::gesdd(lapack::Job::AllVec, sk_dim, (n+1), SAB, sk_dim, svals, U, sk_dim, VT, n+1);
-
-        stopPAPI(values, EventSet, averageValues, 0, 1, NUM_RUNS, numEvents);
-
-        end_time = omp_get_wtime();
-        averageRuntime = (end_time - start_time);
-
-        std::stringstream ss;
-        ss << m << "x" << n << "_" << numThreads << "_" << "Dense_SVD";
-        sampleName = ss.str();
-
-        cleanUpPAPI(EventSet, averageValues, averageRuntime, numEvents, events, 1, sampleName);
-    } catch(const lapack::Error& e) {
-	std::cout << "Caught lapack error ; " << e.what() << std::endl;
-    }
-            
-    for (int i = 0; i < n; i++) {
-        X[i] = VT[n + i*(n+1)]; // Take the right n by 1 block of V
-    }
-
-    // Scale X by the inverse of the 1 by 1 bottom right block of V
-    blas::scal(n, -1/VT[(n+1)*(n+1)-1], X, 1); 
-    auto time_TLS2 = high_resolution_clock::now();
-
-    //Check TLS solution. Expected to be close to a vector of 1's
-    float res_infnorm = 0;
-    float res_twonorm = 0;
-
-    for (int i = 0; i < n; i++) {
-        res[i] = abs(X[i] - 1);
-        res_twonorm += res[i]*res[i];
-        if (res_infnorm < res[i]) {
-            res_infnorm = res[i];
-        }
-    }
-
-    delete[] AB;
-    delete[] SAB;
-    delete[] X;
-    delete[] res;
-    delete[] U;
-    delete[] svals;
-    delete[] VT;
+    
     return 0;
 }
+
+    
+

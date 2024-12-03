@@ -56,11 +56,7 @@ void init_noisy_data(int64_t m, int64_t n, int64_t d, double* AB){
 // of A respectively. We expect m > 2*n.
 int main(int argc, char* argv[]){
 
- // PAPI Setup
-
-#define NUM_RUNS 10 // The higher the better averaged data
-
-    // PAPI Setup Here
+     // PAPI Setup Here
     // ----------------------------------------------------------------------------
 
     std::vector<std::string> events;
@@ -69,11 +65,8 @@ int main(int argc, char* argv[]){
     int numThreads;
     long long values[omp_get_max_threads()];
     long long averageValues[numEvents];
-    float averageRuntime = 0;
-    float counter = 0;
+    float runtime = 0;
     std::string sampleName;
-
-    double start_time, end_time;
 
     // Initialize values of arrays to 0
     for (int i = 0; i < omp_get_max_threads(); i++)
@@ -90,16 +83,18 @@ int main(int argc, char* argv[]){
         std::cerr << "PAPI initialization failed!" << std::endl;
     }
 
-    // ----------------------------------------------------------------------------
+     // ----------------------------------------------------------------------------
 
     // Initialize dimensions
-    int64_t m;           // Number of rows of A, B
-    int64_t n;           // Number of columns of A
-                         
-    if (argc == 1) {
-        m = 10000;
+    int64_t m; // Number of rows of A, B
+    int64_t n; // Number of columns of A
+
+    if (argc == 1)
+    {
+        m = 10000; // 10000x10000 50000x1000 50000x2000
         n = 500;
-    } else if (argc == 4)
+    }
+    else if (argc == 4)
     {
         m = atoi(argv[1]);
         n = atoi(argv[2]);
@@ -109,67 +104,69 @@ int main(int argc, char* argv[]){
             std::cout << "Make sure number of rows are greater than number of cols" << '\n';
             exit(0);
         }
-    } else {
+    }
+    else
+    {
         std::cout << "Invalid arguments" << '\n';
         exit(1);
     }
 
-    // Define number or rows of the sketching operator
-    int64_t sk_dim = 2*(n+1);
-
-    // Initialize workspace
-    double *AB = new double[m*(n+1)]; // Store [A B] in column major format
-    double *SAB = new double[sk_dim*(n+1)];
-    double *X = new double[n];
-    double *res = new double[n];
-
-    // Initialize workspace for the sketched svd 
-    double *U = new double[sk_dim*sk_dim];
-    double *svals = new double[n+1];
-    double *VT = new double[(n+1)*(n+1)];
-
-    // Initialize noisy gaussian data
-    init_noisy_data(m, n, 1, AB);
-
-
-    // Define the parameters of the sparse distribution 
-    auto time_constructsketch1 = high_resolution_clock::now();
-    
-    // Initialize sparse distribution struct for the sketching operator
-    uint32_t seed = 0;     // Initialize seed for random number generation
-    RandBLAS::SparseDist Dist = {.n_rows = sk_dim,                            // Number of rows of the sketching operator 
-                                 .n_cols = m,                                 // Number of columns of the sketching operator
-                                 .vec_nnz = 4,                               // Number of non-zero entires per major axis
-                                 .major_axis = RandBLAS::MajorAxis::Short     // Defines the major axis of the sketching operator 
-                                };
-
-    //Construct the sparse sketching operator
-    RandBLAS::SparseSkOp<double> S(Dist, seed);  
-    RandBLAS::fill_sparse(S);
-    auto time_constructsketch2 = high_resolution_clock::now();
-
-    // Sketch AB
-    // SAB = alpha * \op(S) * \op(AB) + beta * SAB
-    auto time_sketch1 = high_resolution_clock::now();
-
-
-
-    // 2. PAPI measurements for the sketching operator
-    // ----------------------------------------------------------------------------
-
     for (int currentEventNumber = 0; currentEventNumber < numEvents; currentEventNumber++)
-    {
-        counter++;
-
-        for (int j = 0; j < NUM_RUNS; j++) // Loop for PAPI measurements
         {
+            // Define number or rows of the sketching operator
+            int64_t sk_dim = 2*(n+1);
+
+            // Initialize workspace
+            double *AB = new double[m*(n+1)]; // Store [A B] in column major format
+            double *SAB = new double[sk_dim*(n+1)];
+            double *X = new double[n];
+            double *res = new double[n];
+
+            // Initialize workspace for the sketched svd 
+            double *U = new double[sk_dim*sk_dim];
+            double *svals = new double[n+1];
+            double *VT = new double[(n+1)*(n+1)];
+
+            // Initialize noisy gaussian data
+            init_noisy_data(m, n, 1, AB);
+
+
             
+            // Define the parameters of the sparse distribution 
             initializePAPI(EventSet, events[currentEventNumber]);
 
             // Dgemm calculations
-            start_time = omp_get_wtime();
             startPAPI(EventSet);
+            auto start_time = high_resolution_clock::now(); 
+            
+            // Initialize sparse distribution struct for the sketching operator
+            uint32_t seed = 0;     // Initialize seed for random number generation
+            RandBLAS::SparseDist Dist = {.n_rows = sk_dim,                            // Number of rows of the sketching operator 
+                                        .n_cols = m,                                 // Number of columns of the sketching operator
+                                        .vec_nnz = 4,                               // Number of non-zero entires per major axis
+                                        .major_axis = RandBLAS::MajorAxis::Short     // Defines the major axis of the sketching operator 
+                                        };
 
+            //Construct the sparse sketching operator
+            RandBLAS::SparseSkOp<double> S(Dist, seed);  
+            RandBLAS::fill_sparse(S);
+            
+
+
+
+            auto end_time = high_resolution_clock::now();
+
+            stopPAPI(values, EventSet, averageValues, currentEventNumber, 1, 1, numEvents);
+            runtime += (float) duration_cast<milliseconds>(end_time - start_time).count()/1000;
+            
+
+            // Sketch AB
+            // SAB = alpha * \op(S) * \op(AB) + beta * SAB
+            auto time_sketch1 = high_resolution_clock::now();
+
+            
+
+            
             RandBLAS::sketch_general<double>(
                     blas::Layout::ColMajor,    // Matrix storage layout of AB and SAB
                     blas::Op::NoTrans,         // NoTrans => \op(S) = S, Trans => \op(S) = S^T
@@ -186,32 +183,62 @@ int main(int argc, char* argv[]){
                     sk_dim                     // Leading dimension of SAB
             );
 
-            stopPAPI(values, EventSet, averageValues, currentEventNumber, counter, NUM_RUNS, numEvents);
 
-            end_time = omp_get_wtime();
-            averageRuntime += (end_time - start_time);
-        }
+
+            
+            auto time_sketch2 = high_resolution_clock::now();
+
+            // Perform SVD operation on SAB
+            auto time_TLS1 = high_resolution_clock::now();
+            
+           
+
+            lapack::gesdd(lapack::Job::AllVec, sk_dim, (n+1), SAB, sk_dim, svals, U, sk_dim, VT, n+1);
+            
+
+            for (int i = 0; i < n; i++) {
+                X[i] = VT[n + i*(n+1)]; // Take the right n by 1 block of V
+            }
+
+            // Scale X by the inverse of the 1 by 1 bottom right block of V
+            blas::scal(n, -1/VT[(n+1)*(n+1)-1], X, 1); 
+            auto time_TLS2 = high_resolution_clock::now();
+
+            //Check TLS solution. Expected to be a vector of 1's
+            double res_infnorm = 0;
+            double res_twonorm = 0;
+
+            for (int i = 0; i < n; i++) {
+                res[i] = abs(X[i] - 1);
+                res_twonorm += res[i]*res[i];
+                if (res_infnorm < res[i]) {
+                    res_infnorm = res[i];
+                }
+            }
+
+            delete[] AB;
+            delete[] SAB;
+            delete[] X;
+            delete[] res;
+            delete[] U;
+            delete[] svals;
+            delete[] VT;
     }
 
     std::stringstream ss;
-    ss << m << "x" << n << "_" << numThreads << "_" << "Sparse_Sketch";
+    ss << m << "x" << n << "_" << numThreads << "_" << "Sparse_Dist";
     sampleName = ss.str();
 
-    cleanUpPAPI(EventSet, averageValues, averageRuntime, numEvents, events, NUM_RUNS, sampleName);
+    cleanUpPAPI(EventSet, averageValues, runtime, numEvents, events, 1, sampleName);
 
     std::cout << "Matrix dimensions: " << m << " by " << n + 1 << '\n';
 
     // ----------------------------------------------------------------------------
+    
 
-
-    delete[] AB;
-    delete[] SAB;
-    delete[] X;
-    delete[] res;
-    delete[] U;
-    delete[] svals;
-    delete[] VT;
     return 0;
 }
 
+
+    
 

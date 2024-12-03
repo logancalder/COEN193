@@ -129,6 +129,7 @@ int main(int argc, char* argv[]){
     // Perform SVD operation on SAB
     auto time_TLS1 = high_resolution_clock::now();
     lapack::gesdd(lapack::Job::AllVec, sk_dim, (n+1), SAB, sk_dim, svals, U, sk_dim, VT, n+1);
+    auto time_TLS2 = high_resolution_clock::now();
             
     for (int i = 0; i < n; i++) {
         X[i] = VT[n + i*(n+1)]; // Take the right n by 1 block of V
@@ -136,7 +137,6 @@ int main(int argc, char* argv[]){
 
     // Scale X by the inverse of the 1 by 1 bottom right block of V
     blas::scal(n, -1/VT[(n+1)*(n+1)-1], X, 1); 
-    auto time_TLS2 = high_resolution_clock::now();
 
     //Check TLS solution. Expected to be a vector of 1's
     double res_infnorm = 0;
@@ -150,13 +150,9 @@ int main(int argc, char* argv[]){
         }
     }
 
-    std::cout << "Matrix dimensions:                                                " << m << " by " << n+1 << '\n'; 
-    std::cout << "Sketch dimension:                                                 " << sk_dim << '\n'; 
     std::cout << "Time to create dense sketch:                                      " << (double) duration_cast<milliseconds>(time_constructsketch2 - time_constructsketch1).count()/1000 << " seconds" << '\n';
     std::cout << "Time to sketch AB:                                                " << (double) duration_cast<milliseconds>(time_sketch2 - time_sketch1).count()/1000 << " seconds" <<'\n';
     std::cout << "Time to perform TLS on sketched matrix:                           " << (double) duration_cast<milliseconds>(time_TLS2 - time_TLS1).count()/1000 << " seconds" << '\n';
-    std::cout << "Inf-norm distance from TLS solution to vector of all ones:        " << res_infnorm << '\n';
-    std::cout << "Two-norm distance from TLS solution to vector of all ones:        " << sqrt(res_twonorm) << '\n';
 
     delete[] AB;
     delete[] SAB;
