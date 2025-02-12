@@ -12,7 +12,7 @@ module load CUDA/12.1.1
 total_steps=$((4 * 11))  # Total number of iterations: 2 (m values) * 3 (n values) * 8 (threads values)
 step=0
 m=50000
-n=1000
+n=2000
 proc_bind_options=("false" "master" "close" "spread")
 
 for proc_bind in "${proc_bind_options[@]}"; do

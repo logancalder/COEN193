@@ -1,7 +1,18 @@
 #!/bin/bash
+export LD_LIBRARY_PATH=/WAVE/projects/ycho_lab/software/OpenBLAS-GCC_12.3.0/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/WAVE/projects/ycho_lab/software/RandBLAS/lapackpp-build/lib64/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/WAVE/projects/ycho_lab/software/RandBLAS/blaspp-install/lib64/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/lib/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/WAVE/apps/el8/eb/software/GCCcore/12.3.0/lib64/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/WAVE/users/unix/lcalder/ycho_lab/logan_calder/workspace/software/papi-install/include/:$LD_LIBRARY_PATH
+
+module load Python
+module load OpenMPI/4.1.5
+module load GCC/12.3.0
+module load CUDA/12.1.1
 
 # File to run
-executable="./TLS_DenseSkOp"
+executable="./TLS_SparseSkOp"
 param1=50000
 param2=2000
 
@@ -10,7 +21,7 @@ threads=(2 4 8 12 16 20 24 28 32 36 40 44 48)
 proc_bind_settings=("false" "master" "close" "spread" "true")
 
 # Directory to store CSV files
-output_dir="dense_output_csvs_502"
+output_dir="sparse_output_csvs_502"
 mkdir -p $output_dir
 
 # Loop through OMP_PROC_BIND settings
